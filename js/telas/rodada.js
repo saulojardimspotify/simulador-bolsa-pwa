@@ -122,5 +122,6 @@ export function render(container, estado, irPara) {
     revelarBtn));
 
   container.append(el('section', { class: 'tela-rodada' }, placar, manchete, area));
-  setTimeout(efeitos.plantao, 200);
+  // Na 1ª rodada quem toca é o sino do pregão (ao confirmar a carteira); a vinheta fica para as demais.
+  if (estado.rodada > 0) setTimeout(efeitos.plantao, 200);
 }
