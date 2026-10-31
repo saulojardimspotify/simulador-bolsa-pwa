@@ -35,7 +35,7 @@ export function render(container, estado, irPara) {
       busca,
       el('h3', {}, 'Setor'),
       el('div', { class: 'chips' }, SETORES.map((s) =>
-        chip(s, f.setores.includes(s), () => { f.setores = alternar(f.setores, s); atualizar(); }, CORES_SETOR[s]))),
+        chip(s, f.setores.includes(s), () => { f.setores = f.setores.includes(s) ? [] : [s]; atualizar(); }, CORES_SETOR[s]))),
       el('h3', {}, 'Porte da empresa'),
       el('div', { class: 'chips' }, PORTES.map((p) =>
         chip(p, f.portes.includes(p), () => { f.portes = alternar(f.portes, p); atualizar(); }))),
