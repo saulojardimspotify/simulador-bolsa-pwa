@@ -51,6 +51,8 @@ As notícias ficam em [`data/eventos.json`](data/eventos.json). Dá para editar 
 - **grupo** (opcional): eventos do mesmo grupo nunca saem na mesma partida (ex.: "Selic sobe" e "Selic cai").
 - O banco precisa ter exatamente **50** eventos, e toda empresa precisa aparecer em pelo menos 3 notícias (os testes conferem).
 
+Para ter o **gabarito** (resposta certa e variação de cada ação em cada notícia) numa planilha, rode `node scripts/gerar-gabarito.mjs`. Ele cria `gabarito.xlsx` na pasta do projeto, que fica fora do GitHub.
+
 Depois de publicar uma alteração, o app mostra a versão nova a partir da **segunda** vez que for aberto com internet.
 
 ## Atualizar os preços
