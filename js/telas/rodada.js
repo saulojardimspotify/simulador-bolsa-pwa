@@ -1,7 +1,8 @@
 import { el, seloAcao, formatarReais, formatarPct, classeVariacao, animarNumero, confete, umaVez } from '../ui.js';
-import { aplicarEvento, avaliarPalpite, valorCarteira } from '../motor.js';
+import { aplicarEvento, avaliarPalpite, valorCarteira, LIMIAR_IGUAL } from '../motor.js';
 
 const TOTAL_RODADAS = 5;
+const PALPITES = { sobe: '▲ subir', igual: '● fica igual', cai: '▼ cair' };
 const ANIMACAO_MS = 1200;
 
 export function render(container, estado, irPara) {
@@ -60,15 +61,13 @@ export function render(container, estado, irPara) {
       }),
     }, ultima ? 'Ver resultado 🏁' : 'Seguir em frente ▶');
 
-    const parada = r.valorDepois === r.valorAntes;
-    const titulo = parada ? '🛡️ Sua carteira não mudou: o palpite conta como certo'
-      : acertou ? '🎯 Você acertou!' : '😅 Não foi dessa vez';
     area.replaceChildren(el('div', { class: 'revelacao' },
-      el('div', { class: `feedback ${parada ? 'parada' : acertou ? 'acertou' : 'errou'}` },
-        titulo,
+      el('div', { class: `feedback ${acertou ? 'acertou' : 'errou'}` },
+        acertou ? '🎯 Você acertou!' : '😅 Não foi dessa vez',
         el('span', { class: 'feedback-detalhe' },
-          ` Você disse ${palpite === 'sobe' ? '▲ subir' : '▼ cair'}. Sua carteira: `,
-          el('b', { class: classeVariacao(variacaoTotal) }, formatarPct(variacaoTotal)))),
+          ` Você disse ${PALPITES[palpite]}. Sua carteira: `,
+          el('b', { class: classeVariacao(variacaoTotal) }, formatarPct(variacaoTotal)),
+          Math.abs(variacaoTotal) < LIMIAR_IGUAL ? ` (menos de ${LIMIAR_IGUAL.toLocaleString('pt-BR')}% conta como "fica igual")` : '')),
       el('div', { class: 'res-lista' }, linhas),
       r.algumaInvestidaAfetada ? null
         : el('p', { class: 'ileso' }, 'Seu setor passou ileso desta vez, e isso também é diversificação!'),
@@ -77,15 +76,16 @@ export function render(container, estado, irPara) {
 
     animarNumero(valorEl, r.valorAntes, r.valorDepois, ANIMACAO_MS, formatarReais);
     acertosEl.textContent = `${estado.acertos}`;
-    if (acertou && !parada) confete(container);
+    if (acertou) confete(container);
   }
 
   area.append(el('div', { class: 'palpite' },
-    el('h2', {}, 'Sua carteira vai subir ou cair com essa notícia?'),
+    el('h2', {}, 'O que acontece com sua carteira depois dessa notícia?'),
     el('div', { class: 'carteira-mini' }, estado.carteira.posicoes.map((p) =>
       el('span', { class: `mini${p.percentual === 0 ? ' zerada' : ''}` }, seloAcao(p.acao), `${p.acao.nome} · ${p.percentual}%`))),
     el('div', { class: 'palpite-botoes' },
       el('button', { class: 'botao botao-sobe botao-enorme', onclick: umaVez(() => revelar('sobe')) }, '▲ Subir'),
+      el('button', { class: 'botao botao-igual botao-enorme', onclick: umaVez(() => revelar('igual')) }, '● Fica igual'),
       el('button', { class: 'botao botao-cai botao-enorme', onclick: umaVez(() => revelar('cai')) }, '▼ Cair'))));
 
   container.append(el('section', { class: 'tela-rodada' }, placar, manchete, area));

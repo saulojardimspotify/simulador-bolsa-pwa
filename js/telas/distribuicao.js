@@ -1,6 +1,6 @@
 import { el, seloAcao, formatarReais, umaVez } from '../ui.js';
 import { PERCENTUAIS_PADRAO, ajustarPercentual, statusDistribuicao, criarCarteira } from '../carteira.js';
-import { sortearEventos } from '../motor.js';
+import { sortearEventos, eventoAfetaCarteira } from '../motor.js';
 
 const CAPITAL = 10000;
 
@@ -13,7 +13,8 @@ export function render(container, estado, irPara) {
 
   confirmar.addEventListener('click', umaVez(() => {
     estado.carteira = criarCarteira(acoes, estado.percentuais, CAPITAL);
-    estado.eventosPartida = sortearEventos(estado.eventos, 5);
+    estado.eventosPartida = sortearEventos(estado.eventos, 5, Math.random,
+      (ev) => eventoAfetaCarteira(ev, estado.carteira));
     estado.rodada = 0;
     estado.acertos = 0;
     estado.historico = [];

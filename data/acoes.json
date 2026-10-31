@@ -7,7 +7,8 @@
       "setor": "Alimentos e Bebidas",
       "porte": "Grande",
       "bonsDividendos": true,
-      "preco": 14.6
+      "preco": 14.6,
+      "logo": true
     },
     {
       "ticker": "ALOS3",
@@ -15,7 +16,8 @@
       "setor": "Construção e Imóveis",
       "porte": "Média",
       "bonsDividendos": true,
-      "preco": 23.5
+      "preco": 23.5,
+      "logo": true
     },
     {
       "ticker": "ASAI3",
@@ -23,7 +25,8 @@
       "setor": "Varejo e Consumo",
       "porte": "Média",
       "bonsDividendos": false,
-      "preco": 7.88
+      "preco": 7.88,
+      "logo": true
     },
     {
       "ticker": "AURE3",
@@ -31,7 +34,8 @@
       "setor": "Energia e Saneamento",
       "porte": "Média",
       "bonsDividendos": false,
-      "preco": 10.87
+      "preco": 10.87,
+      "logo": true
     },
     {
       "ticker": "AXIA3",
@@ -39,7 +43,8 @@
       "setor": "Energia e Saneamento",
       "porte": "Grande",
       "bonsDividendos": false,
-      "preco": 47.43
+      "preco": 47.43,
+      "logo": true
     },
     {
       "ticker": "AZZA3",
@@ -47,7 +52,8 @@
       "setor": "Varejo e Consumo",
       "porte": "Pequena",
       "bonsDividendos": false,
-      "preco": 14.33
+      "preco": 14.33,
+      "logo": true
     },
     {
       "ticker": "B3SA3",
@@ -55,7 +61,8 @@
       "setor": "Bancos e Finanças",
       "porte": "Grande",
       "bonsDividendos": false,
-      "preco": 13.43
+      "preco": 13.43,
+      "logo": true
     },
     {
       "ticker": "BBAS3",
@@ -63,7 +70,8 @@
       "setor": "Bancos e Finanças",
       "porte": "Grande",
       "bonsDividendos": true,
-      "preco": 16.47
+      "preco": 16.47,
+      "logo": true
     },
     {
       "ticker": "BBDC3",
@@ -71,7 +79,8 @@
       "setor": "Bancos e Finanças",
       "porte": "Grande",
       "bonsDividendos": true,
-      "preco": 12.71
+      "preco": 12.71,
+      "logo": true
     },
     {
       "ticker": "BBDC4",
@@ -79,7 +88,8 @@
       "setor": "Bancos e Finanças",
       "porte": "Grande",
       "bonsDividendos": true,
-      "preco": 13.86
+      "preco": 13.86,
+      "logo": true
     },
     {
       "ticker": "BBSE3",
@@ -87,7 +97,8 @@
       "setor": "Bancos e Finanças",
       "porte": "Grande",
       "bonsDividendos": true,
-      "preco": 41.32
+      "preco": 41.32,
+      "logo": true
     },
     {
       "ticker": "BEEF3",
@@ -95,7 +106,8 @@
       "setor": "Agronegócio",
       "porte": "Pequena",
       "bonsDividendos": false,
-      "preco": 2.55
+      "preco": 2.55,
+      "logo": true
     },
     {
       "ticker": "BPAC11",
@@ -103,7 +115,8 @@
       "setor": "Bancos e Finanças",
       "porte": "Grande",
       "bonsDividendos": false,
-      "preco": 51.52
+      "preco": 51.52,
+      "logo": true
     },
     {
       "ticker": "BRAP4",
@@ -111,7 +124,8 @@
       "setor": "Mineração e Siderurgia",
       "porte": "Pequena",
       "bonsDividendos": true,
-      "preco": 18.27
+      "preco": 18.27,
+      "logo": true
     },
     {
       "ticker": "BRAV3",
@@ -119,7 +133,8 @@
       "setor": "Petróleo e Gás",
       "porte": "Pequena",
       "bonsDividendos": false,
-      "preco": 18.42
+      "preco": 18.42,
+      "logo": true
     },
     {
       "ticker": "CEAB3",
@@ -127,7 +142,8 @@
       "setor": "Varejo e Consumo",
       "porte": "Pequena",
       "bonsDividendos": false,
-      "preco": 6.55
+      "preco": 6.55,
+      "logo": true
     },
     {
       "ticker": "CMIG4",
@@ -135,7 +151,8 @@
       "setor": "Energia e Saneamento",
       "porte": "Média",
       "bonsDividendos": true,
-      "preco": 10.07
+      "preco": 10.07,
+      "logo": true
     },
     {
       "ticker": "CMIN3",
@@ -143,7 +160,8 @@
       "setor": "Mineração e Siderurgia",
       "porte": "Média",
       "bonsDividendos": true,
-      "preco": 4.86
+      "preco": 4.86,
+      "logo": true
     },
     {
       "ticker": "COGN3",
@@ -151,7 +169,8 @@
       "setor": "Varejo e Consumo",
       "porte": "Pequena",
       "bonsDividendos": false,
-      "preco": 1.58
+      "preco": 1.58,
+      "logo": true
     },
     {
       "ticker": "CPFE3",
@@ -159,7 +178,8 @@
       "setor": "Energia e Saneamento",
       "porte": "Média",
       "bonsDividendos": true,
-      "preco": 41.9
+      "preco": 41.9,
+      "logo": true
     },
     {
       "ticker": "CPLE3",
@@ -167,7 +187,8 @@
       "setor": "Energia e Saneamento",
       "porte": "Média",
       "bonsDividendos": false,
-      "preco": 14.32
+      "preco": 14.32,
+      "logo": true
     },
     {
       "ticker": "CSAN3",
@@ -175,7 +196,8 @@
       "setor": "Agronegócio",
       "porte": "Pequena",
       "bonsDividendos": false,
-      "preco": 2.33
+      "preco": 2.33,
+      "logo": true
     },
     {
       "ticker": "CSMG3",
@@ -183,7 +205,8 @@
       "setor": "Energia e Saneamento",
       "porte": "Pequena",
       "bonsDividendos": true,
-      "preco": 48.11
+      "preco": 48.11,
+      "logo": true
     },
     {
       "ticker": "CSNA3",
@@ -191,7 +214,8 @@
       "setor": "Mineração e Siderurgia",
       "porte": "Pequena",
       "bonsDividendos": false,
-      "preco": 3.88
+      "preco": 3.88,
+      "logo": true
     },
     {
       "ticker": "CURY3",
@@ -199,7 +223,8 @@
       "setor": "Construção e Imóveis",
       "porte": "Pequena",
       "bonsDividendos": true,
-      "preco": 25.9
+      "preco": 25.9,
+      "logo": true
     },
     {
       "ticker": "CXSE3",
@@ -207,7 +232,8 @@
       "setor": "Bancos e Finanças",
       "porte": "Média",
       "bonsDividendos": true,
-      "preco": 21.38
+      "preco": 21.38,
+      "logo": true
     },
     {
       "ticker": "CYRE3",
@@ -215,7 +241,8 @@
       "setor": "Construção e Imóveis",
       "porte": "Média",
       "bonsDividendos": true,
-      "preco": 17.09
+      "preco": 17.09,
+      "logo": true
     },
     {
       "ticker": "DIRR3",
@@ -223,7 +250,8 @@
       "setor": "Construção e Imóveis",
       "porte": "Pequena",
       "bonsDividendos": true,
-      "preco": 8.06
+      "preco": 8.06,
+      "logo": true
     },
     {
       "ticker": "EGIE3",
@@ -231,7 +259,8 @@
       "setor": "Energia e Saneamento",
       "porte": "Média",
       "bonsDividendos": true,
-      "preco": 26.26
+      "preco": 26.26,
+      "logo": true
     },
     {
       "ticker": "EMBJ3",
@@ -239,7 +268,8 @@
       "setor": "Indústria e Papel",
       "porte": "Grande",
       "bonsDividendos": false,
-      "preco": 99.62
+      "preco": 99.62,
+      "logo": true
     },
     {
       "ticker": "ENEV3",
@@ -247,7 +277,8 @@
       "setor": "Energia e Saneamento",
       "porte": "Média",
       "bonsDividendos": false,
-      "preco": 25.7
+      "preco": 25.7,
+      "logo": true
     },
     {
       "ticker": "ENGI11",
@@ -255,7 +286,8 @@
       "setor": "Energia e Saneamento",
       "porte": "Média",
       "bonsDividendos": false,
-      "preco": 44.29
+      "preco": 44.29,
+      "logo": true
     },
     {
       "ticker": "EQTL3",
@@ -263,7 +295,8 @@
       "setor": "Energia e Saneamento",
       "porte": "Média",
       "bonsDividendos": false,
-      "preco": 32.6
+      "preco": 32.6,
+      "logo": true
     },
     {
       "ticker": "FLRY3",
@@ -271,7 +304,8 @@
       "setor": "Saúde",
       "porte": "Pequena",
       "bonsDividendos": true,
-      "preco": 20.47
+      "preco": 20.47,
+      "logo": true
     },
     {
       "ticker": "GGBR4",
@@ -279,7 +313,8 @@
       "setor": "Mineração e Siderurgia",
       "porte": "Média",
       "bonsDividendos": false,
-      "preco": 25.13
+      "preco": 25.13,
+      "logo": true
     },
     {
       "ticker": "GOAU4",
@@ -287,7 +322,8 @@
       "setor": "Mineração e Siderurgia",
       "porte": "Pequena",
       "bonsDividendos": false,
-      "preco": 11.11
+      "preco": 11.11,
+      "logo": true
     },
     {
       "ticker": "HAPV3",
@@ -295,7 +331,8 @@
       "setor": "Saúde",
       "porte": "Média",
       "bonsDividendos": false,
-      "preco": 4.2
+      "preco": 4.2,
+      "logo": true
     },
     {
       "ticker": "HYPE3",
@@ -303,7 +340,8 @@
       "setor": "Saúde",
       "porte": "Média",
       "bonsDividendos": false,
-      "preco": 21.27
+      "preco": 21.27,
+      "logo": true
     },
     {
       "ticker": "IGTI11",
@@ -311,7 +349,8 @@
       "setor": "Construção e Imóveis",
       "porte": "Pequena",
       "bonsDividendos": false,
-      "preco": 21.79
+      "preco": 21.79,
+      "logo": true
     },
     {
       "ticker": "ISAE4",
@@ -319,7 +358,8 @@
       "setor": "Energia e Saneamento",
       "porte": "Média",
       "bonsDividendos": true,
-      "preco": 24.76
+      "preco": 24.76,
+      "logo": true
     },
     {
       "ticker": "ITSA4",
@@ -327,7 +367,8 @@
       "setor": "Bancos e Finanças",
       "porte": "Grande",
       "bonsDividendos": true,
-      "preco": 12.45
+      "preco": 12.45,
+      "logo": true
     },
     {
       "ticker": "ITUB4",
@@ -335,7 +376,8 @@
       "setor": "Bancos e Finanças",
       "porte": "Grande",
       "bonsDividendos": true,
-      "preco": 38.69
+      "preco": 38.69,
+      "logo": true
     },
     {
       "ticker": "KLBN11",
@@ -343,7 +385,8 @@
       "setor": "Indústria e Papel",
       "porte": "Média",
       "bonsDividendos": false,
-      "preco": 17.2
+      "preco": 17.2,
+      "logo": true
     },
     {
       "ticker": "LREN3",
@@ -351,7 +394,8 @@
       "setor": "Varejo e Consumo",
       "porte": "Média",
       "bonsDividendos": false,
-      "preco": 8.98
+      "preco": 8.98,
+      "logo": true
     },
     {
       "ticker": "MBRF3",
@@ -359,7 +403,8 @@
       "setor": "Alimentos e Bebidas",
       "porte": "Média",
       "bonsDividendos": false,
-      "preco": 15.61
+      "preco": 15.61,
+      "logo": true
     },
     {
       "ticker": "MGLU3",
@@ -367,7 +412,8 @@
       "setor": "Varejo e Consumo",
       "porte": "Pequena",
       "bonsDividendos": false,
-      "preco": 5.35
+      "preco": 5.35,
+      "logo": true
     },
     {
       "ticker": "MOTV3",
@@ -375,7 +421,8 @@
       "setor": "Transporte e Logística",
       "porte": "Média",
       "bonsDividendos": false,
-      "preco": 14
+      "preco": 14,
+      "logo": true
     },
     {
       "ticker": "MRVE3",
@@ -383,7 +430,8 @@
       "setor": "Construção e Imóveis",
       "porte": "Pequena",
       "bonsDividendos": false,
-      "preco": 4.05
+      "preco": 4.05,
+      "logo": true
     },
     {
       "ticker": "MULT3",
@@ -391,7 +439,8 @@
       "setor": "Construção e Imóveis",
       "porte": "Média",
       "bonsDividendos": false,
-      "preco": 25.19
+      "preco": 25.19,
+      "logo": true
     },
     {
       "ticker": "NATU3",
@@ -399,7 +448,8 @@
       "setor": "Varejo e Consumo",
       "porte": "Pequena",
       "bonsDividendos": false,
-      "preco": 4.86
+      "preco": 4.86,
+      "logo": true
     },
     {
       "ticker": "PETR3",
@@ -407,7 +457,8 @@
       "setor": "Petróleo e Gás",
       "porte": "Grande",
       "bonsDividendos": true,
-      "preco": 60.01
+      "preco": 60.01,
+      "logo": true
     },
     {
       "ticker": "PETR4",
@@ -415,7 +466,8 @@
       "setor": "Petróleo e Gás",
       "porte": "Grande",
       "bonsDividendos": true,
-      "preco": 52.71
+      "preco": 52.71,
+      "logo": true
     },
     {
       "ticker": "POMO4",
@@ -423,7 +475,8 @@
       "setor": "Indústria e Papel",
       "porte": "Pequena",
       "bonsDividendos": true,
-      "preco": 3.7
+      "preco": 3.7,
+      "logo": true
     },
     {
       "ticker": "PRIO3",
@@ -431,7 +484,8 @@
       "setor": "Petróleo e Gás",
       "porte": "Média",
       "bonsDividendos": false,
-      "preco": 71.49
+      "preco": 71.49,
+      "logo": true
     },
     {
       "ticker": "PSSA3",
@@ -439,7 +493,8 @@
       "setor": "Bancos e Finanças",
       "porte": "Média",
       "bonsDividendos": true,
-      "preco": 44.75
+      "preco": 44.75,
+      "logo": true
     },
     {
       "ticker": "RADL3",
@@ -447,7 +502,8 @@
       "setor": "Saúde",
       "porte": "Média",
       "bonsDividendos": false,
-      "preco": 15.22
+      "preco": 15.22,
+      "logo": true
     },
     {
       "ticker": "RAIL3",
@@ -455,7 +511,8 @@
       "setor": "Transporte e Logística",
       "porte": "Média",
       "bonsDividendos": false,
-      "preco": 13.78
+      "preco": 13.78,
+      "logo": true
     },
     {
       "ticker": "RDOR3",
@@ -463,7 +520,8 @@
       "setor": "Saúde",
       "porte": "Grande",
       "bonsDividendos": false,
-      "preco": 31.68
+      "preco": 31.68,
+      "logo": true
     },
     {
       "ticker": "RENT3",
@@ -471,7 +529,8 @@
       "setor": "Transporte e Logística",
       "porte": "Média",
       "bonsDividendos": false,
-      "preco": 27.85
+      "preco": 27.85,
+      "logo": true
     },
     {
       "ticker": "SANB11",
@@ -479,7 +538,8 @@
       "setor": "Bancos e Finanças",
       "porte": "Grande",
       "bonsDividendos": true,
-      "preco": 23.94
+      "preco": 23.94,
+      "logo": true
     },
     {
       "ticker": "SBSP3",
@@ -487,7 +547,8 @@
       "setor": "Energia e Saneamento",
       "porte": "Grande",
       "bonsDividendos": false,
-      "preco": 24.7
+      "preco": 24.7,
+      "logo": true
     },
     {
       "ticker": "SMFT3",
@@ -495,7 +556,8 @@
       "setor": "Saúde",
       "porte": "Média",
       "bonsDividendos": false,
-      "preco": 15.52
+      "preco": 15.52,
+      "logo": true
     },
     {
       "ticker": "SUZB3",
@@ -503,7 +565,8 @@
       "setor": "Indústria e Papel",
       "porte": "Grande",
       "bonsDividendos": false,
-      "preco": 50.14
+      "preco": 50.14,
+      "logo": true
     },
     {
       "ticker": "TAEE11",
@@ -511,7 +574,8 @@
       "setor": "Energia e Saneamento",
       "porte": "Pequena",
       "bonsDividendos": true,
-      "preco": 39.59
+      "preco": 39.59,
+      "logo": true
     },
     {
       "ticker": "TEND3",
@@ -519,7 +583,8 @@
       "setor": "Construção e Imóveis",
       "porte": "Pequena",
       "bonsDividendos": false,
-      "preco": 20.01
+      "preco": 20.01,
+      "logo": true
     },
     {
       "ticker": "TIMS3",
@@ -527,7 +592,8 @@
       "setor": "Tecnologia e Telecom",
       "porte": "Média",
       "bonsDividendos": true,
-      "preco": 19.17
+      "preco": 19.17,
+      "logo": true
     },
     {
       "ticker": "TOTS3",
@@ -535,7 +601,8 @@
       "setor": "Tecnologia e Telecom",
       "porte": "Média",
       "bonsDividendos": false,
-      "preco": 32
+      "preco": 32,
+      "logo": true
     },
     {
       "ticker": "UGPA3",
@@ -543,7 +610,8 @@
       "setor": "Petróleo e Gás",
       "porte": "Média",
       "bonsDividendos": false,
-      "preco": 31.76
+      "preco": 31.76,
+      "logo": true
     },
     {
       "ticker": "USIM5",
@@ -551,7 +619,8 @@
       "setor": "Mineração e Siderurgia",
       "porte": "Pequena",
       "bonsDividendos": false,
-      "preco": 5
+      "preco": 5,
+      "logo": true
     },
     {
       "ticker": "VALE3",
@@ -559,7 +628,8 @@
       "setor": "Mineração e Siderurgia",
       "porte": "Grande",
       "bonsDividendos": true,
-      "preco": 62.02
+      "preco": 62.02,
+      "logo": true
     },
     {
       "ticker": "VAMO3",
@@ -567,7 +637,8 @@
       "setor": "Transporte e Logística",
       "porte": "Pequena",
       "bonsDividendos": false,
-      "preco": 2.38
+      "preco": 2.38,
+      "logo": true
     },
     {
       "ticker": "VBBR3",
@@ -575,7 +646,8 @@
       "setor": "Petróleo e Gás",
       "porte": "Média",
       "bonsDividendos": true,
-      "preco": 29.6
+      "preco": 29.6,
+      "logo": true
     },
     {
       "ticker": "VIVA3",
@@ -583,7 +655,8 @@
       "setor": "Varejo e Consumo",
       "porte": "Pequena",
       "bonsDividendos": false,
-      "preco": 17.3
+      "preco": 17.3,
+      "logo": true
     },
     {
       "ticker": "VIVT3",
@@ -591,7 +664,8 @@
       "setor": "Tecnologia e Telecom",
       "porte": "Grande",
       "bonsDividendos": true,
-      "preco": 30.7
+      "preco": 30.7,
+      "logo": true
     },
     {
       "ticker": "WEGE3",
@@ -599,7 +673,8 @@
       "setor": "Indústria e Papel",
       "porte": "Grande",
       "bonsDividendos": false,
-      "preco": 48.36
+      "preco": 48.36,
+      "logo": true
     },
     {
       "ticker": "YDUQ3",
@@ -607,7 +682,8 @@
       "setor": "Varejo e Consumo",
       "porte": "Pequena",
       "bonsDividendos": false,
-      "preco": 8.91
+      "preco": 8.91,
+      "logo": true
     }
   ]
 }

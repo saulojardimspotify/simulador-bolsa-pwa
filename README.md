@@ -1,6 +1,6 @@
 # Simulador da Bolsa
 
-App educativo (PWA) para feiras escolares. O aluno recebe **R$ 10.000 fictícios**, monta uma carteira com **3 ações do IBOVESPA**, divide o dinheiro em partes de 10% e acompanha **5 notícias sorteadas**. A cada notícia ele dá um palpite (a carteira vai subir ou cair?), vê quanto cada ação mudou e lê o porquê. No fim, vê o resultado, uma lição sobre diversificação e entra no **ranking do dia**.
+App educativo (PWA) para feiras escolares. O aluno recebe **R$ 10.000 fictícios**, monta uma carteira com **3 ações do IBOVESPA**, divide o dinheiro em partes de 10% e acompanha **5 notícias sorteadas**. As notícias são escolhidas de preferência entre as que afetam as ações da carteira dele. A cada notícia ele dá um palpite (a carteira vai subir, ficar igual, com variação menor que 0,5%, ou cair?), vê quanto cada ação mudou e lê o porquê. No fim, vê o resultado, uma lição sobre diversificação e entra no **ranking do dia**.
 
 > Simulação educativa: os eventos e os impactos são fictícios. Os preços iniciais são reais, da data indicada no rodapé.
 
@@ -52,7 +52,9 @@ Com o [Node.js](https://nodejs.org) instalado, na pasta do projeto:
 node scripts/atualizar-precos.mjs
 ```
 
-O script busca a última cotação de cada ação e regrava `data/acoes.json`. Porte e "bons dividendos" são classificações aproximadas, feitas à mão; revise-as de tempos em tempos. A lista de ações segue a carteira teórica do IBOVESPA na B3; se ela mudar, edite `data/acoes.json`.
+O script busca a última cotação de cada ação e regrava `data/acoes.json`.
+
+Os logos das empresas ficam em `logos/` (baixados de brapi.dev). Se entrar uma ação nova na lista, rode `node scripts/baixar-logos.mjs`; ela baixa só os que faltam. Ação sem logo aparece com um selo colorido com as iniciais. Os logos são marcas das empresas, usados aqui só para identificá-las num app educativo. Porte e "bons dividendos" são classificações aproximadas, feitas à mão; revise-as de tempos em tempos. A lista de ações segue a carteira teórica do IBOVESPA na B3; se ela mudar, edite `data/acoes.json`.
 
 ## Para desenvolver
 

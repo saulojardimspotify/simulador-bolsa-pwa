@@ -55,6 +55,29 @@ test('sw: dados em cache são servidos e atualizados em segundo plano', async ()
   assert.deepEqual(sw.gravacoes, [`${ORIGEM}/data/eventos.json`], 'gravação termina dentro do waitUntil');
 });
 
+test('sw: na instalação guarda também os logos das ações', async () => {
+  const guardados = [];
+  const ouvintes = {};
+  const contexto = {
+    self: { location: { origin: ORIGEM }, addEventListener: (t, fn) => { ouvintes[t] = fn; }, skipWaiting() {}, clients: { claim() {} } },
+    caches: { open: async () => ({ addAll: async (l) => { guardados.push(...l); }, put: async () => {} }) },
+    fetch: async (url) => ({
+      ok: true,
+      json: async () => ({ acoes: [{ ticker: 'PETR4', logo: true }, { ticker: 'XPTO3', logo: false }] }),
+      url,
+    }),
+    URL,
+    Promise,
+  };
+  vm.runInNewContext(codigo, contexto);
+  let espera;
+  ouvintes.install({ waitUntil: (p) => { espera = p; } });
+  await espera;
+  assert.ok(guardados.includes('./js/app.js'));
+  assert.ok(guardados.includes('./logos/PETR4.svg'));
+  assert.ok(!guardados.includes('./logos/XPTO3.svg'));
+});
+
 test('sw: arquivo fora do cache vem da rede', async () => {
   const sw = montar({ emCache: [] });
   const r = await sw.pedir('/js/ui.js');

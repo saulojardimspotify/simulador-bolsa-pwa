@@ -3,7 +3,7 @@
 //   uma edição de eventos ou preços aparece a partir da segunda abertura do app.
 // - Código (html, css, js): só sai do cache. Para publicar uma mudança de código, troque a
 //   versão abaixo; o app inteiro é baixado de novo de uma vez, sem misturar versões.
-const CACHE = 'simulador-bolsa-v1';
+const CACHE = 'simulador-bolsa-v2';
 
 const ARQUIVOS = [
   './',
@@ -30,8 +30,19 @@ const ARQUIVOS = [
   './icons/icon-maskable-512.png',
 ];
 
+// Os logos vêm da lista de ações, para não precisar listar os 76 arquivos aqui.
+async function logos() {
+  const resp = await fetch('./data/acoes.json');
+  const { acoes } = await resp.json();
+  return acoes.filter((a) => a.logo).map((a) => `./logos/${a.ticker}.svg`);
+}
+
 self.addEventListener('install', (evento) => {
-  evento.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(ARQUIVOS)).then(() => self.skipWaiting()));
+  evento.waitUntil((async () => {
+    const cache = await caches.open(CACHE);
+    await cache.addAll([...ARQUIVOS, ...(await logos())]);
+    await self.skipWaiting();
+  })());
 });
 
 self.addEventListener('activate', (evento) => {

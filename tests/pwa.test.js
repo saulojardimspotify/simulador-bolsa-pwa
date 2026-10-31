@@ -21,6 +21,14 @@ test('sw.js: todo módulo, dado e ícone do app está na lista', () => {
   for (const arq of esperados) assert.ok(lista.includes(arq), `faltando no sw.js: ${arq}`);
 });
 
+test('logos: toda ação marcada com logo tem o arquivo', () => {
+  const { acoes } = JSON.parse(readFileSync(new URL('data/acoes.json', raiz), 'utf8'));
+  for (const a of acoes) {
+    assert.equal(typeof a.logo, 'boolean', a.ticker);
+    if (a.logo) assert.ok(existsSync(new URL(`logos/${a.ticker}.svg`, raiz)), a.ticker);
+  }
+});
+
 test('manifest: caminhos relativos e ícones existentes', () => {
   const m = JSON.parse(readFileSync(new URL('manifest.webmanifest', raiz), 'utf8'));
   assert.equal(m.start_url, './');

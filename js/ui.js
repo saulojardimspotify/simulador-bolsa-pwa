@@ -40,11 +40,18 @@ export function el(tag, attrs = {}, ...filhos) {
 }
 
 export function seloAcao(acao, grande = false) {
-  return el('div', {
-    class: grande ? 'selo selo-grande' : 'selo',
+  const classe = grande ? 'selo selo-grande' : 'selo';
+  const iniciais = () => el('div', {
+    class: classe,
     style: `--cor-setor: ${CORES_SETOR[acao.setor] ?? '#64748b'}`,
     'aria-hidden': 'true',
   }, acao.ticker.slice(0, 4));
+  if (!acao.logo) return iniciais();
+  const img = el('img', {
+    class: `${classe} selo-logo`, src: `./logos/${acao.ticker}.svg`, alt: '', draggable: 'false', decoding: 'async',
+  });
+  img.addEventListener('error', () => img.replaceWith(iniciais()), { once: true });
+  return img;
 }
 
 // Evita que um toque duplo dispare a ação duas vezes.
