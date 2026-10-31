@@ -3,7 +3,7 @@
 //   uma edição de eventos ou preços aparece a partir da segunda abertura do app.
 // - Código (html, css, js): só sai do cache. Para publicar uma mudança de código, troque a
 //   versão abaixo; o app inteiro é baixado de novo de uma vez, sem misturar versões.
-const CACHE = 'simulador-bolsa-v8';
+const CACHE = 'simulador-bolsa-v9';
 
 const ARQUIVOS = [
   './',
@@ -29,6 +29,8 @@ const ARQUIVOS = [
   './data/eventos.json',
   './fonts/outfit-latin.woff2',
   './icons/icon-192.png',
+  './sons/applause.mp3',
+  './sons/breaking_news.mp3',
   './icons/icon-512.png',
   './icons/icon-maskable-512.png',
 ];

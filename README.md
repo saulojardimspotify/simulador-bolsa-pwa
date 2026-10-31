@@ -22,8 +22,9 @@ Segure o dedo por **3 segundos** sobre o título **"🏆 Ranking de hoje"**. Abr
 
 ## Som
 
-O app toca efeitos sonoros (sino de abertura do pregão ao confirmar a carteira, vinheta de plantão, acertos, fanfarra no resultado, um "plim" de conquista no ranking). Os sons são gerados pelo próprio navegador, sem arquivos, e funcionam offline.
+O app toca efeitos sonoros: sino de abertura do pregão ao confirmar a carteira, vinheta de plantão a cada notícia, acertos, fanfarra no resultado e aplausos no ranking. A vinheta e os aplausos vêm dos arquivos em [`sons/`](sons/) (`breaking_news.mp3` e `applause.mp3`); os demais são gerados pelo próprio navegador. Tudo funciona offline.
 
+- Para trocar a vinheta ou os aplausos, substitua o arquivo em `sons/` mantendo o mesmo nome (MP3 curto, até 4,5 segundos; o que passar disso é cortado) e troque a versão do cache no `sw.js`.
 - O botão **🔊/🔇** no canto superior direito liga e desliga o som.
 - No **painel do professor** (segurar o título do ranking por 3 segundos) há o **volume** e a **música de fundo**, que vem desligada.
 - As escolhas ficam salvas naquele computador.

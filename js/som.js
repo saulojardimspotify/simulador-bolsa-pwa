@@ -1,4 +1,5 @@
-// Efeitos sonoros e música de fundo sintetizados com Web Audio (sem arquivos: funciona offline).
+// Efeitos sonoros e música de fundo com Web Audio. A maioria é sintetizada; os que têm arquivo em
+// sons/ tocam o arquivo (guardado pelo service worker para funcionar offline).
 import { carregarPreferenciasSom, salvarPreferenciasSom } from './preferencias-som.js';
 
 let ctx = null;
@@ -6,6 +7,12 @@ let mestre = null;
 let storage = null;
 let prefs = carregarPreferenciasSom(null);
 const ouvintes = new Set();
+
+// Efeitos com arquivo próprio. Se o arquivo não carregar, toca a versão sintetizada.
+const ARQUIVOS_SOM = { plantao: './sons/breaking_news.mp3', conquista: './sons/applause.mp3' };
+const MAX_SEGUNDOS_ARQUIVO = 4.5;
+const buffers = {};
+const tocando = {};
 
 export function iniciarSom(armazenamento) {
   storage = armazenamento;
@@ -22,9 +29,53 @@ function desbloquear() {
     mestre = ctx.createGain();
     mestre.connect(ctx.destination);
     aplicarVolume();
+    carregarArquivos();
     if (prefs.musica) musica.ligar();
   }
   if (ctx.state === 'suspended') ctx.resume();
+}
+
+function carregarArquivos() {
+  for (const [nome, url] of Object.entries(ARQUIVOS_SOM)) {
+    fetch(url)
+      .then((r) => (r.ok ? r.arrayBuffer() : Promise.reject(new Error(r.status))))
+      .then((dados) => ctx.decodeAudioData(dados))
+      .then((buffer) => { buffers[nome] = buffer; })
+      .catch(() => {});
+  }
+}
+
+// Toca o arquivo do efeito, cortando com fade depois de MAX_SEGUNDOS_ARQUIVO. Devolve false se não houver arquivo.
+function tocarArquivo(nome, ganho = 0.8) {
+  const buffer = buffers[nome];
+  if (!buffer) return false;
+  parar(nome);
+  const fonte = ctx.createBufferSource();
+  const g = ctx.createGain();
+  const t = ctx.currentTime;
+  const fim = Math.min(buffer.duration, MAX_SEGUNDOS_ARQUIVO);
+  fonte.buffer = buffer;
+  g.gain.setValueAtTime(ganho, t);
+  g.gain.setValueAtTime(ganho, t + fim - 0.3);
+  g.gain.linearRampToValueAtTime(0.0001, t + fim);
+  fonte.connect(g).connect(mestre);
+  fonte.start(t);
+  fonte.stop(t + fim + 0.05);
+  tocando[nome] = { fonte, g };
+  fonte.onended = () => { if (tocando[nome]?.fonte === fonte) delete tocando[nome]; };
+  return true;
+}
+
+function parar(nome) {
+  const atual = tocando[nome];
+  if (!atual) return;
+  atual.g.gain.setTargetAtTime(0, ctx.currentTime, 0.05);
+  try {
+    atual.fonte.stop(ctx.currentTime + 0.3);
+  } catch {
+    // já tinha parado
+  }
+  delete tocando[nome];
 }
 
 function aplicarVolume() {
@@ -89,13 +140,14 @@ export const efeitos = {
     badalada(0.9);
   },
   plantao() {
-    if (!pronto()) return;
+    if (!pronto() || tocarArquivo('plantao')) return;
     nota(NOTA.A5, 0, 0.12, { tipo: 'square', ganho: 0.05 });
     nota(NOTA.A5, 0.16, 0.12, { tipo: 'square', ganho: 0.05 });
     nota(NOTA.E5 * 2, 0.32, 0.28, { tipo: 'square', ganho: 0.05 });
   },
   contagem(segundos = 1.1) {
     if (!pronto()) return;
+    parar('plantao'); // a vinheta não pode atropelar a revelação
     const passos = 14;
     for (let i = 0; i < passos; i++) nota(700 + i * 45, (i * segundos) / passos, 0.03, { tipo: 'triangle', ganho: 0.04 });
   },
@@ -122,7 +174,7 @@ export const efeitos = {
     for (const f of [NOTA.A3, NOTA.C4, NOTA.E4]) nota(f, 0, 1.2, { ganho: 0.08, ataque: 0.05 });
   },
   conquista() {
-    if (!pronto()) return;
+    if (!pronto() || tocarArquivo('conquista')) return;
     [NOTA.C6, NOTA.E5 * 2, NOTA.G5 * 2, NOTA.C6 * 2].forEach((f, i) => nota(f, i * 0.11, 0.9, { ganho: 0.09, ataque: 0.004 }));
   },
 };

@@ -17,6 +17,7 @@ test('sw.js: todo módulo, dado e ícone do app está na lista', () => {
     ...readdirSync(new URL('data/', raiz)).map((f) => `data/${f}`),
     ...readdirSync(new URL('icons/', raiz)).map((f) => `icons/${f}`),
     ...readdirSync(new URL('fonts/', raiz)).map((f) => `fonts/${f}`),
+    ...readdirSync(new URL('sons/', raiz)).map((f) => `sons/${f}`),
     'index.html', 'manifest.webmanifest', 'css/style.css',
   ];
   for (const arq of esperados) assert.ok(lista.includes(arq), `faltando no sw.js: ${arq}`);
