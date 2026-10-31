@@ -24,7 +24,7 @@ test('eventos.json: textos no tamanho certo', () => {
 
 test('eventos.json: impactos por empresa, entre 1 e 12 pontos, cada um com motivo', () => {
   for (const e of eventos) {
-    assert.deepEqual(Object.keys(e).filter((k) => k.startsWith('impacto') && k !== 'impactos'), [], `${e.id} campo antigo`);
+    assert.deepEqual(Object.keys(e).filter((k) => k.startsWith('impacto') && !['impactos', 'impactoGeral'].includes(k)), [], `${e.id} campo antigo`);
     const lista = Object.entries(e.impactos);
     assert.ok(lista.length > 0, `${e.id} sem impacto`);
     for (const [t, v] of lista) {
@@ -35,6 +35,28 @@ test('eventos.json: impactos por empresa, entre 1 e 12 pontos, cada um com motiv
     }
     for (const t of Object.keys(e.motivos)) assert.ok(t in e.impactos, `${e.id} motivo sobrando ${t}`);
   }
+});
+
+test('eventos.json: efeito geral só em notícias de economia, menor que o das empresas citadas', () => {
+  const comGeral = eventos.filter((e) => 'impactoGeral' in e);
+  assert.ok(comGeral.length >= 8 && comGeral.length <= 20, `${comGeral.length} eventos com efeito geral`);
+  for (const e of comGeral) {
+    const g = e.impactoGeral;
+    assert.ok(Math.abs(g) >= 1 && Math.abs(g) <= 2.5 && Math.round(g * 10) === g * 10, `${e.id} geral ${g}`);
+    assert.ok(typeof e.motivoGeral === 'string' && e.motivoGeral.length >= 8 && e.motivoGeral.length <= 60, `${e.id} motivoGeral`);
+    for (const [t, v] of Object.entries(e.impactos)) {
+      // Com o ruído de até 10%, a empresa citada continua mexendo mais que o efeito geral.
+      if (Math.sign(v) === Math.sign(g)) assert.ok(Math.abs(v) * 0.9 > Math.abs(g) * 1.1, `${e.id} ${t} deveria mexer mais que o geral`);
+    }
+  }
+  for (const id of ['gripe-aviaria-controlada', 'embraer-encomenda', 'magalu-black-friday']) {
+    assert.ok(!('impactoGeral' in eventos.find((e) => e.id === id)), `${id} não deve ter efeito geral`);
+  }
+});
+
+test('eventos.json: reforma tributária sobre produtos do dia a dia faz a Ambev subir', () => {
+  const e = eventos.find((x) => x.id === 'reforma-tributaria-consumo');
+  assert.ok(e.impactos.ABEV3 > 0);
 });
 
 test('eventos.json: equilíbrio entre notícias boas e ruins', () => {

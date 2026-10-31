@@ -78,23 +78,6 @@ function badalada(quando, base = 830) {
   }
 }
 
-function ruido(quando, duracao, ganho, freqFiltro) {
-  const t = ctx.currentTime + quando;
-  const buffer = ctx.createBuffer(1, Math.ceil(ctx.sampleRate * duracao), ctx.sampleRate);
-  const dados = buffer.getChannelData(0);
-  for (let i = 0; i < dados.length; i++) dados[i] = Math.random() * 2 - 1;
-  const fonte = ctx.createBufferSource();
-  fonte.buffer = buffer;
-  const filtro = ctx.createBiquadFilter();
-  filtro.type = 'bandpass';
-  filtro.frequency.value = freqFiltro;
-  const g = ctx.createGain();
-  g.gain.setValueAtTime(ganho, t);
-  g.gain.exponentialRampToValueAtTime(0.0001, t + duracao);
-  fonte.connect(filtro).connect(g).connect(mestre);
-  fonte.start(t);
-}
-
 export const efeitos = {
   clique() {
     if (pronto()) nota(1400, 0, 0.04, { tipo: 'triangle', ganho: 0.06 });
@@ -138,9 +121,9 @@ export const efeitos = {
     if (!pronto()) return;
     for (const f of [NOTA.A3, NOTA.C4, NOTA.E4]) nota(f, 0, 1.2, { ganho: 0.08, ataque: 0.05 });
   },
-  aplauso() {
+  conquista() {
     if (!pronto()) return;
-    for (let i = 0; i < 40; i++) ruido(Math.random() * 1.4, 0.05 + Math.random() * 0.05, 0.12, 1500 + Math.random() * 2000);
+    [NOTA.C6, NOTA.E5 * 2, NOTA.G5 * 2, NOTA.C6 * 2].forEach((f, i) => nota(f, i * 0.11, 0.9, { ganho: 0.09, ataque: 0.004 }));
   },
 };
 

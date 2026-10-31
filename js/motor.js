@@ -3,7 +3,8 @@
 /**
  * @typedef {{ticker:string, nome:string, setor:string, porte:string, bonsDividendos:boolean, preco:number}} Acao
  * @typedef {{id:string, manchete:string, explicacao:string, impactos:Object<string,number>,
- *   motivos:Object<string,string>, grupo?:string}} Evento   (impactos e motivos por ticker)
+ *   motivos:Object<string,string>, grupo?:string, impactoGeral?:number, motivoGeral?:string}} Evento
+ *   (impactos e motivos por ticker; impactoGeral vale para as empresas não citadas)
  * @typedef {{acao:Acao, percentual:number, quantidade:number, preco:number}} Posicao
  * @typedef {{posicoes:Posicao[], valorInicial:number}} Carteira
  */
@@ -38,11 +39,14 @@ export function sortearEventos(eventos, n = 5, rng = Math.random, relevante = ()
 }
 
 export function variacaoAcao(acao, evento, rng = Math.random) {
-  const base = evento.impactos?.[acao.ticker];
-  if (base === undefined) return { pct: 0, afetada: false, direcao: 'neutra', motivo: null };
+  const propria = evento.impactos?.[acao.ticker];
+  // Notícias de economia geral (juros, PIB...) também movem, menos, as empresas não citadas.
+  const base = propria ?? evento.impactoGeral;
+  if (!base) return { pct: 0, afetada: false, direcao: 'neutra', motivo: null };
   // O ruído evita ações idênticas; é proporcional ao impacto para nunca inverter o sinal.
-  const ruido = (rng() * 2 - 1) * Math.min(1, Math.abs(base) * 0.3);
-  return { pct: base + ruido, afetada: true, direcao: base > 0 ? 'sobe' : 'cai', motivo: evento.motivos?.[acao.ticker] ?? null };
+  const ruido = (rng() * 2 - 1) * Math.min(0.5, Math.abs(base) * 0.1);
+  const motivo = propria !== undefined ? evento.motivos?.[acao.ticker] ?? null : evento.motivoGeral ?? null;
+  return { pct: base + ruido, afetada: true, direcao: base > 0 ? 'sobe' : 'cai', motivo };
 }
 
 export function valorCarteira(carteira) {

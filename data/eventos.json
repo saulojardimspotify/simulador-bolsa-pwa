@@ -2,7 +2,7 @@
   {
     "id": "selic-sobe",
     "manchete": "Banco Central sobe a taxa Selic para conter a inflação",
-    "explicacao": "A Selic é a taxa básica de juros. Quando ela sobe, comprar a prazo e financiar imóvel fica caro: lojas, construtoras, faculdades e shoppings vendem menos, e empresas com muita dívida pagam mais juros. Bancos e seguradoras ganham mais aplicando dinheiro, e muita gente troca a bolsa pela renda fixa.",
+    "explicacao": "A Selic é a taxa básica de juros. Quando ela sobe, comprar a prazo e financiar imóvel fica caro: lojas, construtoras, faculdades e shoppings vendem menos, e empresas com muita dívida pagam mais juros. Bancos e seguradoras ganham mais aplicando dinheiro, e muita gente troca a bolsa pela renda fixa. Como a notícia mexe com a economia toda, as demais ações também caem um pouco.",
     "impactos": {
       "MGLU3": -9,
       "LREN3": -5,
@@ -87,12 +87,14 @@
       "B3SA3": "Investidores trocam a bolsa pela renda fixa",
       "TOTS3": "Empresa de crescimento perde atrativo"
     },
-    "grupo": "juros"
+    "grupo": "juros",
+    "impactoGeral": -2,
+    "motivoGeral": "Juros altos tiram dinheiro da bolsa toda"
   },
   {
     "id": "selic-cai",
     "manchete": "Banco Central corta a Selic e juros caem pela primeira vez no ano",
-    "explicacao": "Com juros menores, comprar a prazo e financiar imóvel fica mais barato: lojas, construtoras, faculdades e shoppings vendem mais, e empresas com muita dívida economizam. A bolsa atrai mais investidores. Bancos e seguradoras ganham um pouco menos aplicando dinheiro.",
+    "explicacao": "Com juros menores, comprar a prazo e financiar imóvel fica mais barato: lojas, construtoras, faculdades e shoppings vendem mais, e empresas com muita dívida economizam. A bolsa atrai mais investidores. Bancos e seguradoras ganham um pouco menos aplicando dinheiro. Como a notícia mexe com a economia toda, as demais ações também sobem um pouco.",
     "impactos": {
       "MGLU3": 9,
       "LREN3": 5,
@@ -177,12 +179,14 @@
       "B3SA3": "Mais gente investe na bolsa",
       "TOTS3": "Empresas de crescimento voltam à moda"
     },
-    "grupo": "juros"
+    "grupo": "juros",
+    "impactoGeral": 2,
+    "motivoGeral": "Juros baixos trazem dinheiro para a bolsa toda"
   },
   {
     "id": "inflacao-dispara",
     "manchete": "Inflação acelera e preços nos supermercados sobem pelo terceiro mês seguido",
-    "explicacao": "Inflação é a alta geral dos preços. Com comida mais cara, sobra menos dinheiro e as famílias cortam roupas, eletrônicos e cosméticos. Muita gente passa a fazer compras no atacarejo, que é mais barato. Fabricantes de bebidas e carnes pagam mais pelos ingredientes.",
+    "explicacao": "Inflação é a alta geral dos preços. Com comida mais cara, sobra menos dinheiro e as famílias cortam roupas, eletrônicos e cosméticos. Muita gente passa a fazer compras no atacarejo, que é mais barato. Fabricantes de bebidas e carnes pagam mais pelos ingredientes. Como a notícia mexe com a economia toda, as demais ações também caem um pouco.",
     "impactos": {
       "MGLU3": -4,
       "LREN3": -4,
@@ -205,12 +209,14 @@
       "ABEV3": "Ingredientes mais caros",
       "MBRF3": "Ingredientes mais caros"
     },
-    "grupo": "inflacao"
+    "grupo": "inflacao",
+    "impactoGeral": -1,
+    "motivoGeral": "Medo de juros mais altos pesa na bolsa"
   },
   {
     "id": "inflacao-controlada",
     "manchete": "Inflação fica abaixo da meta e preços dos alimentos caem",
-    "explicacao": "Quando a inflação está controlada, o salário rende mais no fim do mês e cresce a chance de os juros caírem. Sobra dinheiro para roupas, eletrônicos e lazer, e mais famílias pensam em comprar a casa própria.",
+    "explicacao": "Quando a inflação está controlada, o salário rende mais no fim do mês e cresce a chance de os juros caírem. Sobra dinheiro para roupas, eletrônicos e lazer, e mais famílias pensam em comprar a casa própria. Como a notícia mexe com a economia toda, as demais ações também sobem um pouco.",
     "impactos": {
       "MGLU3": 3,
       "LREN3": 3,
@@ -239,7 +245,9 @@
       "CYRE3": "Famílias planejam comprar imóvel",
       "ABEV3": "Consumo de bebidas cresce"
     },
-    "grupo": "inflacao"
+    "grupo": "inflacao",
+    "impactoGeral": 1,
+    "motivoGeral": "Chance de juros menores anima a bolsa"
   },
   {
     "id": "dolar-dispara",
@@ -356,7 +364,7 @@
   {
     "id": "pib-forte",
     "manchete": "Economia brasileira cresce acima do esperado no trimestre",
-    "explicacao": "O PIB mede tudo o que o país produz. Quando ele cresce forte, há mais emprego e mais dinheiro circulando: lojas vendem mais, bancos emprestam mais, as pessoas viajam, alugam carros, vão à academia e compram imóveis. Fábricas e empresas de energia também trabalham mais.",
+    "explicacao": "O PIB mede tudo o que o país produz. Quando ele cresce forte, há mais emprego e mais dinheiro circulando: lojas vendem mais, bancos emprestam mais, as pessoas viajam, alugam carros, vão à academia e compram imóveis. Fábricas e empresas de energia também trabalham mais. Como a notícia mexe com a economia toda, as demais ações também sobem um pouco.",
     "impactos": {
       "MGLU3": 4,
       "LREN3": 4,
@@ -431,12 +439,14 @@
       "CPLE3": "País consome mais energia",
       "CPFE3": "Distribui mais energia"
     },
-    "grupo": "pib"
+    "grupo": "pib",
+    "impactoGeral": 1.5,
+    "motivoGeral": "Economia forte anima a bolsa toda"
   },
   {
     "id": "recessao",
     "manchete": "Brasil entra em recessão após dois trimestres de queda no PIB",
-    "explicacao": "Recessão é quando a economia encolhe por um tempo. Empresas vendem menos e demitem, as pessoas atrasam contas e cortam gastos. Lojas, shoppings, construtoras, bancos e quem fabrica ou aluga veículos sentem mais, porque dependem de consumo e de crédito.",
+    "explicacao": "Recessão é quando a economia encolhe por um tempo. Empresas vendem menos e demitem, as pessoas atrasam contas e cortam gastos. Lojas, shoppings, construtoras, bancos e quem fabrica ou aluga veículos sentem mais, porque dependem de consumo e de crédito. Como a notícia mexe com a economia toda, as demais ações também caem um pouco.",
     "impactos": {
       "MGLU3": -5,
       "LREN3": -5,
@@ -501,12 +511,14 @@
       "COGN3": "Alunos abandonam a faculdade",
       "YDUQ3": "Alunos abandonam a faculdade"
     },
-    "grupo": "pib"
+    "grupo": "pib",
+    "impactoGeral": -1.5,
+    "motivoGeral": "Crise econômica derruba a bolsa toda"
   },
   {
     "id": "desemprego-minimo",
     "manchete": "Desemprego cai ao menor nível da história",
-    "explicacao": "Com mais gente trabalhando e recebendo salário, o consumo cresce. As famílias gastam mais em compras, voltam a pagar faculdade e sonham com a casa própria. As empresas contratam planos de saúde para os novos funcionários, e mais gente faz exames.",
+    "explicacao": "Com mais gente trabalhando e recebendo salário, o consumo cresce. As famílias gastam mais em compras, voltam a pagar faculdade e sonham com a casa própria. As empresas contratam planos de saúde para os novos funcionários, e mais gente faz exames. Como a notícia mexe com a economia toda, as demais ações também sobem um pouco.",
     "impactos": {
       "MGLU3": 4,
       "LREN3": 4,
@@ -544,12 +556,14 @@
       "HAPV3": "Empresas contratam planos de saúde",
       "FLRY3": "Mais gente com plano faz exames",
       "ABEV3": "Mais consumo de bebidas"
-    }
+    },
+    "impactoGeral": 1,
+    "motivoGeral": "Economia aquecida anima a bolsa"
   },
   {
     "id": "crise-bancaria-exterior",
     "manchete": "Quebra de banco nos Estados Unidos espalha medo pelos mercados",
-    "explicacao": "Quando um banco grande quebra lá fora, investidores do mundo todo ficam com medo de que o problema se espalhe e vendem ações de bancos. Também temem uma freada na economia mundial, o que derruba as petroleiras menores, mais sensíveis ao preço do petróleo.",
+    "explicacao": "Quando um banco grande quebra lá fora, investidores do mundo todo ficam com medo de que o problema se espalhe e vendem ações de bancos. Também temem uma freada na economia mundial, o que derruba as petroleiras menores, mais sensíveis ao preço do petróleo. Como a notícia mexe com a economia toda, as demais ações também caem um pouco.",
     "impactos": {
       "ITUB4": -6,
       "BBDC3": -6,
@@ -579,12 +593,14 @@
       "PSSA3": "Setor financeiro sob desconfiança",
       "PRIO3": "Medo de menor demanda por petróleo",
       "BRAV3": "Medo de menor demanda por petróleo"
-    }
+    },
+    "impactoGeral": -1.5,
+    "motivoGeral": "Medo global derruba a bolsa toda"
   },
   {
     "id": "juros-eua-sobem",
     "manchete": "Banco central americano sobe juros e dinheiro sai dos países emergentes",
-    "explicacao": "Quando os juros dos Estados Unidos sobem, investir lá fica mais seguro e atraente. Investidores tiram dinheiro do Brasil, e quem mais sofre são as empresas que prometem crescer no futuro e a própria bolsa, que tem menos negócios.",
+    "explicacao": "Quando os juros dos Estados Unidos sobem, investir lá fica mais seguro e atraente. Investidores tiram dinheiro do Brasil, e quem mais sofre são as empresas que prometem crescer no futuro e a própria bolsa, que tem menos negócios. Como a notícia mexe com a economia toda, as demais ações também caem um pouco.",
     "impactos": {
       "B3SA3": -3,
       "TOTS3": -4,
@@ -599,12 +615,14 @@
       "CYRE3": "Estrangeiros vendem ações brasileiras",
       "RENT3": "Estrangeiros vendem ações brasileiras"
     },
-    "grupo": "juros-eua"
+    "grupo": "juros-eua",
+    "impactoGeral": -1.5,
+    "motivoGeral": "Estrangeiros vendem ações brasileiras"
   },
   {
     "id": "juros-eua-caem",
     "manchete": "Juros caem nos Estados Unidos e estrangeiros voltam à bolsa brasileira",
-    "explicacao": "Com juros baixos nos Estados Unidos, investidores procuram lugares onde o dinheiro renda mais, e o Brasil entra na lista. As empresas que prometem crescer e a própria bolsa, que faz mais negócios, são as mais procuradas.",
+    "explicacao": "Com juros baixos nos Estados Unidos, investidores procuram lugares onde o dinheiro renda mais, e o Brasil entra na lista. As empresas que prometem crescer e a própria bolsa, que faz mais negócios, são as mais procuradas. Como a notícia mexe com a economia toda, as demais ações também sobem um pouco.",
     "impactos": {
       "B3SA3": 3,
       "TOTS3": 4,
@@ -619,7 +637,9 @@
       "CYRE3": "Estrangeiros compram ações brasileiras",
       "RENT3": "Estrangeiros compram ações brasileiras"
     },
-    "grupo": "juros-eua"
+    "grupo": "juros-eua",
+    "impactoGeral": 1.5,
+    "motivoGeral": "Estrangeiros compram ações brasileiras"
   },
   {
     "id": "petroleo-dispara",
@@ -745,7 +765,7 @@
   {
     "id": "guerra-comercial",
     "manchete": "Grandes potências entram em guerra comercial e aumentam impostos de importação",
-    "explicacao": "Numa guerra comercial, os países cobram taxas mais altas sobre produtos estrangeiros. Quem exporta encontra barreiras: aviões, motores, aço, minério, celulose e carne. Com o comércio mundial menor, também cai a procura por petróleo.",
+    "explicacao": "Numa guerra comercial, os países cobram taxas mais altas sobre produtos estrangeiros. Quem exporta encontra barreiras: aviões, motores, aço, minério, celulose e carne. Com o comércio mundial menor, também cai a procura por petróleo. Como a notícia mexe com a economia toda, as demais ações também caem um pouco.",
     "impactos": {
       "EMBJ3": -6,
       "WEGE3": -4,
@@ -780,7 +800,9 @@
       "PRIO3": "Menor demanda por petróleo",
       "BRAV3": "Menor demanda por petróleo"
     },
-    "grupo": "comercio"
+    "grupo": "comercio",
+    "impactoGeral": -1.5,
+    "motivoGeral": "Comércio mundial em crise pesa na bolsa"
   },
   {
     "id": "acordo-mercosul-ue",
@@ -994,7 +1016,7 @@
   {
     "id": "reforma-tributaria-consumo",
     "manchete": "Reforma tributária simplifica impostos sobre produtos do dia a dia",
-    "explicacao": "A reforma junta vários impostos sobre o consumo em poucos, o que reduz custos e burocracia das lojas. Remédios ganham imposto reduzido. Já as bebidas alcoólicas passam a pagar um imposto extra, o chamado imposto seletivo, criado para produtos que fazem mal à saúde.",
+    "explicacao": "A reforma junta vários impostos sobre o consumo em poucos, o que reduz custos e burocracia de quem vende produtos do dia a dia, como lojas, atacarejos, a Ambev e a Natura. Remédios ganham imposto reduzido e a carne da cesta básica fica sem imposto. Como a notícia mexe com a economia toda, as demais ações também sobem um pouco.",
     "impactos": {
       "MGLU3": 3,
       "LREN3": 3,
@@ -1003,7 +1025,9 @@
       "ASAI3": 3,
       "RADL3": 3,
       "HYPE3": 3,
-      "ABEV3": -4
+      "ABEV3": 2,
+      "MBRF3": 3,
+      "NATU3": 2
     },
     "motivos": {
       "MGLU3": "Menos impostos e burocracia",
@@ -1013,8 +1037,12 @@
       "ASAI3": "Menos impostos e burocracia",
       "RADL3": "Remédios terão imposto reduzido",
       "HYPE3": "Remédios terão imposto reduzido",
-      "ABEV3": "Cerveja paga o novo imposto seletivo"
-    }
+      "ABEV3": "Vende produtos do dia a dia",
+      "MBRF3": "Carne da cesta básica fica sem imposto",
+      "NATU3": "Cosméticos do dia a dia pagam menos imposto"
+    },
+    "impactoGeral": 1,
+    "motivoGeral": "Menos burocracia anima a bolsa toda"
   },
   {
     "id": "bancos-mais-capital",
@@ -1176,7 +1204,7 @@
   {
     "id": "imposto-dividendos",
     "manchete": "Governo propõe cobrar imposto sobre dividendos",
-    "explicacao": "Dividendos são a parte do lucro que a empresa divide com quem tem suas ações. Se passarem a pagar imposto, o investidor recebe menos. As empresas famosas por pagar muitos dividendos ficam menos atraentes e são as que mais caem.",
+    "explicacao": "Dividendos são a parte do lucro que a empresa divide com quem tem suas ações. Se passarem a pagar imposto, o investidor recebe menos. As empresas famosas por pagar muitos dividendos ficam menos atraentes e são as que mais caem. Como a notícia mexe com a economia toda, as demais ações também caem um pouco.",
     "impactos": {
       "BBSE3": -5,
       "TAEE11": -5,
@@ -1208,7 +1236,9 @@
       "EGIE3": "Paga bons dividendos",
       "CSMG3": "Paga bons dividendos",
       "VBBR3": "Paga bons dividendos"
-    }
+    },
+    "impactoGeral": -1,
+    "motivoGeral": "Investidores vendem ações com o novo imposto"
   },
   {
     "id": "petrobras-novo-campo",

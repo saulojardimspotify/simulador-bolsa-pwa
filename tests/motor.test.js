@@ -71,11 +71,24 @@ test('variacaoAcao: empresa do mesmo setor mas não citada fica neutra', () => {
   assert.equal(variacaoAcao(MBRF, ev, meio).direcao, 'sobe');
 });
 
+test('variacaoAcao: notícia com efeito geral move as empresas não citadas', () => {
+  const ev = {
+    id: 'juros-eua-caem', impactos: { B3SA3: 3 }, motivos: { B3SA3: 'Mais negócios' },
+    impactoGeral: 1.5, motivoGeral: 'Estrangeiros compram ações brasileiras',
+  };
+  const r = variacaoAcao(PETR, ev, meio);
+  assert.equal(r.pct, 1.5);
+  assert.equal(r.direcao, 'sobe');
+  assert.equal(r.motivo, 'Estrangeiros compram ações brasileiras');
+  assert.equal(r.afetada, true);
+  assert.equal(variacaoAcao(acao('B3SA3', 'Bancos e Finanças'), ev, meio).pct, 3);
+});
+
 test('variacaoAcao: ruído varia o valor mas nunca inverte o sinal', () => {
   const ev = { id: 'e', impactos: { PETR4: -1 } };
-  assert.ok(Math.abs(variacaoAcao(PETR, ev, () => 0).pct - -1.3) < 1e-9);
+  assert.ok(Math.abs(variacaoAcao(PETR, ev, () => 0).pct - -1.1) < 1e-9);
   assert.ok(variacaoAcao(PETR, ev, () => 0.999999).pct < 0);
-  assert.equal(variacaoAcao(LREN, selic, () => 0).pct, -6);
+  assert.equal(variacaoAcao(LREN, selic, () => 0).pct, -5.5);
 });
 
 test('aplicarEvento: -10% na 1ª ação com 40% derruba 400', () => {

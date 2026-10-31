@@ -140,7 +140,7 @@ export function render(container, estado, irPara) {
       acertos: estado.acertos, timestamp: Date.now(),
     };
     gravar(estado, inserirNoRanking(estado.ranking, entrada).lista);
-    efeitos.aplauso();
+    efeitos.conquista();
     mostrarFinal(entrada);
   }
   nome.addEventListener('keydown', (e) => { if (e.key === 'Enter') salvar(); });

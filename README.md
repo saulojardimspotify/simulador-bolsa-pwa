@@ -22,7 +22,7 @@ Segure o dedo por **3 segundos** sobre o título **"🏆 Ranking de hoje"**. Abr
 
 ## Som
 
-O app toca efeitos sonoros (sino de abertura do pregão ao confirmar a carteira, vinheta de plantão, acertos, fanfarra no resultado, aplausos no ranking). Os sons são gerados pelo próprio navegador, sem arquivos, e funcionam offline.
+O app toca efeitos sonoros (sino de abertura do pregão ao confirmar a carteira, vinheta de plantão, acertos, fanfarra no resultado, um "plim" de conquista no ranking). Os sons são gerados pelo próprio navegador, sem arquivos, e funcionam offline.
 
 - O botão **🔊/🔇** no canto superior direito liga e desliga o som.
 - No **painel do professor** (segurar o título do ranking por 3 segundos) há o **volume** e a **música de fundo**, que vem desligada.
@@ -46,6 +46,7 @@ As notícias ficam em [`data/eventos.json`](data/eventos.json). Dá para editar 
 
 - **impactos**: quanto (em %, de 1 a 12, para cima ou para baixo) cada **empresa** sobe ou cai, pelo código da ação. Só entram as empresas que a notícia afeta de verdade; as outras ficam paradas, e para elas a resposta certa é "neutra".
 - **motivos**: frase curta mostrada ao lado de cada empresa citada em `impactos` (obrigatória para todas).
+- **impactoGeral** e **motivoGeral** (opcionais): só para notícias que mexem com a economia toda (juros, PIB, crise...). Todas as empresas não citadas sobem ou caem esse tanto (de 1 a 2,5), sempre menos que as citadas. Notícias sobre uma empresa ou um setor não usam isso, e as demais ações ficam neutras.
 - **grupo** (opcional): eventos do mesmo grupo nunca saem na mesma partida (ex.: "Selic sobe" e "Selic cai").
 - O banco precisa ter exatamente **50** eventos, e toda empresa precisa aparecer em pelo menos 3 notícias (os testes conferem).
 
