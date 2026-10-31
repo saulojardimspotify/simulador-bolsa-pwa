@@ -78,12 +78,11 @@ p { margin: 0 0 0.6em; }
 .app {
   max-width: 1800px; margin: 0 auto;
   padding: 24px 16px 24px;
-  min-height: calc(100vh - var(--letreiro));
+  min-height: calc(100vh - var(--letreiro) - 64px); /* deixa o rodapé à vista */
 }
-.aviso {
-  padding: 8px 16px 16px; text-align: center; font-size: 0.65em;
-  color: var(--suave); opacity: 0.55;
-}
+.rodape { padding: 8px 16px 16px; text-align: center; }
+.credito { margin: 0 0 4px; font-size: 0.8em; font-weight: 600; color: var(--suave); }
+.aviso { margin: 0; font-size: 0.65em; color: var(--suave); opacity: 0.55; }
 .carregando, .erro-carga { text-align: center; padding-top: 20vh; }
 .cabecalho-tela {
   display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px;
