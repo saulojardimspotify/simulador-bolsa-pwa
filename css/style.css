@@ -406,3 +406,14 @@ p { margin: 0 0 0.6em; }
 @media (prefers-reduced-motion: reduce) {
   .letreiro-faixa, .plantao, .manchete, .revelacao { animation: none; }
 }
+
+/* ---------- Som ---------- */
+.botao-som {
+  position: fixed; top: 3px; right: 8px; z-index: 30;
+  width: 34px; height: 34px; border-radius: 50%; padding: 0; line-height: 1;
+  border: 1px solid var(--borda); background: var(--pilula); color: var(--texto);
+  font-size: 17px; cursor: pointer; box-shadow: -12px 0 12px var(--painel-2);
+}
+.professor-som { display: grid; gap: 12px; margin-bottom: 16px; }
+.professor-volume { display: flex; align-items: center; gap: 12px; font-weight: 600; }
+.professor-volume input { flex: 1; accent-color: var(--verde); height: 32px; }

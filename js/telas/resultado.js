@@ -1,11 +1,13 @@
 import { el, seloAcao, formatarReais, formatarPct, classeVariacao, umaVez } from '../ui.js';
 import { valorCarteira, licaoFinal } from '../motor.js';
+import { efeitos } from '../som.js';
 
 export function render(container, estado, irPara) {
   const c = estado.carteira;
   const final = valorCarteira(c);
   const retorno = (final / c.valorInicial - 1) * 100;
   estado.retornoFinal = retorno;
+  if (retorno >= 0) efeitos.fanfarra(); else efeitos.neutro();
 
   container.append(el('section', { class: 'tela-resultado' },
     el('header', { class: 'cabecalho-tela' }, el('h1', {}, '🏁 Resultado da sua carteira')),

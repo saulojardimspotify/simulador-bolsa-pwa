@@ -1,5 +1,6 @@
 import { el, seloAcao, formatarReais, formatarPct, classeVariacao, animarNumero, confete, umaVez } from '../ui.js';
 import { aplicarEvento, contarAcertos, valorCarteira } from '../motor.js';
+import { efeitos } from '../som.js';
 
 const TOTAL_RODADAS = 5;
 const OPCOES = [
@@ -35,6 +36,7 @@ export function render(container, estado, irPara) {
     // Trava única: um toque duplo não aplica o evento duas vezes.
     if (revelado || Object.keys(palpites).length < posicoes.length) return;
     revelado = true;
+    efeitos.contagem(ANIMACAO_MS / 1000);
     const r = aplicarEvento(estado.carteira, evento);
     const acertos = contarAcertos(palpites, r.resultados);
     estado.carteira = r.carteira;
@@ -90,6 +92,8 @@ export function render(container, estado, irPara) {
     animarNumero(valorEl, r.valorAntes, r.valorDepois, ANIMACAO_MS, formatarReais);
     acertosEl.textContent = `${estado.acertos} de ${maxAcertos}`;
     if (acertos === posicoes.length) confete(container);
+    const somFinal = acertos === posicoes.length ? efeitos.acertoTotal : acertos > 0 ? efeitos.acertoParcial : efeitos.erro;
+    setTimeout(somFinal, ANIMACAO_MS);
   }
   revelarBtn.addEventListener('click', revelar);
 
@@ -118,4 +122,5 @@ export function render(container, estado, irPara) {
     revelarBtn));
 
   container.append(el('section', { class: 'tela-rodada' }, placar, manchete, area));
+  setTimeout(efeitos.plantao, 200);
 }

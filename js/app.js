@@ -2,6 +2,7 @@
 import { carregarRanking, dataHoje } from './ranking.js';
 import { iniciarInatividade } from './inatividade.js';
 import { el, formatarReais } from './ui.js';
+import { iniciarSom, efeitos, preferencias, ajustar, aoMudar } from './som.js';
 import * as inicio from './telas/inicio.js';
 import * as escolha from './telas/escolha.js';
 import * as distribuicao from './telas/distribuicao.js';
@@ -117,5 +118,16 @@ async function carregarDados() {
 }
 
 document.addEventListener('contextmenu', (e) => e.preventDefault());
+
+iniciarSom(estado.storage);
+document.addEventListener('click', (e) => { if (e.target.closest?.('button')) efeitos.clique(); });
+const botaoSom = el('button', { class: 'botao-som', onclick: () => ajustar({ mudo: !preferencias().mudo }) });
+const rotularSom = ({ mudo }) => {
+  botaoSom.textContent = mudo ? '🔇' : '🔊';
+  botaoSom.setAttribute('aria-label', mudo ? 'Ligar som' : 'Desligar som');
+};
+rotularSom(preferencias());
+aoMudar(rotularSom);
+document.body.append(botaoSom);
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(() => {});
 carregarDados();

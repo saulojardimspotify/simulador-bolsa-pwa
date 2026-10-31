@@ -1,6 +1,7 @@
 import { el, seloAcao, formatarReais, umaVez } from '../ui.js';
 import { PERCENTUAIS_PADRAO, ajustarPercentual, statusDistribuicao, criarCarteira } from '../carteira.js';
 import { sortearEventos, eventoAfetaCarteira } from '../motor.js';
+import { efeitos } from '../som.js';
 
 const CAPITAL = 10000;
 
@@ -12,6 +13,7 @@ export function render(container, estado, irPara) {
   const confirmar = el('button', { class: 'botao botao-primario' }, 'Confirmar carteira ▶');
 
   confirmar.addEventListener('click', umaVez(() => {
+    efeitos.sino();
     estado.carteira = criarCarteira(acoes, estado.percentuais, CAPITAL);
     estado.eventosPartida = sortearEventos(estado.eventos, 5, Math.random,
       (ev) => eventoAfetaCarteira(ev, estado.carteira));

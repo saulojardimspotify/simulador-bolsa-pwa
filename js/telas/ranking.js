@@ -3,6 +3,7 @@ import {
   TITULOS, normalizarNome, nomePermitido, inserirNoRanking, topN, removerEntrada, salvarRanking, dataHoje,
 } from '../ranking.js';
 import { atualizarRankingDoDia } from '../app.js';
+import { efeitos, preferencias, ajustar } from '../som.js';
 
 const PAINEL_PROFESSOR_MS = 45000;
 
@@ -45,9 +46,28 @@ function abrirPainelProfessor(estado, onMudou) {
     desenhar();
   });
 
+  const som = preferencias();
+  const rotuloVolume = el('span', {}, `${Math.round(som.volume * 100)}%`);
+  const volume = el('input', {
+    type: 'range', min: '0', max: '100', step: '10', value: String(Math.round(som.volume * 100)), 'aria-label': 'Volume',
+    oninput: (e) => { ajustar({ volume: Number(e.target.value) / 100 }); rotuloVolume.textContent = `${e.target.value}%`; },
+    onchange: () => efeitos.acertoParcial(),
+  });
+  const musica = el('button', {
+    class: 'botao botao-secundario',
+    onclick: () => {
+      ajustar({ musica: !preferencias().musica });
+      musica.textContent = preferencias().musica ? '🎵 Música de fundo: ligada' : '🎵 Música de fundo: desligada';
+    },
+  }, som.musica ? '🎵 Música de fundo: ligada' : '🎵 Música de fundo: desligada');
+
   const fundo = el('div', { class: 'modal-fundo', role: 'dialog', 'aria-modal': 'true', 'aria-label': 'Área do professor' },
     el('div', { class: 'modal' },
       el('h2', {}, '🔒 Área do professor'),
+      el('div', { class: 'professor-som' },
+        el('label', { class: 'professor-volume' }, '🔊 Volume ', volume, rotuloVolume),
+        musica),
+      el('h3', {}, 'Ranking de hoje'),
       lista,
       el('div', { class: 'rodape-botoes' }, zerar, el('button', { class: 'botao botao-primario', onclick: fechar }, 'Fechar'))));
   fundo.addEventListener('pointerdown', adiar);
@@ -120,6 +140,7 @@ export function render(container, estado, irPara) {
       acertos: estado.acertos, timestamp: Date.now(),
     };
     gravar(estado, inserirNoRanking(estado.ranking, entrada).lista);
+    efeitos.aplauso();
     mostrarFinal(entrada);
   }
   nome.addEventListener('keydown', (e) => { if (e.key === 'Enter') salvar(); });

@@ -20,6 +20,15 @@ Se ninguém tocar na tela por **60 segundos**, o app volta sozinho para a tela i
 
 Segure o dedo por **3 segundos** sobre o título **"🏆 Ranking de hoje"**. Abre um painel para **apagar** um nome ou **zerar** o ranking do dia. O ranking fica salvo só naquele computador e começa vazio a cada novo dia.
 
+## Som
+
+O app toca efeitos sonoros (sino de abertura do pregão ao confirmar a carteira, vinheta de plantão, acertos, fanfarra no resultado, aplausos no ranking). Os sons são gerados pelo próprio navegador, sem arquivos, e funcionam offline.
+
+- O botão **🔊/🔇** no canto superior direito liga e desliga o som.
+- No **painel do professor** (segurar o título do ranking por 3 segundos) há o **volume** e a **música de fundo**, que vem desligada.
+- As escolhas ficam salvas naquele computador.
+- Os sons só começam depois do primeiro toque na tela (regra dos navegadores).
+
 ## Editar as notícias
 
 As notícias ficam em [`data/eventos.json`](data/eventos.json). Dá para editar direto no site do GitHub (abra o arquivo e clique no lápis ✏️). Cada evento tem este formato:
