@@ -154,7 +154,7 @@ p { margin: 0 0 0.6em; }
 .titulo-ranking { cursor: default; }
 .lista-ranking { list-style: none; padding: 0; margin: 0; }
 .lista-ranking li {
-  display: grid; grid-template-columns: 2.6em 1fr auto; gap: 8px; align-items: center;
+  display: grid; grid-template-columns: 2.6em 1fr auto 5.2em; gap: 10px; align-items: center;
   padding: 10px 6px; border-bottom: 1px solid var(--borda);
   font-variant-numeric: tabular-nums;
 }
@@ -162,7 +162,10 @@ p { margin: 0 0 0.6em; }
 .lista-ranking li.destaque { background: var(--verde-fundo); border-radius: 10px; }
 .lista-ranking .pos { font-weight: 800; color: var(--suave); }
 .lista-ranking .quem { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.lista-ranking .ret { font-weight: 700; }
+.lista-ranking .ret { font-size: 0.8em; font-weight: 600; text-align: right; opacity: 0.85; }
+.lista-ranking .pts { font-size: 1.35em; font-weight: 800; color: var(--texto); }
+.lista-ranking .pts small { font-size: 0.55em; font-weight: 600; color: var(--suave); }
+.ranking-regra { font-size: 0.8em; color: var(--suave); margin: -0.2em 0 0.6em; }
 
 /* ---------- Escolha ---------- */
 .escolha-corpo { display: grid; gap: 20px; }

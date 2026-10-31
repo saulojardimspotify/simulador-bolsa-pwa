@@ -87,7 +87,7 @@ Placar fixo: valor atual da carteira e "Rodada N de 5".
 ### 3.5 Ranking
 - Escolha do **título** por botões: Mestre, Investidor(a), Administrador(a), Dr(a)., Chefe, CEO, Magnata, Professor(a).
 - **Primeiro nome** digitado: só letras (com acentos) e espaço, até 12 caracteres; passa por filtro básico de palavrões em português (lista no código, comparação sem acentos, sem diferenciar maiúsculas e tolerando trocas como 0→o, 4→a, 1→i, 3→e). Nome bloqueado gera a mensagem "Escolha outro nome".
-- Exibição: "Mestre Ana — +12,4%". O top 10 é ordenado pelo retorno; no empate, vale quem acertou mais palpites e depois quem jogou antes.
+- Exibição: "Mestre Ana — 12 pts (+12,4%)". O top 10 é ordenado pelos acertos (até 15); no empate, vale o maior retorno e depois quem jogou antes.
 - Se o aluno não entrou no top 10, a tela mostra a posição dele mesmo assim.
 - Botão **Jogar de novo**.
 

@@ -52,10 +52,11 @@ test('nomePermitido: não bloqueia nomes comuns parecidos', () => {
   }
 });
 
-test('inserirNoRanking ordena por retorno, acertos e tempo', () => {
-  let { lista } = inserirNoRanking([], entrada(5, 1, 1));
-  ({ lista } = inserirNoRanking(lista, entrada(12, 2, 2)));
-  const r = inserirNoRanking(lista, entrada(12, 4, 3));
+test('inserirNoRanking ordena por acertos, depois retorno e tempo', () => {
+  let { lista } = inserirNoRanking([], entrada(8.2, 9, 1));
+  ({ lista } = inserirNoRanking(lista, entrada(-2.4, 12, 2)));
+  const r = inserirNoRanking(lista, entrada(4.3, 12, 3));
+  // 12 acertos vencem 9, mesmo com retorno menor; no empate de acertos, vence o maior retorno
   assert.deepEqual(r.lista.map((e) => e.timestamp), [3, 2, 1]);
   assert.equal(r.posicao, 1);
   const empate = inserirNoRanking([entrada(7, 2, 10)], entrada(7, 2, 20));
@@ -81,6 +82,12 @@ test('carregarRanking e salvarRanking do mesmo dia', () => {
   assert.equal(salvarRanking(s, '2026-10-31', [entrada(1, 0, 1)]), true);
   assert.equal(carregarRanking(s, '2026-10-31').length, 1);
   assert.ok(s.m.has(CHAVE_RANKING));
+});
+
+test('carregarRanking reordena por acertos um ranking salvo na ordem antiga', () => {
+  const salvo = { data: '2026-10-31', entradas: [entrada(8.2, 9, 1), entrada(-2.4, 12, 2)] };
+  const s = storageFalso({ [CHAVE_RANKING]: JSON.stringify(salvo) });
+  assert.deepEqual(carregarRanking(s, '2026-10-31').map((e) => e.timestamp), [2, 1]);
 });
 
 test('carregarRanking descarta outro dia e dados ruins', () => {

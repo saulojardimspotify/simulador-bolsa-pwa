@@ -39,7 +39,8 @@ export function nomePermitido(nome) {
 }
 
 function comparar(a, b) {
-  return b.retornoPct - a.retornoPct || b.acertos - a.acertos || a.timestamp - b.timestamp;
+  // Quem acertou mais palpites fica na frente; o retorno só desempata.
+  return b.acertos - a.acertos || b.retornoPct - a.retornoPct || a.timestamp - b.timestamp;
 }
 
 export function inserirNoRanking(lista, entrada) {
@@ -59,7 +60,7 @@ export function carregarRanking(storage, hoje) {
   try {
     const dados = JSON.parse(storage.getItem(CHAVE_RANKING));
     if (dados?.data !== hoje || !Array.isArray(dados.entradas)) return [];
-    return dados.entradas;
+    return [...dados.entradas].sort(comparar);
   } catch {
     return [];
   }

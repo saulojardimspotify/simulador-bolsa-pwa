@@ -29,7 +29,7 @@ function abrirPainelProfessor(estado, onMudou) {
   function desenhar() {
     lista.replaceChildren(...(estado.ranking.length
       ? estado.ranking.map((e, i) => el('li', {},
-        el('span', {}, `${i + 1}º ${e.titulo} ${e.nome} · ${formatarPct(e.retornoPct)}`),
+        el('span', {}, `${i + 1}º ${e.titulo} ${e.nome} · ${e.acertos} pts · ${formatarPct(e.retornoPct)}`),
         el('button', { class: 'botao botao-secundario', onclick: () => { gravar(estado, removerEntrada(estado.ranking, e.timestamp)); desenhar(); } }, 'Apagar')))
       : [el('li', { class: 'suave' }, 'Ranking vazio.')]));
   }
@@ -82,11 +82,13 @@ export function painelRanking(estado, { destaque = null, onMudou } = {}) {
   const top = topN(estado.ranking);
   return el('aside', { class: 'painel-ranking' },
     titulo,
+    el('p', { class: 'ranking-regra' }, 'Ordem por acertos nos palpites (até 15 pontos)'),
     top.length
       ? el('ol', { class: 'lista-ranking' }, top.map((e, i) =>
         el('li', { class: e.timestamp === destaque ? 'destaque' : '' },
           el('span', { class: 'pos' }, `${i + 1}º`),
           el('span', { class: 'quem' }, `${e.titulo} ${e.nome}`),
+          el('span', { class: 'pts' }, `${e.acertos}`, el('small', {}, ' pts')),
           el('span', { class: `ret ${classeVariacao(e.retornoPct)}` }, formatarPct(e.retornoPct)))))
       : el('p', { class: 'suave vazio' }, 'Seja o primeiro do ranking de hoje!'));
 }
@@ -155,7 +157,7 @@ export function render(container, estado, irPara) {
   container.append(el('section', { class: 'tela-ranking' },
     el('header', { class: 'cabecalho-tela' },
       el('h1', {}, '🏆 Entre no ranking'),
-      el('p', { class: 'suave' }, `Seu retorno: ${formatarPct(estado.retornoFinal ?? 0)} · ${estado.acertos} de 15 palpites certos`)),
+      el('p', { class: 'suave' }, `Você fez ${estado.acertos} de 15 pontos · retorno da carteira: ${formatarPct(estado.retornoFinal ?? 0)}`)),
     area));
   desenharTitulos();
   atualizarPrevia();
