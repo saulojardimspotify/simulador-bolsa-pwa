@@ -1,0 +1,387 @@
+[
+  {
+    "id": "selic-sobe",
+    "manchete": "Banco Central sobe a taxa Selic para conter a inflação",
+    "explicacao": "A Selic é a taxa básica de juros do país. Quando ela sobe, pegar dinheiro emprestado fica mais caro: as pessoas compram menos a prazo e as construtoras vendem menos imóveis financiados. Já os bancos costumam ganhar mais com os juros dos empréstimos.",
+    "impactoSetores": { "Varejo e Consumo": -6, "Construção e Imóveis": -7, "Bancos e Finanças": 3, "Tecnologia e Telecom": -3 },
+    "impactoAcoes": { "MGLU3": -9 },
+    "motivos": { "Varejo e Consumo": "Vendas a prazo ficam mais caras", "Construção e Imóveis": "Financiamento de imóveis encarece", "Bancos e Finanças": "Bancos ganham mais com juros", "Tecnologia e Telecom": "Empresas de crescimento sofrem com juros altos", "MGLU3": "Depende muito de vendas parceladas" },
+    "grupo": "juros"
+  },
+  {
+    "id": "selic-cai",
+    "manchete": "Banco Central corta a Selic e juros caem pela primeira vez no ano",
+    "explicacao": "Com juros menores, o crédito fica mais barato. As famílias voltam a comprar parcelado, financiar a casa própria fica mais fácil e as empresas que precisam de empréstimo para crescer respiram aliviadas. Os bancos ganham um pouco menos por empréstimo.",
+    "impactoSetores": { "Varejo e Consumo": 6, "Construção e Imóveis": 7, "Bancos e Finanças": -2, "Tecnologia e Telecom": 4 },
+    "motivos": { "Varejo e Consumo": "Crédito barato aumenta as vendas", "Construção e Imóveis": "Mais gente consegue financiar imóvel", "Bancos e Finanças": "Margem dos empréstimos diminui", "Tecnologia e Telecom": "Investidores voltam a apostar em crescimento" },
+    "grupo": "juros"
+  },
+  {
+    "id": "inflacao-dispara",
+    "manchete": "Inflação acelera e preços nos supermercados sobem pelo terceiro mês seguido",
+    "explicacao": "Inflação é a alta geral dos preços. Quando ela acelera, o salário compra menos coisas e as famílias cortam gastos com roupas, eletrônicos e até remédios. Empresas de energia, por outro lado, têm contratos com tarifas corrigidas pela inflação.",
+    "impactoSetores": { "Varejo e Consumo": -5, "Alimentos e Bebidas": -3, "Saúde": -2, "Energia e Saneamento": 2 },
+    "motivos": { "Varejo e Consumo": "Família com menos dinheiro compra menos", "Alimentos e Bebidas": "Custos sobem e consumo cai", "Saúde": "Clientes cortam gastos", "Energia e Saneamento": "Tarifas são reajustadas pela inflação" },
+    "grupo": "inflacao"
+  },
+  {
+    "id": "inflacao-controlada",
+    "manchete": "Inflação fica abaixo da meta e preços dos alimentos caem",
+    "explicacao": "Quando a inflação está controlada, o dinheiro das famílias rende mais no fim do mês. Sobra para comprar roupas, sair para comer e até pensar num imóvel. Isso ajuda as empresas que vendem direto para o consumidor.",
+    "impactoSetores": { "Varejo e Consumo": 4, "Alimentos e Bebidas": 3, "Construção e Imóveis": 3 },
+    "motivos": { "Varejo e Consumo": "Salário rende mais", "Alimentos e Bebidas": "Consumo volta a crescer", "Construção e Imóveis": "Famílias planejam comprar imóvel" },
+    "grupo": "inflacao"
+  },
+  {
+    "id": "dolar-dispara",
+    "manchete": "Dólar dispara e passa a valer muito mais em reais",
+    "explicacao": "Empresas que exportam vendem em dólar e recebem mais reais por cada venda: é o caso de mineradoras, do agronegócio e de indústrias como a Embraer. Já quem depende de produtos importados, como lojas de eletrônicos e empresas de tecnologia, vê os custos subirem.",
+    "impactoSetores": { "Indústria e Papel": 5, "Mineração e Siderurgia": 4, "Agronegócio": 5, "Varejo e Consumo": -4, "Tecnologia e Telecom": -3 },
+    "motivos": { "Indústria e Papel": "Exporta e recebe em dólar", "Mineração e Siderurgia": "Vende minério e aço em dólar", "Agronegócio": "Exporta carne e grãos em dólar", "Varejo e Consumo": "Produtos importados ficam caros", "Tecnologia e Telecom": "Equipamentos importados encarecem" },
+    "grupo": "cambio"
+  },
+  {
+    "id": "dolar-despenca",
+    "manchete": "Dólar despenca com entrada forte de investidores estrangeiros",
+    "explicacao": "Com o dólar barato, os exportadores recebem menos reais pelo que vendem lá fora. Em compensação, produtos e peças importadas ficam mais baratos, o que ajuda o varejo e as empresas de tecnologia.",
+    "impactoSetores": { "Indústria e Papel": -4, "Mineração e Siderurgia": -3, "Agronegócio": -4, "Varejo e Consumo": 4, "Tecnologia e Telecom": 3 },
+    "motivos": { "Indústria e Papel": "Exportação rende menos reais", "Mineração e Siderurgia": "Minério vendido em dólar vale menos", "Agronegócio": "Exportação rende menos reais", "Varejo e Consumo": "Importados ficam baratos", "Tecnologia e Telecom": "Equipamentos ficam mais baratos" },
+    "grupo": "cambio"
+  },
+  {
+    "id": "pib-forte",
+    "manchete": "Economia brasileira cresce acima do esperado no trimestre",
+    "explicacao": "O PIB mede tudo o que o país produz. Quando ele cresce forte, há mais empregos, mais vendas e mais empréstimos. Lojas, bancos, construtoras e empresas de transporte costumam se beneficiar juntas.",
+    "impactoSetores": { "Varejo e Consumo": 5, "Bancos e Finanças": 3, "Construção e Imóveis": 4, "Transporte e Logística": 4 },
+    "motivos": { "Varejo e Consumo": "Mais gente empregada comprando", "Bancos e Finanças": "Mais crédito e menos calote", "Construção e Imóveis": "Demanda por imóveis aumenta", "Transporte e Logística": "Mais mercadorias circulando" },
+    "grupo": "pib"
+  },
+  {
+    "id": "recessao",
+    "manchete": "Brasil entra em recessão após dois trimestres de queda no PIB",
+    "explicacao": "Recessão é quando a economia encolhe por um tempo. As empresas vendem menos, demitem, e as pessoas atrasam contas. Quase todos os setores sofrem, mas os que dependem do consumo e do crédito sentem mais.",
+    "impactoSetores": { "Varejo e Consumo": -6, "Bancos e Finanças": -4, "Construção e Imóveis": -5, "Transporte e Logística": -4, "Indústria e Papel": -3 },
+    "motivos": { "Varejo e Consumo": "Consumidores param de comprar", "Bancos e Finanças": "Mais gente sem pagar dívidas", "Construção e Imóveis": "Ninguém quer comprar imóvel na crise", "Transporte e Logística": "Menos carga para transportar", "Indústria e Papel": "Fábricas produzem menos" },
+    "grupo": "pib"
+  },
+  {
+    "id": "desemprego-minimo",
+    "manchete": "Desemprego cai ao menor nível da história",
+    "explicacao": "Com mais gente trabalhando e recebendo salário, o consumo cresce. As famílias gastam mais em supermercado, roupas e lazer, contratam planos de saúde pela empresa e voltam a sonhar com a casa própria.",
+    "impactoSetores": { "Varejo e Consumo": 5, "Alimentos e Bebidas": 3, "Construção e Imóveis": 3, "Saúde": 2 },
+    "motivos": { "Varejo e Consumo": "Mais salários circulando", "Alimentos e Bebidas": "Mais consumo de alimentos e bebidas", "Construção e Imóveis": "Mais famílias compram imóvel", "Saúde": "Empresas contratam planos de saúde" }
+  },
+  {
+    "id": "crise-bancaria-exterior",
+    "manchete": "Quebra de banco nos Estados Unidos espalha medo pelos mercados",
+    "explicacao": "Quando um banco grande quebra lá fora, investidores do mundo todo ficam com medo e vendem ações de risco, principalmente de bancos. Empresas ligadas a commodities, como petróleo e minério, também caem porque se teme uma desaceleração global.",
+    "impactoSetores": { "Bancos e Finanças": -8, "Mineração e Siderurgia": -3, "Petróleo e Gás": -3 },
+    "motivos": { "Bancos e Finanças": "Medo de contágio entre bancos", "Mineração e Siderurgia": "Medo de a economia mundial frear", "Petróleo e Gás": "Medo de menor demanda por petróleo" }
+  },
+  {
+    "id": "juros-eua-sobem",
+    "manchete": "Banco central americano sobe juros e dinheiro sai dos países emergentes",
+    "explicacao": "Quando os juros dos Estados Unidos sobem, investir lá fica mais seguro e atraente. Muitos investidores tiram dinheiro de países como o Brasil, e as ações de empresas que dependem de crédito e de crescimento futuro caem mais.",
+    "impactoSetores": { "Bancos e Finanças": -2, "Construção e Imóveis": -3, "Tecnologia e Telecom": -4, "Varejo e Consumo": -3 },
+    "motivos": { "Bancos e Finanças": "Estrangeiros vendem ações brasileiras", "Construção e Imóveis": "Crédito tende a encarecer", "Tecnologia e Telecom": "Ações de crescimento perdem atrativo", "Varejo e Consumo": "Crédito tende a encarecer" },
+    "grupo": "juros-eua"
+  },
+  {
+    "id": "juros-eua-caem",
+    "manchete": "Juros caem nos Estados Unidos e estrangeiros voltam à bolsa brasileira",
+    "explicacao": "Com juros baixos lá fora, os investidores buscam lugares onde o dinheiro renda mais, e o Brasil entra na lista. A chegada desse dinheiro faz subir as ações, principalmente de empresas ligadas ao crédito e ao crescimento.",
+    "impactoSetores": { "Bancos e Finanças": 3, "Construção e Imóveis": 3, "Tecnologia e Telecom": 4, "Varejo e Consumo": 3 },
+    "motivos": { "Bancos e Finanças": "Estrangeiros compram ações brasileiras", "Construção e Imóveis": "Expectativa de crédito mais barato", "Tecnologia e Telecom": "Ações de crescimento voltam à moda", "Varejo e Consumo": "Expectativa de crédito mais barato" },
+    "grupo": "juros-eua"
+  },
+  {
+    "id": "petroleo-dispara",
+    "manchete": "Conflito no Oriente Médio faz preço do petróleo disparar",
+    "explicacao": "O Oriente Médio produz boa parte do petróleo do mundo. Quando há conflito por lá, o barril fica mais caro. Petroleiras lucram mais, mas quem gasta muito com combustível, como transportadoras e indústrias, vê os custos subirem.",
+    "impactoSetores": { "Petróleo e Gás": 8, "Transporte e Logística": -5, "Agronegócio": -2, "Indústria e Papel": -2 },
+    "motivos": { "Petróleo e Gás": "Vende petróleo mais caro", "Transporte e Logística": "Diesel mais caro", "Agronegócio": "Frete e fertilizantes encarecem", "Indústria e Papel": "Energia e frete mais caros" },
+    "grupo": "petroleo"
+  },
+  {
+    "id": "petroleo-despenca",
+    "manchete": "Preço do petróleo despenca com excesso de produção no mundo",
+    "explicacao": "Quando há petróleo sobrando no mercado, o preço cai. Petroleiras passam a lucrar menos por barril. Para empresas de transporte e indústrias, combustível e energia mais baratos significam custos menores.",
+    "impactoSetores": { "Petróleo e Gás": -8, "Transporte e Logística": 4, "Indústria e Papel": 2 },
+    "motivos": { "Petróleo e Gás": "Lucro por barril despenca", "Transporte e Logística": "Diesel mais barato", "Indústria e Papel": "Energia e frete mais baratos" },
+    "grupo": "petroleo"
+  },
+  {
+    "id": "opep-corta-producao",
+    "manchete": "Países produtores de petróleo combinam cortar a produção",
+    "explicacao": "A OPEP é um grupo de países que produzem muito petróleo. Quando eles decidem produzir menos, a oferta cai e o preço do barril sobe. Petroleiras de fora do grupo, como as brasileiras, ganham com isso.",
+    "impactoSetores": { "Petróleo e Gás": 6, "Transporte e Logística": -3 },
+    "motivos": { "Petróleo e Gás": "Barril mais caro aumenta o lucro", "Transporte e Logística": "Combustível encarece" },
+    "grupo": "petroleo"
+  },
+  {
+    "id": "minerio-sobe-china",
+    "manchete": "China anuncia grande pacote de obras e minério de ferro sobe forte",
+    "explicacao": "A China é a maior compradora de minério de ferro do mundo, usado para fazer aço. Quando o governo chinês investe em prédios, pontes e ferrovias, precisa de muito aço, e as mineradoras brasileiras vendem mais e mais caro.",
+    "impactoSetores": { "Mineração e Siderurgia": 8, "Transporte e Logística": 2 },
+    "motivos": { "Mineração e Siderurgia": "China compra mais minério", "Transporte e Logística": "Mais carga nas ferrovias e portos" },
+    "grupo": "minerio"
+  },
+  {
+    "id": "minerio-cai-china",
+    "manchete": "Economia da China desacelera e preço do minério de ferro desaba",
+    "explicacao": "Se a China constrói menos, compra menos minério. Com menos procura, o preço cai e as mineradoras brasileiras faturam menos. Indústrias ligadas à exportação também sentem a freada do maior parceiro comercial do Brasil.",
+    "impactoSetores": { "Mineração e Siderurgia": -8, "Indústria e Papel": -2 },
+    "motivos": { "Mineração e Siderurgia": "China compra menos minério", "Indústria e Papel": "Exportações para a China caem" },
+    "grupo": "minerio"
+  },
+  {
+    "id": "china-compra-carne",
+    "manchete": "China libera mais frigoríficos brasileiros para exportar carne",
+    "explicacao": "Quando a China autoriza mais empresas brasileiras a vender carne para lá, abre-se um mercado gigante, com mais de 1 bilhão de consumidores. Frigoríficos e empresas de alimentos podem vender mais e com preços melhores.",
+    "impactoSetores": { "Agronegócio": 7, "Alimentos e Bebidas": 5 },
+    "motivos": { "Agronegócio": "Novo mercado para a carne brasileira", "Alimentos e Bebidas": "Mais exportação de proteína" }
+  },
+  {
+    "id": "guerra-comercial",
+    "manchete": "Grandes potências entram em guerra comercial e aumentam impostos de importação",
+    "explicacao": "Numa guerra comercial, os países cobram taxas mais altas sobre produtos estrangeiros. O comércio mundial encolhe, e empresas que exportam, como indústrias, mineradoras e o agronegócio, encontram mais barreiras para vender.",
+    "impactoSetores": { "Indústria e Papel": -5, "Mineração e Siderurgia": -5, "Agronegócio": -3, "Tecnologia e Telecom": -2 },
+    "motivos": { "Indústria e Papel": "Exportações enfrentam barreiras", "Mineração e Siderurgia": "Comércio mundial de aço e minério cai", "Agronegócio": "Menos compradores lá fora", "Tecnologia e Telecom": "Peças importadas encarecem" },
+    "grupo": "comercio"
+  },
+  {
+    "id": "acordo-mercosul-ue",
+    "manchete": "Acordo entre Mercosul e União Europeia reduz impostos sobre produtos brasileiros",
+    "explicacao": "Com o acordo, produtos brasileiros pagam menos imposto para entrar na Europa. Carnes, grãos, bebidas e produtos industrializados ficam mais competitivos lá fora, e as empresas exportadoras podem vender mais.",
+    "impactoSetores": { "Agronegócio": 6, "Alimentos e Bebidas": 4, "Indústria e Papel": 3 },
+    "motivos": { "Agronegócio": "Carne e grãos entram mais fácil na Europa", "Alimentos e Bebidas": "Exportação de alimentos cresce", "Indústria e Papel": "Produtos industriais ficam competitivos" },
+    "grupo": "comercio"
+  },
+  {
+    "id": "taxa-aco-importado",
+    "manchete": "Governo aumenta imposto sobre aço importado da China",
+    "explicacao": "O aço chinês chega muito barato e tira clientes das siderúrgicas brasileiras. Com o novo imposto, o aço nacional volta a competir. Por outro lado, quem usa aço para construir ou fabricar coisas passa a pagar um pouco mais.",
+    "impactoSetores": { "Mineração e Siderurgia": 6, "Construção e Imóveis": -2, "Indústria e Papel": -2 },
+    "motivos": { "Mineração e Siderurgia": "Menos concorrência do aço chinês", "Construção e Imóveis": "Aço para obras fica mais caro", "Indústria e Papel": "Matéria-prima mais cara" }
+  },
+  {
+    "id": "celulose-recorde",
+    "manchete": "Preço da celulose bate recorde com alta procura por embalagens",
+    "explicacao": "Celulose é a matéria-prima do papel e das embalagens de papelão. Com o crescimento das compras online, o mundo precisa de muito mais caixas. O Brasil é um dos maiores produtores, e as fabricantes e as transportadoras ganham com isso.",
+    "impactoSetores": { "Indústria e Papel": 7, "Transporte e Logística": 2 },
+    "motivos": { "Indústria e Papel": "Celulose vendida mais cara", "Transporte e Logística": "Mais carga para levar aos portos" }
+  },
+  {
+    "id": "safra-recorde",
+    "manchete": "Brasil colhe a maior safra de grãos da sua história",
+    "explicacao": "Uma safra recorde significa muita soja e milho para vender e exportar. O agronegócio fatura mais, as ferrovias e transportadoras levam mais carga até os portos e a ração dos animais fica mais barata para os frigoríficos.",
+    "impactoSetores": { "Agronegócio": 7, "Transporte e Logística": 5, "Alimentos e Bebidas": 2 },
+    "motivos": { "Agronegócio": "Muito mais produção para vender", "Transporte e Logística": "Grãos lotam trens e caminhões", "Alimentos e Bebidas": "Ração e insumos mais baratos" },
+    "grupo": "safra"
+  },
+  {
+    "id": "seca-centro-oeste",
+    "manchete": "Seca severa atinge o Centro-Oeste e derruba a produção de grãos",
+    "explicacao": "Sem chuva, as plantações rendem menos e o agronegócio perde dinheiro. Há menos carga para transportar, os rios e represas baixam, e as hidrelétricas geram menos energia, obrigando o uso de usinas mais caras.",
+    "impactoSetores": { "Agronegócio": -7, "Transporte e Logística": -4, "Energia e Saneamento": -5, "Alimentos e Bebidas": -3 },
+    "motivos": { "Agronegócio": "Colheita menor", "Transporte e Logística": "Menos grãos para levar", "Energia e Saneamento": "Represas baixas geram menos energia", "Alimentos e Bebidas": "Matéria-prima mais cara" },
+    "grupo": "clima"
+  },
+  {
+    "id": "chuvas-enchem-reservatorios",
+    "manchete": "Chuvas acima da média enchem as represas das hidrelétricas",
+    "explicacao": "A maior parte da energia do Brasil vem de hidrelétricas. Com as represas cheias, gerar energia fica barato, as empresas do setor lucram mais e a conta de luz das famílias pode cair, sobrando dinheiro para outras compras.",
+    "impactoSetores": { "Energia e Saneamento": 5, "Varejo e Consumo": 2 },
+    "motivos": { "Energia e Saneamento": "Energia barata de gerar", "Varejo e Consumo": "Conta de luz menor sobra dinheiro" },
+    "grupo": "clima"
+  },
+  {
+    "id": "el-nino-forte",
+    "manchete": "Meteorologistas preveem El Niño forte com secas e enchentes",
+    "explicacao": "O El Niño é o aquecimento das águas do Oceano Pacífico, que bagunça o clima: chove demais no Sul e falta chuva no Norte e Nordeste. Isso atrapalha as lavouras, a geração de energia e encarece alimentos.",
+    "impactoSetores": { "Agronegócio": -5, "Energia e Saneamento": -3, "Alimentos e Bebidas": -2 },
+    "motivos": { "Agronegócio": "Risco de perder parte da colheita", "Energia e Saneamento": "Geração de energia fica incerta", "Alimentos e Bebidas": "Ingredientes podem encarecer" },
+    "grupo": "clima"
+  },
+  {
+    "id": "gripe-aviaria-controlada",
+    "manchete": "Brasil é declarado livre da gripe aviária e volta a exportar frango",
+    "explicacao": "Quando surge uma doença em aves, vários países param de comprar frango brasileiro por segurança. Com o fim do problema, as exportações são liberadas e os frigoríficos e produtores voltam a vender normalmente.",
+    "impactoSetores": { "Alimentos e Bebidas": 5, "Agronegócio": 3 },
+    "motivos": { "Alimentos e Bebidas": "Exportação de frango liberada", "Agronegócio": "Produtores voltam a vender" }
+  },
+  {
+    "id": "apagao-nacional",
+    "manchete": "Apagão deixa várias regiões do país sem luz por horas",
+    "explicacao": "Um apagão grande levanta dúvidas sobre a qualidade das empresas de energia, que podem levar multas. Fábricas param, lojas fecham e serviços de internet e telefone ficam fora do ar, causando prejuízo em vários setores.",
+    "impactoSetores": { "Energia e Saneamento": -6, "Indústria e Papel": -3, "Varejo e Consumo": -2, "Tecnologia e Telecom": -2 },
+    "motivos": { "Energia e Saneamento": "Risco de multas e investigação", "Indústria e Papel": "Fábricas paradas", "Varejo e Consumo": "Lojas fechadas", "Tecnologia e Telecom": "Serviços fora do ar" },
+    "grupo": "energia"
+  },
+  {
+    "id": "leilao-transmissao",
+    "manchete": "Governo faz leilão bilionário para novas linhas de transmissão de energia",
+    "explicacao": "Linhas de transmissão levam a energia das usinas até as cidades. As empresas que vencem o leilão garantem receita por cerca de 30 anos. Fabricantes de equipamentos elétricos também ganham, porque recebem grandes encomendas.",
+    "impactoSetores": { "Energia e Saneamento": 5, "Indústria e Papel": 3 },
+    "motivos": { "Energia e Saneamento": "Receita garantida por décadas", "Indústria e Papel": "Encomendas de equipamentos elétricos" },
+    "impactoAcoes": { "WEGE3": 5 },
+    "grupo": "energia"
+  },
+  {
+    "id": "reforma-tributaria-consumo",
+    "manchete": "Reforma tributária simplifica impostos sobre produtos do dia a dia",
+    "explicacao": "Hoje o Brasil tem muitos impostos diferentes sobre o consumo, o que deixa tudo mais caro e complicado. Com regras mais simples, lojas e fabricantes gastam menos com burocracia. Alguns serviços financeiros, porém, passam a pagar mais.",
+    "impactoSetores": { "Varejo e Consumo": 4, "Alimentos e Bebidas": 3, "Bancos e Finanças": -2 },
+    "motivos": { "Varejo e Consumo": "Menos burocracia e custo", "Alimentos e Bebidas": "Impostos mais simples", "Bancos e Finanças": "Serviços financeiros pagam mais" }
+  },
+  {
+    "id": "bancos-mais-capital",
+    "manchete": "Banco Central exige que bancos guardem mais dinheiro como reserva",
+    "explicacao": "Para deixar o sistema mais seguro, o Banco Central manda os bancos guardarem mais dinheiro parado. Isso reduz o risco de crises, mas sobra menos dinheiro para emprestar e lucrar, e os bancos ganham menos no curto prazo.",
+    "impactoSetores": { "Bancos e Finanças": -5 },
+    "motivos": { "Bancos e Finanças": "Menos dinheiro para emprestar" }
+  },
+  {
+    "id": "programa-habitacao",
+    "manchete": "Governo amplia programa de casas populares com juros baixos",
+    "explicacao": "Programas de habitação ajudam famílias de renda mais baixa a comprar a casa própria. As construtoras focadas nesse público vendem muito mais, e aumenta a procura por aço, cimento e financiamentos.",
+    "impactoSetores": { "Construção e Imóveis": 8, "Mineração e Siderurgia": 2, "Bancos e Finanças": 2 },
+    "motivos": { "Construção e Imóveis": "Muito mais casas vendidas", "Mineração e Siderurgia": "Mais aço para as obras", "Bancos e Finanças": "Mais financiamentos" },
+    "impactoAcoes": { "CURY3": 10, "DIRR3": 10, "TEND3": 10, "MRVE3": 10 }
+  },
+  {
+    "id": "planos-saude-reajuste",
+    "manchete": "Agência autoriza reajuste maior nos planos de saúde",
+    "explicacao": "A ANS é a agência que regula os planos de saúde. Com um reajuste maior autorizado, as operadoras recebem mais por cliente e conseguem cobrir melhor os custos de consultas e cirurgias. Para as famílias, a mensalidade fica mais cara.",
+    "impactoSetores": { "Saúde": 5 },
+    "motivos": { "Saúde": "Operadoras recebem mais por cliente" },
+    "grupo": "saude-regras"
+  },
+  {
+    "id": "regra-planos-saude",
+    "manchete": "Nova regra obriga planos de saúde a cobrir mais tratamentos",
+    "explicacao": "Quando os planos de saúde precisam cobrir mais exames e tratamentos, os custos das operadoras sobem bastante. Isso é bom para os pacientes, mas reduz o lucro das empresas do setor no curto prazo.",
+    "impactoSetores": { "Saúde": -6 },
+    "motivos": { "Saúde": "Custos das operadoras aumentam" },
+    "grupo": "saude-regras"
+  },
+  {
+    "id": "epidemia-dengue",
+    "manchete": "Epidemia de dengue lota hospitais e farmácias pelo país",
+    "explicacao": "Nem toda empresa de saúde reage igual. Farmácias vendem muito mais remédios e repelentes. Já os planos de saúde gastam mais com internações e exames dos clientes, o que aperta o lucro. Mesmo setor, efeitos opostos!",
+    "impactoSetores": { "Saúde": 2 },
+    "impactoAcoes": { "RADL3": 6, "HAPV3": -5 },
+    "motivos": { "Saúde": "Procura por serviços de saúde cresce", "RADL3": "Farmácias vendem mais remédios", "HAPV3": "Plano de saúde paga mais internações" }
+  },
+  {
+    "id": "concessao-rodovias",
+    "manchete": "Governo concede rodovias e ferrovias à iniciativa privada",
+    "explicacao": "Em uma concessão, uma empresa privada assume uma estrada ou ferrovia, faz melhorias e cobra pedágio ou frete por muitos anos. As empresas de infraestrutura ganham novos negócios, e as construtoras recebem obras.",
+    "impactoSetores": { "Transporte e Logística": 6, "Construção e Imóveis": 3 },
+    "motivos": { "Transporte e Logística": "Novos contratos de longo prazo", "Construção e Imóveis": "Mais obras de infraestrutura" }
+  },
+  {
+    "id": "expansao-5g",
+    "manchete": "Internet 5G chega a todas as cidades com mais de 50 mil habitantes",
+    "explicacao": "O 5G é uma internet móvel muito mais rápida. Com a expansão, as operadoras ganham mais clientes e vendem planos mais caros. Fabricantes de equipamentos e antenas também recebem encomendas.",
+    "impactoSetores": { "Tecnologia e Telecom": 5, "Indústria e Papel": 2 },
+    "motivos": { "Tecnologia e Telecom": "Mais clientes e planos melhores", "Indústria e Papel": "Encomendas de equipamentos" }
+  },
+  {
+    "id": "ataque-hacker",
+    "manchete": "Ataque hacker expõe dados de milhões de brasileiros",
+    "explicacao": "Um grande vazamento de dados assusta clientes e pode gerar multas pesadas pela Lei Geral de Proteção de Dados. Empresas de tecnologia e bancos precisam investir mais em segurança, o que aumenta os custos.",
+    "impactoSetores": { "Tecnologia e Telecom": -5, "Bancos e Finanças": -2 },
+    "motivos": { "Tecnologia e Telecom": "Risco de multas e perda de clientes", "Bancos e Finanças": "Gastos extras com segurança" }
+  },
+  {
+    "id": "privatizacao-saneamento",
+    "manchete": "Novas regras atraem empresas privadas para levar esgoto a todo o país",
+    "explicacao": "Milhões de brasileiros ainda não têm esgoto tratado. Com regras novas, empresas de saneamento podem ganhar contratos grandes e longos para resolver isso, e as construtoras ganham as obras de canos e estações de tratamento.",
+    "impactoSetores": { "Energia e Saneamento": 6, "Construção e Imóveis": 2 },
+    "motivos": { "Energia e Saneamento": "Contratos grandes e longos", "Construção e Imóveis": "Obras de redes de esgoto" }
+  },
+  {
+    "id": "imposto-dividendos",
+    "manchete": "Governo propõe cobrar imposto sobre dividendos",
+    "explicacao": "Dividendos são a parte do lucro que a empresa divide com quem tem suas ações. Se passarem a pagar imposto, o investidor recebe menos. Empresas famosas por pagar muitos dividendos, como bancos, elétricas e petroleiras, ficam menos atraentes.",
+    "impactoSetores": { "Bancos e Finanças": -4, "Energia e Saneamento": -3, "Petróleo e Gás": -3, "Tecnologia e Telecom": -2 },
+    "motivos": { "Bancos e Finanças": "Famosos por pagar bons dividendos", "Energia e Saneamento": "Dividendos rendem menos ao investidor", "Petróleo e Gás": "Dividendos rendem menos ao investidor", "Tecnologia e Telecom": "Dividendos rendem menos ao investidor" }
+  },
+  {
+    "id": "petrobras-novo-campo",
+    "manchete": "Petrobras anuncia descoberta de grande campo de petróleo no pré-sal",
+    "explicacao": "O pré-sal é uma camada de petróleo muito profunda no fundo do mar. Uma descoberta grande significa que a empresa terá mais petróleo para vender por muitos anos. Os investidores apostam em lucros maiores no futuro.",
+    "impactoSetores": { "Petróleo e Gás": 2 },
+    "impactoAcoes": { "PETR3": 7, "PETR4": 7 },
+    "motivos": { "PETR3": "Mais reservas de petróleo", "PETR4": "Mais reservas de petróleo", "Petróleo e Gás": "Setor ganha atenção dos investidores" }
+  },
+  {
+    "id": "embraer-encomenda",
+    "manchete": "Embraer fecha a maior encomenda de aviões da sua história",
+    "explicacao": "A Embraer é a fabricante brasileira de aviões. Uma encomenda recorde garante trabalho e faturamento por vários anos. Como os aviões são vendidos em dólar, a notícia anima ainda mais os investidores.",
+    "impactoSetores": { "Indústria e Papel": 1 },
+    "impactoAcoes": { "EMBJ3": 9 },
+    "motivos": { "EMBJ3": "Faturamento garantido por anos", "Indústria e Papel": "Indústria brasileira em destaque" }
+  },
+  {
+    "id": "weg-fabrica-nova",
+    "manchete": "WEG anuncia fábrica nova para motores de carros elétricos",
+    "explicacao": "A WEG fabrica motores e equipamentos elétricos e vende para o mundo todo. Com a fábrica nova, ela entra forte no mercado de carros elétricos, que cresce rápido. Investidores apostam em mais vendas no futuro.",
+    "impactoSetores": { "Indústria e Papel": 1 },
+    "impactoAcoes": { "WEGE3": 6 },
+    "motivos": { "WEGE3": "Aposta num mercado em crescimento", "Indústria e Papel": "Indústria investe em inovação" }
+  },
+  {
+    "id": "vale-recompra",
+    "manchete": "Vale anuncia que vai recomprar bilhões em ações próprias",
+    "explicacao": "Na recompra, a empresa usa seu dinheiro para comprar as próprias ações na bolsa. Com menos ações circulando, cada uma passa a representar um pedaço maior da empresa. É um sinal de que a direção acha a ação barata.",
+    "impactoSetores": { "Mineração e Siderurgia": 1 },
+    "impactoAcoes": { "VALE3": 5 },
+    "motivos": { "VALE3": "Empresa compra as próprias ações", "Mineração e Siderurgia": "Setor fica mais atraente" }
+  },
+  {
+    "id": "magalu-black-friday",
+    "manchete": "Magazine Luiza bate recorde de vendas na Black Friday",
+    "explicacao": "A Black Friday é o dia de promoções mais importante do varejo. Um recorde de vendas mostra que a empresa está atraindo clientes, principalmente no site e no aplicativo. O setor todo se anima com o consumo forte.",
+    "impactoSetores": { "Varejo e Consumo": 2 },
+    "impactoAcoes": { "MGLU3": 8 },
+    "motivos": { "MGLU3": "Vendas recordes", "Varejo e Consumo": "Consumo forte anima o setor" }
+  },
+  {
+    "id": "ambev-sem-alcool",
+    "manchete": "Cerveja sem álcool da Ambev vira febre entre os jovens adultos",
+    "explicacao": "Muitas pessoas estão bebendo menos álcool. A Ambev investiu cedo em cervejas sem álcool e agora colhe os frutos com vendas crescendo rápido. Isso mostra como acompanhar mudanças de comportamento ajuda uma empresa.",
+    "impactoSetores": { "Alimentos e Bebidas": 1 },
+    "impactoAcoes": { "ABEV3": 6 },
+    "motivos": { "ABEV3": "Produto novo vende muito", "Alimentos e Bebidas": "Setor se anima com a novidade" }
+  },
+  {
+    "id": "copa-do-mundo",
+    "manchete": "Copa do Mundo começa e o Brasil para para ver os jogos",
+    "explicacao": "Em época de Copa, as pessoas compram mais cerveja, salgadinhos, televisões e camisas da seleção. As operadoras de internet ganham com o streaming dos jogos. Já nas fábricas, a produção cai um pouco nos dias de jogo.",
+    "impactoSetores": { "Alimentos e Bebidas": 4, "Varejo e Consumo": 3, "Tecnologia e Telecom": 2, "Indústria e Papel": -1 },
+    "motivos": { "Alimentos e Bebidas": "Mais cerveja e petiscos", "Varejo e Consumo": "TVs e camisas vendem mais", "Tecnologia e Telecom": "Mais uso de internet", "Indústria e Papel": "Fábricas param nos jogos" }
+  },
+  {
+    "id": "ia-nas-empresas",
+    "manchete": "Empresas brasileiras aceleram o uso de inteligência artificial",
+    "explicacao": "A inteligência artificial ajuda empresas a atender clientes, prever vendas e cortar custos. Empresas de tecnologia vendem mais software e serviços, e bancos e lojas que usam IA ficam mais eficientes.",
+    "impactoSetores": { "Tecnologia e Telecom": 6, "Bancos e Finanças": 2, "Varejo e Consumo": 1 },
+    "motivos": { "Tecnologia e Telecom": "Mais procura por software", "Bancos e Finanças": "Atendimento mais eficiente", "Varejo e Consumo": "Vendas mais inteligentes" }
+  },
+  {
+    "id": "jovens-academia",
+    "manchete": "Pesquisa mostra jovens trocando refrigerante por academia",
+    "explicacao": "Mudanças de hábito mexem com as empresas. Se as pessoas se preocupam mais com a saúde, academias e farmácias ganham clientes, enquanto fabricantes de refrigerantes e bebidas açucaradas precisam se reinventar.",
+    "impactoSetores": { "Saúde": 4, "Alimentos e Bebidas": -3 },
+    "motivos": { "Saúde": "Mais gente cuidando da saúde", "Alimentos e Bebidas": "Menos consumo de refrigerante" }
+  },
+  {
+    "id": "compras-online-crescem",
+    "manchete": "Compras pela internet crescem 30% em um ano",
+    "explicacao": "Cada compra online precisa ser entregue, então as empresas de transporte e logística ganham muito com esse crescimento. As lojas que vendem bem pela internet também se beneficiam, porque alcançam clientes no país inteiro.",
+    "impactoSetores": { "Transporte e Logística": 4, "Varejo e Consumo": 2 },
+    "motivos": { "Transporte e Logística": "Mais entregas para fazer", "Varejo e Consumo": "Lojas online vendem mais" }
+  }
+]
