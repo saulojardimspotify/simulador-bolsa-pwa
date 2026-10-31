@@ -1,0 +1,613 @@
+{
+  "dataReferencia": "2026-10-30",
+  "acoes": [
+    {
+      "ticker": "ABEV3",
+      "nome": "Ambev",
+      "setor": "Alimentos e Bebidas",
+      "porte": "Grande",
+      "bonsDividendos": true,
+      "preco": 14.6
+    },
+    {
+      "ticker": "ALOS3",
+      "nome": "Allos",
+      "setor": "Construção e Imóveis",
+      "porte": "Média",
+      "bonsDividendos": true,
+      "preco": 23.5
+    },
+    {
+      "ticker": "ASAI3",
+      "nome": "Assaí",
+      "setor": "Varejo e Consumo",
+      "porte": "Média",
+      "bonsDividendos": false,
+      "preco": 7.88
+    },
+    {
+      "ticker": "AURE3",
+      "nome": "Auren Energia",
+      "setor": "Energia e Saneamento",
+      "porte": "Média",
+      "bonsDividendos": false,
+      "preco": 10.87
+    },
+    {
+      "ticker": "AXIA3",
+      "nome": "Axia (Eletrobras)",
+      "setor": "Energia e Saneamento",
+      "porte": "Grande",
+      "bonsDividendos": false,
+      "preco": 47.43
+    },
+    {
+      "ticker": "AZZA3",
+      "nome": "Azzas 2154",
+      "setor": "Varejo e Consumo",
+      "porte": "Pequena",
+      "bonsDividendos": false,
+      "preco": 14.33
+    },
+    {
+      "ticker": "B3SA3",
+      "nome": "B3",
+      "setor": "Bancos e Finanças",
+      "porte": "Grande",
+      "bonsDividendos": false,
+      "preco": 13.43
+    },
+    {
+      "ticker": "BBAS3",
+      "nome": "Banco do Brasil",
+      "setor": "Bancos e Finanças",
+      "porte": "Grande",
+      "bonsDividendos": true,
+      "preco": 16.47
+    },
+    {
+      "ticker": "BBDC3",
+      "nome": "Bradesco ON",
+      "setor": "Bancos e Finanças",
+      "porte": "Grande",
+      "bonsDividendos": true,
+      "preco": 12.71
+    },
+    {
+      "ticker": "BBDC4",
+      "nome": "Bradesco PN",
+      "setor": "Bancos e Finanças",
+      "porte": "Grande",
+      "bonsDividendos": true,
+      "preco": 13.86
+    },
+    {
+      "ticker": "BBSE3",
+      "nome": "BB Seguridade",
+      "setor": "Bancos e Finanças",
+      "porte": "Grande",
+      "bonsDividendos": true,
+      "preco": 41.32
+    },
+    {
+      "ticker": "BEEF3",
+      "nome": "Minerva Foods",
+      "setor": "Agronegócio",
+      "porte": "Pequena",
+      "bonsDividendos": false,
+      "preco": 2.55
+    },
+    {
+      "ticker": "BPAC11",
+      "nome": "BTG Pactual",
+      "setor": "Bancos e Finanças",
+      "porte": "Grande",
+      "bonsDividendos": false,
+      "preco": 51.52
+    },
+    {
+      "ticker": "BRAP4",
+      "nome": "Bradespar",
+      "setor": "Mineração e Siderurgia",
+      "porte": "Pequena",
+      "bonsDividendos": true,
+      "preco": 18.27
+    },
+    {
+      "ticker": "BRAV3",
+      "nome": "Brava Energia",
+      "setor": "Petróleo e Gás",
+      "porte": "Pequena",
+      "bonsDividendos": false,
+      "preco": 18.42
+    },
+    {
+      "ticker": "CEAB3",
+      "nome": "C&A",
+      "setor": "Varejo e Consumo",
+      "porte": "Pequena",
+      "bonsDividendos": false,
+      "preco": 6.55
+    },
+    {
+      "ticker": "CMIG4",
+      "nome": "Cemig",
+      "setor": "Energia e Saneamento",
+      "porte": "Média",
+      "bonsDividendos": true,
+      "preco": 10.07
+    },
+    {
+      "ticker": "CMIN3",
+      "nome": "CSN Mineração",
+      "setor": "Mineração e Siderurgia",
+      "porte": "Média",
+      "bonsDividendos": true,
+      "preco": 4.86
+    },
+    {
+      "ticker": "COGN3",
+      "nome": "Cogna Educação",
+      "setor": "Varejo e Consumo",
+      "porte": "Pequena",
+      "bonsDividendos": false,
+      "preco": 1.58
+    },
+    {
+      "ticker": "CPFE3",
+      "nome": "CPFL Energia",
+      "setor": "Energia e Saneamento",
+      "porte": "Média",
+      "bonsDividendos": true,
+      "preco": 41.9
+    },
+    {
+      "ticker": "CPLE3",
+      "nome": "Copel",
+      "setor": "Energia e Saneamento",
+      "porte": "Média",
+      "bonsDividendos": false,
+      "preco": 14.32
+    },
+    {
+      "ticker": "CSAN3",
+      "nome": "Cosan",
+      "setor": "Agronegócio",
+      "porte": "Pequena",
+      "bonsDividendos": false,
+      "preco": 2.33
+    },
+    {
+      "ticker": "CSMG3",
+      "nome": "Copasa",
+      "setor": "Energia e Saneamento",
+      "porte": "Pequena",
+      "bonsDividendos": true,
+      "preco": 48.11
+    },
+    {
+      "ticker": "CSNA3",
+      "nome": "CSN Siderúrgica",
+      "setor": "Mineração e Siderurgia",
+      "porte": "Pequena",
+      "bonsDividendos": false,
+      "preco": 3.88
+    },
+    {
+      "ticker": "CURY3",
+      "nome": "Cury",
+      "setor": "Construção e Imóveis",
+      "porte": "Pequena",
+      "bonsDividendos": true,
+      "preco": 25.9
+    },
+    {
+      "ticker": "CXSE3",
+      "nome": "Caixa Seguridade",
+      "setor": "Bancos e Finanças",
+      "porte": "Média",
+      "bonsDividendos": true,
+      "preco": 21.38
+    },
+    {
+      "ticker": "CYRE3",
+      "nome": "Cyrela",
+      "setor": "Construção e Imóveis",
+      "porte": "Média",
+      "bonsDividendos": true,
+      "preco": 17.09
+    },
+    {
+      "ticker": "DIRR3",
+      "nome": "Direcional",
+      "setor": "Construção e Imóveis",
+      "porte": "Pequena",
+      "bonsDividendos": true,
+      "preco": 8.06
+    },
+    {
+      "ticker": "EGIE3",
+      "nome": "Engie Brasil",
+      "setor": "Energia e Saneamento",
+      "porte": "Média",
+      "bonsDividendos": true,
+      "preco": 26.26
+    },
+    {
+      "ticker": "EMBJ3",
+      "nome": "Embraer",
+      "setor": "Indústria e Papel",
+      "porte": "Grande",
+      "bonsDividendos": false,
+      "preco": 99.62
+    },
+    {
+      "ticker": "ENEV3",
+      "nome": "Eneva",
+      "setor": "Energia e Saneamento",
+      "porte": "Média",
+      "bonsDividendos": false,
+      "preco": 25.7
+    },
+    {
+      "ticker": "ENGI11",
+      "nome": "Energisa",
+      "setor": "Energia e Saneamento",
+      "porte": "Média",
+      "bonsDividendos": false,
+      "preco": 44.29
+    },
+    {
+      "ticker": "EQTL3",
+      "nome": "Equatorial",
+      "setor": "Energia e Saneamento",
+      "porte": "Média",
+      "bonsDividendos": false,
+      "preco": 32.6
+    },
+    {
+      "ticker": "FLRY3",
+      "nome": "Fleury",
+      "setor": "Saúde",
+      "porte": "Pequena",
+      "bonsDividendos": true,
+      "preco": 20.47
+    },
+    {
+      "ticker": "GGBR4",
+      "nome": "Gerdau",
+      "setor": "Mineração e Siderurgia",
+      "porte": "Média",
+      "bonsDividendos": false,
+      "preco": 25.13
+    },
+    {
+      "ticker": "GOAU4",
+      "nome": "Metalúrgica Gerdau",
+      "setor": "Mineração e Siderurgia",
+      "porte": "Pequena",
+      "bonsDividendos": false,
+      "preco": 11.11
+    },
+    {
+      "ticker": "HAPV3",
+      "nome": "Hapvida",
+      "setor": "Saúde",
+      "porte": "Média",
+      "bonsDividendos": false,
+      "preco": 4.2
+    },
+    {
+      "ticker": "HYPE3",
+      "nome": "Hypera Pharma",
+      "setor": "Saúde",
+      "porte": "Média",
+      "bonsDividendos": false,
+      "preco": 21.27
+    },
+    {
+      "ticker": "IGTI11",
+      "nome": "Iguatemi",
+      "setor": "Construção e Imóveis",
+      "porte": "Pequena",
+      "bonsDividendos": false,
+      "preco": 21.79
+    },
+    {
+      "ticker": "ISAE4",
+      "nome": "ISA Energia",
+      "setor": "Energia e Saneamento",
+      "porte": "Média",
+      "bonsDividendos": true,
+      "preco": 24.76
+    },
+    {
+      "ticker": "ITSA4",
+      "nome": "Itaúsa",
+      "setor": "Bancos e Finanças",
+      "porte": "Grande",
+      "bonsDividendos": true,
+      "preco": 12.45
+    },
+    {
+      "ticker": "ITUB4",
+      "nome": "Itaú Unibanco",
+      "setor": "Bancos e Finanças",
+      "porte": "Grande",
+      "bonsDividendos": true,
+      "preco": 38.69
+    },
+    {
+      "ticker": "KLBN11",
+      "nome": "Klabin",
+      "setor": "Indústria e Papel",
+      "porte": "Média",
+      "bonsDividendos": false,
+      "preco": 17.2
+    },
+    {
+      "ticker": "LREN3",
+      "nome": "Lojas Renner",
+      "setor": "Varejo e Consumo",
+      "porte": "Média",
+      "bonsDividendos": false,
+      "preco": 8.98
+    },
+    {
+      "ticker": "MBRF3",
+      "nome": "MBRF (Marfrig e BRF)",
+      "setor": "Alimentos e Bebidas",
+      "porte": "Média",
+      "bonsDividendos": false,
+      "preco": 15.61
+    },
+    {
+      "ticker": "MGLU3",
+      "nome": "Magazine Luiza",
+      "setor": "Varejo e Consumo",
+      "porte": "Pequena",
+      "bonsDividendos": false,
+      "preco": 5.35
+    },
+    {
+      "ticker": "MOTV3",
+      "nome": "Motiva (CCR)",
+      "setor": "Transporte e Logística",
+      "porte": "Média",
+      "bonsDividendos": false,
+      "preco": 14
+    },
+    {
+      "ticker": "MRVE3",
+      "nome": "MRV",
+      "setor": "Construção e Imóveis",
+      "porte": "Pequena",
+      "bonsDividendos": false,
+      "preco": 4.05
+    },
+    {
+      "ticker": "MULT3",
+      "nome": "Multiplan",
+      "setor": "Construção e Imóveis",
+      "porte": "Média",
+      "bonsDividendos": false,
+      "preco": 25.19
+    },
+    {
+      "ticker": "NATU3",
+      "nome": "Natura",
+      "setor": "Varejo e Consumo",
+      "porte": "Pequena",
+      "bonsDividendos": false,
+      "preco": 4.86
+    },
+    {
+      "ticker": "PETR3",
+      "nome": "Petrobras ON",
+      "setor": "Petróleo e Gás",
+      "porte": "Grande",
+      "bonsDividendos": true,
+      "preco": 60.01
+    },
+    {
+      "ticker": "PETR4",
+      "nome": "Petrobras PN",
+      "setor": "Petróleo e Gás",
+      "porte": "Grande",
+      "bonsDividendos": true,
+      "preco": 52.71
+    },
+    {
+      "ticker": "POMO4",
+      "nome": "Marcopolo",
+      "setor": "Indústria e Papel",
+      "porte": "Pequena",
+      "bonsDividendos": true,
+      "preco": 3.7
+    },
+    {
+      "ticker": "PRIO3",
+      "nome": "PRIO",
+      "setor": "Petróleo e Gás",
+      "porte": "Média",
+      "bonsDividendos": false,
+      "preco": 71.49
+    },
+    {
+      "ticker": "PSSA3",
+      "nome": "Porto Seguro",
+      "setor": "Bancos e Finanças",
+      "porte": "Média",
+      "bonsDividendos": true,
+      "preco": 44.75
+    },
+    {
+      "ticker": "RADL3",
+      "nome": "Raia Drogasil",
+      "setor": "Saúde",
+      "porte": "Média",
+      "bonsDividendos": false,
+      "preco": 15.22
+    },
+    {
+      "ticker": "RAIL3",
+      "nome": "Rumo",
+      "setor": "Transporte e Logística",
+      "porte": "Média",
+      "bonsDividendos": false,
+      "preco": 13.78
+    },
+    {
+      "ticker": "RDOR3",
+      "nome": "Rede D'Or",
+      "setor": "Saúde",
+      "porte": "Grande",
+      "bonsDividendos": false,
+      "preco": 31.68
+    },
+    {
+      "ticker": "RENT3",
+      "nome": "Localiza",
+      "setor": "Transporte e Logística",
+      "porte": "Média",
+      "bonsDividendos": false,
+      "preco": 27.85
+    },
+    {
+      "ticker": "SANB11",
+      "nome": "Santander Brasil",
+      "setor": "Bancos e Finanças",
+      "porte": "Grande",
+      "bonsDividendos": true,
+      "preco": 23.94
+    },
+    {
+      "ticker": "SBSP3",
+      "nome": "Sabesp",
+      "setor": "Energia e Saneamento",
+      "porte": "Grande",
+      "bonsDividendos": false,
+      "preco": 24.7
+    },
+    {
+      "ticker": "SMFT3",
+      "nome": "Smart Fit",
+      "setor": "Saúde",
+      "porte": "Média",
+      "bonsDividendos": false,
+      "preco": 15.52
+    },
+    {
+      "ticker": "SUZB3",
+      "nome": "Suzano",
+      "setor": "Indústria e Papel",
+      "porte": "Grande",
+      "bonsDividendos": false,
+      "preco": 50.14
+    },
+    {
+      "ticker": "TAEE11",
+      "nome": "Taesa",
+      "setor": "Energia e Saneamento",
+      "porte": "Pequena",
+      "bonsDividendos": true,
+      "preco": 39.59
+    },
+    {
+      "ticker": "TEND3",
+      "nome": "Tenda",
+      "setor": "Construção e Imóveis",
+      "porte": "Pequena",
+      "bonsDividendos": false,
+      "preco": 20.01
+    },
+    {
+      "ticker": "TIMS3",
+      "nome": "TIM",
+      "setor": "Tecnologia e Telecom",
+      "porte": "Média",
+      "bonsDividendos": true,
+      "preco": 19.17
+    },
+    {
+      "ticker": "TOTS3",
+      "nome": "Totvs",
+      "setor": "Tecnologia e Telecom",
+      "porte": "Média",
+      "bonsDividendos": false,
+      "preco": 32
+    },
+    {
+      "ticker": "UGPA3",
+      "nome": "Ultrapar (Ipiranga)",
+      "setor": "Petróleo e Gás",
+      "porte": "Média",
+      "bonsDividendos": false,
+      "preco": 31.76
+    },
+    {
+      "ticker": "USIM5",
+      "nome": "Usiminas",
+      "setor": "Mineração e Siderurgia",
+      "porte": "Pequena",
+      "bonsDividendos": false,
+      "preco": 5
+    },
+    {
+      "ticker": "VALE3",
+      "nome": "Vale",
+      "setor": "Mineração e Siderurgia",
+      "porte": "Grande",
+      "bonsDividendos": true,
+      "preco": 62.02
+    },
+    {
+      "ticker": "VAMO3",
+      "nome": "Vamos",
+      "setor": "Transporte e Logística",
+      "porte": "Pequena",
+      "bonsDividendos": false,
+      "preco": 2.38
+    },
+    {
+      "ticker": "VBBR3",
+      "nome": "Vibra Energia",
+      "setor": "Petróleo e Gás",
+      "porte": "Média",
+      "bonsDividendos": true,
+      "preco": 29.6
+    },
+    {
+      "ticker": "VIVA3",
+      "nome": "Vivara",
+      "setor": "Varejo e Consumo",
+      "porte": "Pequena",
+      "bonsDividendos": false,
+      "preco": 17.3
+    },
+    {
+      "ticker": "VIVT3",
+      "nome": "Vivo (Telefônica)",
+      "setor": "Tecnologia e Telecom",
+      "porte": "Grande",
+      "bonsDividendos": true,
+      "preco": 30.7
+    },
+    {
+      "ticker": "WEGE3",
+      "nome": "WEG",
+      "setor": "Indústria e Papel",
+      "porte": "Grande",
+      "bonsDividendos": false,
+      "preco": 48.36
+    },
+    {
+      "ticker": "YDUQ3",
+      "nome": "Yduqs",
+      "setor": "Varejo e Consumo",
+      "porte": "Pequena",
+      "bonsDividendos": false,
+      "preco": 8.91
+    }
+  ]
+}
