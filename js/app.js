@@ -104,7 +104,7 @@ async function carregarDados() {
     estado.dataReferencia = acoes.dataReferencia;
     estado.eventos = eventos;
     document.getElementById('aviso').textContent =
-      `Simulação educativa: eventos e impactos fictícios. Preços de ${formatarData(acoes.dataReferencia)}.`;
+      `Preços de ${formatarData(acoes.dataReferencia)} · Simulação educativa`;
     montarLetreiro();
     novaPartida();
     atualizarRankingDoDia();

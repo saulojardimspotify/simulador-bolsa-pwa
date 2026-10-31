@@ -13,7 +13,7 @@ export function render(container, estado, irPara) {
       el('p', { class: 'selo-texto' }, '📈 Bolsa de Valores'),
       el('h1', { class: 'inicio-titulo' }, 'Simulador da Bolsa'),
       el('p', { class: 'inicio-sub' },
-        'Você ganhou ', el('b', {}, 'R$ 10.000'), ' de mentirinha. Escolha 3 ações do IBOVESPA, ',
+        'Você tem ', el('b', {}, 'R$ 10.000'), ' para investir. Escolha 3 ações do IBOVESPA, ',
         'acompanhe 5 notícias e descubra como elas mexem com o seu dinheiro.'),
       el('ol', { class: 'inicio-passos' },
         el('li', {}, 'Monte sua carteira'),
