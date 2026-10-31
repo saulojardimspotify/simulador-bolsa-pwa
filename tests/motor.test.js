@@ -72,6 +72,28 @@ test('variacaoAcao: setor não citado fica em zero', () => {
   assert.equal(r.motivo, null);
 });
 
+test('variacaoAcao: ação fora dos setores citados acompanha o mercado', () => {
+  const ev = { ...selic, impactoMercado: -2 };
+  const r = variacaoAcao(PETR, ev, meio);
+  assert.equal(r.pct, -2);
+  assert.equal(r.afetada, false);
+  assert.equal(r.origem, 'mercado');
+  assert.equal(r.motivo, 'Acompanhou o mercado');
+  assert.equal(variacaoAcao(PETR, { ...ev, motivoMercado: 'Bolsa toda caiu' }, meio).motivo, 'Bolsa toda caiu');
+});
+
+test('variacaoAcao: ruído nunca inverte o sinal de um efeito pequeno', () => {
+  const ev = { id: 'e', impactoSetores: {}, impactoMercado: -0.5 };
+  assert.ok(variacaoAcao(PETR, ev, () => 0.999999).pct < 0);
+  assert.ok(variacaoAcao(PETR, ev, () => 0).pct < 0);
+  assert.ok(Math.abs(variacaoAcao(PETR, ev, () => 0).pct - -0.65) < 1e-9);
+});
+
+test('variacaoAcao: origem indica de onde veio o impacto', () => {
+  assert.equal(variacaoAcao(MGLU, selic, meio).origem, 'acao');
+  assert.equal(variacaoAcao(LREN, selic, meio).origem, 'setor');
+});
+
 test('variacaoAcao: ação não afetada não recebe ruído', () => {
   assert.equal(variacaoAcao(PETR, selic, () => 0).pct, 0);
   assert.equal(variacaoAcao(PETR, selic, () => 0.99).pct, 0);

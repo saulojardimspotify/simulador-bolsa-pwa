@@ -19,7 +19,9 @@
       "Tecnologia e Telecom": "Empresas de crescimento sofrem com juros altos",
       "MGLU3": "Depende muito de vendas parceladas"
     },
-    "grupo": "juros"
+    "grupo": "juros",
+    "impactoMercado": -2,
+    "motivoMercado": "Juros altos derrubam a bolsa toda"
   },
   {
     "id": "selic-cai",
@@ -37,25 +39,25 @@
       "Bancos e Finanças": "Margem dos empréstimos diminui",
       "Tecnologia e Telecom": "Investidores voltam a apostar em crescimento"
     },
-    "grupo": "juros"
+    "grupo": "juros",
+    "impactoMercado": 2,
+    "motivoMercado": "Juros baixos animam a bolsa toda"
   },
   {
     "id": "inflacao-dispara",
     "manchete": "Inflação acelera e preços nos supermercados sobem pelo terceiro mês seguido",
-    "explicacao": "Inflação é a alta geral dos preços. Quando ela acelera, o salário compra menos coisas e as famílias cortam gastos com roupas, eletrônicos e até remédios. Empresas de energia, por outro lado, têm contratos com tarifas corrigidas pela inflação.",
+    "explicacao": "Inflação é a alta geral dos preços. Quando a comida fica mais cara, sobra menos dinheiro no fim do mês e as famílias cortam roupas, eletrônicos e passeios. As empresas de alimentos pagam mais pelos ingredientes e vendem menos.",
     "impactoSetores": {
       "Varejo e Consumo": -5,
-      "Alimentos e Bebidas": -3,
-      "Saúde": -2,
-      "Energia e Saneamento": 2
+      "Alimentos e Bebidas": -2
     },
     "motivos": {
       "Varejo e Consumo": "Família com menos dinheiro compra menos",
-      "Alimentos e Bebidas": "Custos sobem e consumo cai",
-      "Saúde": "Clientes cortam gastos",
-      "Energia e Saneamento": "Tarifas são reajustadas pela inflação"
+      "Alimentos e Bebidas": "Custos sobem e consumo cai"
     },
-    "grupo": "inflacao"
+    "grupo": "inflacao",
+    "impactoMercado": -1.5,
+    "motivoMercado": "Medo de juros mais altos pesa na bolsa"
   },
   {
     "id": "inflacao-controlada",
@@ -71,7 +73,9 @@
       "Alimentos e Bebidas": "Consumo volta a crescer",
       "Construção e Imóveis": "Famílias planejam comprar imóvel"
     },
-    "grupo": "inflacao"
+    "grupo": "inflacao",
+    "impactoMercado": 1.5,
+    "motivoMercado": "Chance de juros menores anima a bolsa"
   },
   {
     "id": "dolar-dispara",
@@ -83,7 +87,8 @@
       "Agronegócio": 5,
       "Varejo e Consumo": -4,
       "Tecnologia e Telecom": -3,
-      "Petróleo e Gás": 3
+      "Petróleo e Gás": 3,
+      "Saúde": -2
     },
     "motivos": {
       "Indústria e Papel": "Exporta e recebe em dólar",
@@ -91,9 +96,12 @@
       "Agronegócio": "Exporta carne e grãos em dólar",
       "Varejo e Consumo": "Produtos importados ficam caros",
       "Tecnologia e Telecom": "Equipamentos importados encarecem",
-      "Petróleo e Gás": "Petróleo é vendido em dólar"
+      "Petróleo e Gás": "Petróleo é vendido em dólar",
+      "Saúde": "Remédios e equipamentos importados encarecem"
     },
-    "grupo": "cambio"
+    "grupo": "cambio",
+    "impactoMercado": -1,
+    "motivoMercado": "Estrangeiros saindo derrubam a bolsa"
   },
   {
     "id": "dolar-despenca",
@@ -105,7 +113,8 @@
       "Agronegócio": -4,
       "Varejo e Consumo": 4,
       "Tecnologia e Telecom": 3,
-      "Petróleo e Gás": -3
+      "Petróleo e Gás": -3,
+      "Saúde": 2
     },
     "motivos": {
       "Indústria e Papel": "Exportação rende menos reais",
@@ -113,9 +122,12 @@
       "Agronegócio": "Exportação rende menos reais",
       "Varejo e Consumo": "Importados ficam baratos",
       "Tecnologia e Telecom": "Equipamentos ficam mais baratos",
-      "Petróleo e Gás": "Petróleo vendido em dólar rende menos reais"
+      "Petróleo e Gás": "Petróleo vendido em dólar rende menos reais",
+      "Saúde": "Remédios e equipamentos importados ficam baratos"
     },
-    "grupo": "cambio"
+    "grupo": "cambio",
+    "impactoMercado": 1,
+    "motivoMercado": "Dinheiro estrangeiro entrando na bolsa"
   },
   {
     "id": "pib-forte",
@@ -133,7 +145,9 @@
       "Construção e Imóveis": "Demanda por imóveis aumenta",
       "Transporte e Logística": "Mais mercadorias circulando"
     },
-    "grupo": "pib"
+    "grupo": "pib",
+    "impactoMercado": 2,
+    "motivoMercado": "Economia forte anima a bolsa toda"
   },
   {
     "id": "recessao",
@@ -155,7 +169,9 @@
       "Indústria e Papel": "Fábricas produzem menos",
       "Petróleo e Gás": "Menos consumo de combustível"
     },
-    "grupo": "pib"
+    "grupo": "pib",
+    "impactoMercado": -2.5,
+    "motivoMercado": "Crise econômica derruba a bolsa toda"
   },
   {
     "id": "desemprego-minimo",
@@ -164,30 +180,32 @@
     "impactoSetores": {
       "Varejo e Consumo": 5,
       "Alimentos e Bebidas": 3,
-      "Construção e Imóveis": 3,
-      "Saúde": 2
+      "Construção e Imóveis": 3
     },
     "motivos": {
       "Varejo e Consumo": "Mais salários circulando",
       "Alimentos e Bebidas": "Mais consumo de alimentos e bebidas",
       "Construção e Imóveis": "Mais famílias compram imóvel",
-      "Saúde": "Empresas contratam planos de saúde"
-    }
+      "HAPV3": "Empresas contratam planos de saúde"
+    },
+    "impactoAcoes": {
+      "HAPV3": 3
+    },
+    "impactoMercado": 1.5,
+    "motivoMercado": "Economia aquecida anima a bolsa"
   },
   {
     "id": "crise-bancaria-exterior",
     "manchete": "Quebra de banco nos Estados Unidos espalha medo pelos mercados",
-    "explicacao": "Quando um banco grande quebra lá fora, investidores do mundo todo ficam com medo e vendem ações de risco, principalmente de bancos. Empresas ligadas a commodities, como petróleo e minério, também caem porque se teme uma desaceleração global.",
+    "explicacao": "Quando um banco grande quebra lá fora, investidores do mundo todo ficam com medo e vendem ações, principalmente de bancos. A bolsa inteira cai, mas os bancos sofrem mais porque se teme que o problema se espalhe entre eles.",
     "impactoSetores": {
-      "Bancos e Finanças": -8,
-      "Mineração e Siderurgia": -3,
-      "Petróleo e Gás": -3
+      "Bancos e Finanças": -8
     },
     "motivos": {
-      "Bancos e Finanças": "Medo de contágio entre bancos",
-      "Mineração e Siderurgia": "Medo de a economia mundial frear",
-      "Petróleo e Gás": "Medo de menor demanda por petróleo"
-    }
+      "Bancos e Finanças": "Medo de contágio entre bancos"
+    },
+    "impactoMercado": -2.5,
+    "motivoMercado": "Medo global derruba a bolsa toda"
   },
   {
     "id": "juros-eua-sobem",
@@ -205,7 +223,9 @@
       "Tecnologia e Telecom": "Ações de crescimento perdem atrativo",
       "Varejo e Consumo": "Crédito tende a encarecer"
     },
-    "grupo": "juros-eua"
+    "grupo": "juros-eua",
+    "impactoMercado": -1.5,
+    "motivoMercado": "Estrangeiros tiram dinheiro do Brasil"
   },
   {
     "id": "juros-eua-caem",
@@ -223,7 +243,9 @@
       "Tecnologia e Telecom": "Ações de crescimento voltam à moda",
       "Varejo e Consumo": "Expectativa de crédito mais barato"
     },
-    "grupo": "juros-eua"
+    "grupo": "juros-eua",
+    "impactoMercado": 1.5,
+    "motivoMercado": "Estrangeiros trazem dinheiro ao Brasil"
   },
   {
     "id": "petroleo-dispara",
@@ -241,7 +263,9 @@
       "Agronegócio": "Frete e fertilizantes encarecem",
       "Indústria e Papel": "Energia e frete mais caros"
     },
-    "grupo": "petroleo"
+    "grupo": "petroleo",
+    "impactoMercado": -1,
+    "motivoMercado": "Medo de inflação pesa na bolsa"
   },
   {
     "id": "petroleo-despenca",
@@ -257,7 +281,9 @@
       "Transporte e Logística": "Diesel mais barato",
       "Indústria e Papel": "Energia e frete mais baratos"
     },
-    "grupo": "petroleo"
+    "grupo": "petroleo",
+    "impactoMercado": 0.5,
+    "motivoMercado": "Combustível barato alivia a economia"
   },
   {
     "id": "opep-corta-producao",
@@ -271,35 +297,37 @@
       "Petróleo e Gás": "Barril mais caro aumenta o lucro",
       "Transporte e Logística": "Combustível encarece"
     },
-    "grupo": "petroleo"
+    "grupo": "petroleo",
+    "impactoMercado": -0.5,
+    "motivoMercado": "Combustível mais caro preocupa"
   },
   {
     "id": "minerio-sobe-china",
     "manchete": "China anuncia grande pacote de obras e minério de ferro sobe forte",
     "explicacao": "A China é a maior compradora de minério de ferro do mundo, usado para fazer aço. Quando o governo chinês investe em prédios, pontes e ferrovias, precisa de muito aço, e as mineradoras brasileiras vendem mais e mais caro.",
     "impactoSetores": {
-      "Mineração e Siderurgia": 8,
-      "Transporte e Logística": 2
+      "Mineração e Siderurgia": 8
     },
     "motivos": {
-      "Mineração e Siderurgia": "China compra mais minério",
-      "Transporte e Logística": "Mais carga nas ferrovias e portos"
+      "Mineração e Siderurgia": "China compra mais minério"
     },
-    "grupo": "minerio"
+    "grupo": "minerio",
+    "impactoMercado": 1,
+    "motivoMercado": "China forte anima a bolsa"
   },
   {
     "id": "minerio-cai-china",
     "manchete": "Economia da China desacelera e preço do minério de ferro desaba",
-    "explicacao": "Se a China constrói menos, compra menos minério. Com menos procura, o preço cai e as mineradoras brasileiras faturam menos. Indústrias ligadas à exportação também sentem a freada do maior parceiro comercial do Brasil.",
+    "explicacao": "Se a China constrói menos, compra menos minério. Com menos procura, o preço cai e as mineradoras e siderúrgicas brasileiras faturam menos, já que a China é o maior cliente delas.",
     "impactoSetores": {
-      "Mineração e Siderurgia": -8,
-      "Indústria e Papel": -2
+      "Mineração e Siderurgia": -8
     },
     "motivos": {
-      "Mineração e Siderurgia": "China compra menos minério",
-      "Indústria e Papel": "Exportações para a China caem"
+      "Mineração e Siderurgia": "China compra menos minério"
     },
-    "grupo": "minerio"
+    "grupo": "minerio",
+    "impactoMercado": -1,
+    "motivoMercado": "China fraca preocupa a bolsa"
   },
   {
     "id": "china-compra-carne",
@@ -312,7 +340,9 @@
     "motivos": {
       "Agronegócio": "Novo mercado para a carne brasileira",
       "Alimentos e Bebidas": "Mais exportação de proteína"
-    }
+    },
+    "impactoMercado": 0.5,
+    "motivoMercado": "Exportações maiores animam a bolsa"
   },
   {
     "id": "guerra-comercial",
@@ -332,7 +362,9 @@
       "Tecnologia e Telecom": "Peças importadas encarecem",
       "Petróleo e Gás": "Medo de menos demanda por petróleo"
     },
-    "grupo": "comercio"
+    "grupo": "comercio",
+    "impactoMercado": -2,
+    "motivoMercado": "Comércio mundial em crise derruba a bolsa"
   },
   {
     "id": "acordo-mercosul-ue",
@@ -348,7 +380,9 @@
       "Alimentos e Bebidas": "Exportação de alimentos cresce",
       "Indústria e Papel": "Produtos industriais ficam competitivos"
     },
-    "grupo": "comercio"
+    "grupo": "comercio",
+    "impactoMercado": 1,
+    "motivoMercado": "Mais comércio anima a bolsa"
   },
   {
     "id": "taxa-aco-importado",
@@ -363,20 +397,22 @@
       "Mineração e Siderurgia": "Menos concorrência do aço chinês",
       "Construção e Imóveis": "Aço para obras fica mais caro",
       "Indústria e Papel": "Matéria-prima mais cara"
-    }
+    },
+    "impactoMercado": 0.5,
+    "motivoMercado": "Leve otimismo com a indústria nacional"
   },
   {
     "id": "celulose-recorde",
     "manchete": "Preço da celulose bate recorde com alta procura por embalagens",
-    "explicacao": "Celulose é a matéria-prima do papel e das embalagens de papelão. Com o crescimento das compras online, o mundo precisa de muito mais caixas. O Brasil é um dos maiores produtores, e as fabricantes e as transportadoras ganham com isso.",
+    "explicacao": "Celulose é a matéria-prima do papel e das embalagens de papelão. Com o crescimento das compras online, o mundo precisa de muito mais caixas. O Brasil é um dos maiores produtores, e as fabricantes vendem mais caro.",
     "impactoSetores": {
-      "Indústria e Papel": 7,
-      "Transporte e Logística": 2
+      "Indústria e Papel": 7
     },
     "motivos": {
-      "Indústria e Papel": "Celulose vendida mais cara",
-      "Transporte e Logística": "Mais carga para levar aos portos"
-    }
+      "Indústria e Papel": "Celulose vendida mais cara"
+    },
+    "impactoMercado": 0.5,
+    "motivoMercado": "Exportação forte anima a bolsa"
   },
   {
     "id": "safra-recorde",
@@ -392,7 +428,9 @@
       "Transporte e Logística": "Grãos lotam trens e caminhões",
       "Alimentos e Bebidas": "Ração e insumos mais baratos"
     },
-    "grupo": "safra"
+    "grupo": "safra",
+    "impactoMercado": 1,
+    "motivoMercado": "Agro forte ajuda a economia"
   },
   {
     "id": "seca-centro-oeste",
@@ -410,21 +448,23 @@
       "Energia e Saneamento": "Represas baixas geram menos energia",
       "Alimentos e Bebidas": "Matéria-prima mais cara"
     },
-    "grupo": "clima"
+    "grupo": "clima",
+    "impactoMercado": -1,
+    "motivoMercado": "Seca prejudica a economia"
   },
   {
     "id": "chuvas-enchem-reservatorios",
     "manchete": "Chuvas acima da média enchem as represas das hidrelétricas",
-    "explicacao": "A maior parte da energia do Brasil vem de hidrelétricas. Com as represas cheias, gerar energia fica barato, as empresas do setor lucram mais e a conta de luz das famílias pode cair, sobrando dinheiro para outras compras.",
+    "explicacao": "A maior parte da energia do Brasil vem de hidrelétricas. Com as represas cheias, gerar energia fica barato e as empresas do setor não precisam ligar usinas caras, o que aumenta o lucro delas.",
     "impactoSetores": {
-      "Energia e Saneamento": 5,
-      "Varejo e Consumo": 2
+      "Energia e Saneamento": 5
     },
     "motivos": {
-      "Energia e Saneamento": "Energia barata de gerar",
-      "Varejo e Consumo": "Conta de luz menor sobra dinheiro"
+      "Energia e Saneamento": "Energia barata de gerar"
     },
-    "grupo": "clima"
+    "grupo": "clima",
+    "impactoMercado": 0.5,
+    "motivoMercado": "Energia barata ajuda a economia"
   },
   {
     "id": "el-nino-forte",
@@ -440,7 +480,8 @@
       "Energia e Saneamento": "Geração de energia fica incerta",
       "Alimentos e Bebidas": "Ingredientes podem encarecer"
     },
-    "grupo": "clima"
+    "impactoMercado": -0.5,
+    "motivoMercado": "Incerteza com o clima"
   },
   {
     "id": "gripe-aviaria-controlada",
@@ -453,57 +494,59 @@
     "motivos": {
       "Alimentos e Bebidas": "Exportação de frango liberada",
       "Agronegócio": "Produtores voltam a vender"
-    }
+    },
+    "impactoMercado": 0.5,
+    "motivoMercado": "Exportações liberadas animam a bolsa"
   },
   {
     "id": "apagao-nacional",
     "manchete": "Apagão deixa várias regiões do país sem luz por horas",
-    "explicacao": "Um apagão grande levanta dúvidas sobre a qualidade das empresas de energia, que podem levar multas. Fábricas param, lojas fecham e serviços de internet e telefone ficam fora do ar, causando prejuízo em vários setores.",
+    "explicacao": "Um apagão grande levanta dúvidas sobre a qualidade das empresas de energia, que podem levar multas e ser investigadas. Fábricas param a produção durante horas, o que causa prejuízo para a indústria.",
     "impactoSetores": {
       "Energia e Saneamento": -6,
-      "Indústria e Papel": -3,
-      "Varejo e Consumo": -2,
-      "Tecnologia e Telecom": -2
+      "Indústria e Papel": -3
     },
     "motivos": {
       "Energia e Saneamento": "Risco de multas e investigação",
-      "Indústria e Papel": "Fábricas paradas",
-      "Varejo e Consumo": "Lojas fechadas",
-      "Tecnologia e Telecom": "Serviços fora do ar"
+      "Indústria e Papel": "Fábricas paradas"
     },
-    "grupo": "energia"
+    "impactoMercado": -1,
+    "motivoMercado": "Dia de prejuízo para a economia"
   },
   {
     "id": "leilao-transmissao",
     "manchete": "Governo faz leilão bilionário para novas linhas de transmissão de energia",
-    "explicacao": "Linhas de transmissão levam a energia das usinas até as cidades. As empresas que vencem o leilão garantem receita por cerca de 30 anos. Fabricantes de equipamentos elétricos também ganham, porque recebem grandes encomendas.",
+    "explicacao": "Linhas de transmissão levam a energia das usinas até as cidades. As empresas que vencem o leilão garantem receita por cerca de 30 anos. A WEG, que fabrica equipamentos elétricos, também ganha com as grandes encomendas.",
     "impactoSetores": {
-      "Energia e Saneamento": 5,
-      "Indústria e Papel": 3
+      "Energia e Saneamento": 5
     },
     "motivos": {
-      "Energia e Saneamento": "Receita garantida por décadas",
-      "Indústria e Papel": "Encomendas de equipamentos elétricos"
+      "Energia e Saneamento": "Receita garantida por décadas"
     },
     "impactoAcoes": {
       "WEGE3": 5
     },
-    "grupo": "energia"
+    "impactoMercado": 0.5,
+    "motivoMercado": "Investimentos animam a bolsa"
   },
   {
     "id": "reforma-tributaria-consumo",
     "manchete": "Reforma tributária simplifica impostos sobre produtos do dia a dia",
-    "explicacao": "Hoje o Brasil tem muitos impostos diferentes sobre o consumo, o que deixa tudo mais caro e complicado. Com regras mais simples, lojas e fabricantes gastam menos com burocracia. Alguns serviços financeiros, porém, passam a pagar mais.",
+    "explicacao": "Hoje o Brasil tem muitos impostos diferentes sobre o consumo, o que deixa tudo mais caro e complicado. Com regras mais simples, lojas e fabricantes gastam menos com burocracia, e remédios e serviços de saúde passam a pagar menos imposto. Alguns serviços financeiros, porém, passam a pagar mais.",
     "impactoSetores": {
       "Varejo e Consumo": 4,
       "Alimentos e Bebidas": 3,
-      "Bancos e Finanças": -2
+      "Bancos e Finanças": -2,
+      "Saúde": 2
     },
     "motivos": {
       "Varejo e Consumo": "Menos burocracia e custo",
       "Alimentos e Bebidas": "Impostos mais simples",
-      "Bancos e Finanças": "Serviços financeiros pagam mais"
-    }
+      "Bancos e Finanças": "Serviços financeiros pagam mais",
+      "Saúde": "Remédios e saúde terão imposto reduzido"
+    },
+    "impactoMercado": 1,
+    "motivoMercado": "Impostos mais simples animam a bolsa"
   },
   {
     "id": "bancos-mais-capital",
@@ -514,69 +557,84 @@
     },
     "motivos": {
       "Bancos e Finanças": "Menos dinheiro para emprestar"
-    }
+    },
+    "impactoMercado": -0.5,
+    "motivoMercado": "Menos crédito na economia"
   },
   {
     "id": "programa-habitacao",
     "manchete": "Governo amplia programa de casas populares com juros baixos",
-    "explicacao": "Programas de habitação ajudam famílias de renda mais baixa a comprar a casa própria. As construtoras focadas nesse público vendem muito mais, e aumenta a procura por aço, cimento e financiamentos.",
+    "explicacao": "Programas de habitação ajudam famílias de renda mais baixa a comprar a casa própria. As construtoras focadas nesse público, como Cury, Direcional, Tenda e MRV, vendem muito mais, e aumenta a procura por aço para as obras.",
     "impactoSetores": {
       "Construção e Imóveis": 8,
-      "Mineração e Siderurgia": 2,
-      "Bancos e Finanças": 2
+      "Mineração e Siderurgia": 2
     },
     "motivos": {
       "Construção e Imóveis": "Muito mais casas vendidas",
-      "Mineração e Siderurgia": "Mais aço para as obras",
-      "Bancos e Finanças": "Mais financiamentos"
+      "Mineração e Siderurgia": "Mais aço para as obras"
     },
     "impactoAcoes": {
       "CURY3": 10,
       "DIRR3": 10,
       "TEND3": 10,
       "MRVE3": 10
-    }
+    },
+    "impactoMercado": 0.5,
+    "motivoMercado": "Mais obras animam a economia"
   },
   {
     "id": "planos-saude-reajuste",
     "manchete": "Agência autoriza reajuste maior nos planos de saúde",
-    "explicacao": "A ANS é a agência que regula os planos de saúde. Com um reajuste maior autorizado, as operadoras recebem mais por cliente e conseguem cobrir melhor os custos de consultas e cirurgias. Para as famílias, a mensalidade fica mais cara.",
-    "impactoSetores": {
-      "Saúde": 5
-    },
+    "explicacao": "A ANS é a agência que regula os planos de saúde. Com um reajuste maior autorizado, as operadoras, como a Hapvida e a SulAmérica (da Rede D'Or), recebem mais por cliente e cobrem melhor os custos de consultas e cirurgias. Para as famílias, a mensalidade fica mais cara.",
+    "impactoSetores": {},
     "motivos": {
-      "Saúde": "Operadoras recebem mais por cliente"
+      "HAPV3": "Operadora recebe mais por cliente",
+      "RDOR3": "Dona da SulAmérica, recebe mais por cliente"
     },
-    "grupo": "saude-regras"
+    "grupo": "saude-regras",
+    "impactoAcoes": {
+      "HAPV3": 6,
+      "RDOR3": 3
+    },
+    "impactoMercado": 0.5,
+    "motivoMercado": "Dia tranquilo na bolsa"
   },
   {
     "id": "regra-planos-saude",
     "manchete": "Nova regra obriga planos de saúde a cobrir mais tratamentos",
-    "explicacao": "Quando os planos de saúde precisam cobrir mais exames e tratamentos, os custos das operadoras sobem bastante. Isso é bom para os pacientes, mas reduz o lucro das empresas do setor no curto prazo.",
-    "impactoSetores": {
-      "Saúde": -6
-    },
+    "explicacao": "Quando os planos de saúde precisam cobrir mais exames e tratamentos, os custos das operadoras, como a Hapvida e a SulAmérica (da Rede D'Or), sobem bastante. É bom para os pacientes, mas reduz o lucro dessas empresas no curto prazo.",
+    "impactoSetores": {},
     "motivos": {
-      "Saúde": "Custos das operadoras aumentam"
+      "HAPV3": "Operadora passa a gastar mais",
+      "RDOR3": "Dona da SulAmérica, gasta mais"
     },
-    "grupo": "saude-regras"
+    "grupo": "saude-regras",
+    "impactoAcoes": {
+      "HAPV3": -7,
+      "RDOR3": -3
+    },
+    "impactoMercado": -0.5,
+    "motivoMercado": "Dia sem grandes novidades na bolsa"
   },
   {
     "id": "epidemia-dengue",
     "manchete": "Epidemia de dengue lota hospitais e farmácias pelo país",
-    "explicacao": "Nem toda empresa de saúde reage igual. Farmácias vendem muito mais remédios e repelentes. Já os planos de saúde gastam mais com internações e exames dos clientes, o que aperta o lucro. Mesmo setor, efeitos opostos!",
-    "impactoSetores": {
-      "Saúde": 2
-    },
+    "explicacao": "Nem toda empresa de saúde reage igual. Farmácias, fabricantes de remédios e laboratórios de exames vendem mais. Já os planos de saúde gastam mais com internações dos clientes, o que aperta o lucro. Mesmo setor, efeitos opostos!",
+    "impactoSetores": {},
     "impactoAcoes": {
       "RADL3": 6,
+      "HYPE3": 4,
+      "FLRY3": 3,
       "HAPV3": -5
     },
     "motivos": {
-      "Saúde": "Procura por serviços de saúde cresce",
       "RADL3": "Farmácias vendem mais remédios",
+      "HYPE3": "Vende mais remédios",
+      "FLRY3": "Mais exames de dengue",
       "HAPV3": "Plano de saúde paga mais internações"
-    }
+    },
+    "impactoMercado": -0.5,
+    "motivoMercado": "Pessoas doentes faltam ao trabalho"
   },
   {
     "id": "concessao-rodovias",
@@ -589,20 +647,22 @@
     "motivos": {
       "Transporte e Logística": "Novos contratos de longo prazo",
       "Construção e Imóveis": "Mais obras de infraestrutura"
-    }
+    },
+    "impactoMercado": 0.5,
+    "motivoMercado": "Investimentos animam a bolsa"
   },
   {
     "id": "expansao-5g",
     "manchete": "Internet 5G chega a todas as cidades com mais de 50 mil habitantes",
-    "explicacao": "O 5G é uma internet móvel muito mais rápida. Com a expansão, as operadoras ganham mais clientes e vendem planos mais caros. Fabricantes de equipamentos e antenas também recebem encomendas.",
+    "explicacao": "O 5G é uma internet móvel muito mais rápida. Com a expansão, as operadoras de telefonia e as empresas de tecnologia ganham mais clientes e vendem planos e serviços mais caros.",
     "impactoSetores": {
-      "Tecnologia e Telecom": 5,
-      "Indústria e Papel": 2
+      "Tecnologia e Telecom": 5
     },
     "motivos": {
-      "Tecnologia e Telecom": "Mais clientes e planos melhores",
-      "Indústria e Papel": "Encomendas de equipamentos"
-    }
+      "Tecnologia e Telecom": "Mais clientes e planos melhores"
+    },
+    "impactoMercado": 0.5,
+    "motivoMercado": "Tecnologia anima a bolsa"
   },
   {
     "id": "ataque-hacker",
@@ -615,20 +675,28 @@
     "motivos": {
       "Tecnologia e Telecom": "Risco de multas e perda de clientes",
       "Bancos e Finanças": "Gastos extras com segurança"
-    }
+    },
+    "impactoMercado": -0.5,
+    "motivoMercado": "Insegurança digital preocupa"
   },
   {
     "id": "privatizacao-saneamento",
     "manchete": "Novas regras atraem empresas privadas para levar esgoto a todo o país",
     "explicacao": "Milhões de brasileiros ainda não têm esgoto tratado. Com regras novas, empresas de saneamento podem ganhar contratos grandes e longos para resolver isso, e as construtoras ganham as obras de canos e estações de tratamento.",
     "impactoSetores": {
-      "Energia e Saneamento": 6,
       "Construção e Imóveis": 2
     },
     "motivos": {
-      "Energia e Saneamento": "Contratos grandes e longos",
-      "Construção e Imóveis": "Obras de redes de esgoto"
-    }
+      "Construção e Imóveis": "Obras de redes de esgoto",
+      "SBSP3": "Contratos grandes e longos de esgoto",
+      "CSMG3": "Contratos grandes e longos de esgoto"
+    },
+    "impactoAcoes": {
+      "SBSP3": 7,
+      "CSMG3": 7
+    },
+    "impactoMercado": 0.5,
+    "motivoMercado": "Investimentos animam a bolsa"
   },
   {
     "id": "imposto-dividendos",
@@ -645,7 +713,9 @@
       "Energia e Saneamento": "Dividendos rendem menos ao investidor",
       "Petróleo e Gás": "Dividendos rendem menos ao investidor",
       "Tecnologia e Telecom": "Dividendos rendem menos ao investidor"
-    }
+    },
+    "impactoMercado": -1.5,
+    "motivoMercado": "Investidores vendem ações com o novo imposto"
   },
   {
     "id": "petrobras-novo-campo",
@@ -662,7 +732,9 @@
       "PETR3": "Mais reservas de petróleo",
       "PETR4": "Mais reservas de petróleo",
       "Petróleo e Gás": "Setor ganha atenção dos investidores"
-    }
+    },
+    "impactoMercado": 0.5,
+    "motivoMercado": "Maior empresa da bolsa puxa o índice"
   },
   {
     "id": "embraer-encomenda",
@@ -677,7 +749,9 @@
     "motivos": {
       "EMBJ3": "Faturamento garantido por anos",
       "Indústria e Papel": "Indústria brasileira em destaque"
-    }
+    },
+    "impactoMercado": 0.5,
+    "motivoMercado": "Bom humor geral na bolsa"
   },
   {
     "id": "weg-fabrica-nova",
@@ -692,7 +766,9 @@
     "motivos": {
       "WEGE3": "Aposta num mercado em crescimento",
       "Indústria e Papel": "Indústria investe em inovação"
-    }
+    },
+    "impactoMercado": 0.5,
+    "motivoMercado": "Bom humor geral na bolsa"
   },
   {
     "id": "vale-recompra",
@@ -707,7 +783,9 @@
     "motivos": {
       "VALE3": "Empresa compra as próprias ações",
       "Mineração e Siderurgia": "Setor fica mais atraente"
-    }
+    },
+    "impactoMercado": 0.5,
+    "motivoMercado": "Uma das maiores da bolsa puxa o índice"
   },
   {
     "id": "magalu-black-friday",
@@ -722,7 +800,9 @@
     "motivos": {
       "MGLU3": "Vendas recordes",
       "Varejo e Consumo": "Consumo forte anima o setor"
-    }
+    },
+    "impactoMercado": 0.5,
+    "motivoMercado": "Bom humor com o consumo"
   },
   {
     "id": "ambev-sem-alcool",
@@ -737,7 +817,9 @@
     "motivos": {
       "ABEV3": "Produto novo vende muito",
       "Alimentos e Bebidas": "Setor se anima com a novidade"
-    }
+    },
+    "impactoMercado": 0.5,
+    "motivoMercado": "Bom humor geral na bolsa"
   },
   {
     "id": "copa-do-mundo",
@@ -754,35 +836,40 @@
       "Varejo e Consumo": "TVs e camisas vendem mais",
       "Tecnologia e Telecom": "Mais uso de internet",
       "Indústria e Papel": "Fábricas param nos jogos"
-    }
+    },
+    "impactoMercado": 0.5,
+    "motivoMercado": "Clima de festa anima a bolsa"
   },
   {
     "id": "ia-nas-empresas",
     "manchete": "Empresas brasileiras aceleram o uso de inteligência artificial",
-    "explicacao": "A inteligência artificial ajuda empresas a atender clientes, prever vendas e cortar custos. Empresas de tecnologia vendem mais software e serviços, e bancos e lojas que usam IA ficam mais eficientes.",
+    "explicacao": "A inteligência artificial ajuda empresas a atender clientes, prever vendas e cortar custos. Empresas de tecnologia vendem mais software e serviços, e os bancos, que usam muita IA no atendimento, ficam mais eficientes.",
     "impactoSetores": {
       "Tecnologia e Telecom": 6,
-      "Bancos e Finanças": 2,
-      "Varejo e Consumo": 1
+      "Bancos e Finanças": 2
     },
     "motivos": {
       "Tecnologia e Telecom": "Mais procura por software",
-      "Bancos e Finanças": "Atendimento mais eficiente",
-      "Varejo e Consumo": "Vendas mais inteligentes"
-    }
+      "Bancos e Finanças": "Atendimento mais eficiente"
+    },
+    "impactoMercado": 1,
+    "motivoMercado": "Empresas mais eficientes animam a bolsa"
   },
   {
     "id": "jovens-academia",
     "manchete": "Pesquisa mostra jovens trocando refrigerante por academia",
-    "explicacao": "Mudanças de hábito mexem com as empresas. Se as pessoas se preocupam mais com a saúde, academias e farmácias ganham clientes, enquanto fabricantes de refrigerantes e bebidas açucaradas precisam se reinventar.",
-    "impactoSetores": {
-      "Saúde": 4,
-      "Alimentos e Bebidas": -3
-    },
+    "explicacao": "Mudanças de hábito mexem com as empresas. Se os jovens se preocupam mais com a saúde, redes de academia como a Smart Fit ganham clientes, enquanto quem vende refrigerante, como a Ambev, precisa se reinventar.",
+    "impactoSetores": {},
     "motivos": {
-      "Saúde": "Mais gente cuidando da saúde",
-      "Alimentos e Bebidas": "Menos consumo de refrigerante"
-    }
+      "SMFT3": "Mais gente matriculada na academia",
+      "ABEV3": "Vende menos refrigerante"
+    },
+    "impactoAcoes": {
+      "SMFT3": 7,
+      "ABEV3": -3
+    },
+    "impactoMercado": 0.5,
+    "motivoMercado": "Dia tranquilo na bolsa"
   },
   {
     "id": "compras-online-crescem",
@@ -795,6 +882,8 @@
     "motivos": {
       "Transporte e Logística": "Mais entregas para fazer",
       "Varejo e Consumo": "Lojas online vendem mais"
-    }
+    },
+    "impactoMercado": 0.5,
+    "motivoMercado": "Consumo forte anima a bolsa"
   }
 ]

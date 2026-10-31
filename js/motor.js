@@ -45,11 +45,15 @@ export function variacaoAcao(acao, evento, rng = Math.random) {
   const proprio = evento.impactoAcoes?.[acao.ticker];
   const doSetor = evento.impactoSetores?.[acao.setor];
   const base = proprio ?? doSetor;
-  if (base === undefined) return { pct: 0, afetada: false, motivo: null };
-  // O ruído só existe para ações afetadas não ficarem idênticas dentro do mesmo setor.
-  const ruido = rng() * 2 - 1;
+  // O ruído evita ações idênticas no mesmo setor; é proporcional ao impacto para nunca inverter o sinal.
+  const ruido = (b) => (rng() * 2 - 1) * Math.min(1, Math.abs(b) * 0.3);
+  if (base === undefined) {
+    const mercado = evento.impactoMercado;
+    if (!mercado) return { pct: 0, afetada: false, origem: null, motivo: null };
+    return { pct: mercado + ruido(mercado), afetada: false, origem: 'mercado', motivo: evento.motivoMercado ?? 'Acompanhou o mercado' };
+  }
   const motivo = evento.motivos?.[acao.ticker] ?? evento.motivos?.[acao.setor] ?? null;
-  return { pct: base + ruido, afetada: true, motivo };
+  return { pct: base + ruido(base), afetada: true, origem: proprio !== undefined ? 'acao' : 'setor', motivo };
 }
 
 export function valorCarteira(carteira) {

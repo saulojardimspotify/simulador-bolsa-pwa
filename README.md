@@ -32,6 +32,8 @@ As notícias ficam em [`data/eventos.json`](data/eventos.json). Dá para editar 
   "impactoSetores": { "Varejo e Consumo": -6, "Bancos e Finanças": 3 },
   "impactoAcoes": { "MGLU3": -9 },
   "motivos": { "Varejo e Consumo": "Vendas a prazo ficam mais caras" },
+  "impactoMercado": -2,
+  "motivoMercado": "Juros altos derrubam a bolsa toda",
   "grupo": "juros"
 }
 ```
@@ -39,6 +41,8 @@ As notícias ficam em [`data/eventos.json`](data/eventos.json). Dá para editar 
 - **impactoSetores**: quanto (em %) cada setor sobe ou cai. Use os nomes de setor exatamente como em [`js/setores.js`](js/setores.js).
 - **impactoAcoes** (opcional): impacto específico de uma ação; vale mais que o do setor.
 - **motivos** (opcional): frase curta mostrada ao lado da ação, por setor ou por código.
+- **impactoMercado**: quanto (em %, de ±0,5 a ±4) se mexem todas as outras ações, as que não são do setor citado. É o "humor geral da bolsa" com a notícia.
+- **motivoMercado**: frase curta mostrada ao lado dessas ações.
 - **grupo** (opcional): eventos do mesmo grupo nunca saem na mesma partida (ex.: "Selic sobe" e "Selic cai").
 - Impactos entre **−12 e +12**, nunca 0. O banco precisa ter exatamente **50** eventos (os testes conferem).
 

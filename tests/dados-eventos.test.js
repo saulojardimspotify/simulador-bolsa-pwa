@@ -38,9 +38,19 @@ test('eventos.json: impactos válidos', () => {
   }
 });
 
+test('eventos.json: todo evento tem efeito no mercado entre 0,5 e 4 pontos', () => {
+  for (const e of eventos) {
+    const m = e.impactoMercado;
+    assert.ok(typeof m === 'number' && Math.abs(m) >= 0.5 && Math.abs(m) <= 4 && Math.round(m * 10) === m * 10, `${e.id} ${m}`);
+    assert.ok(typeof e.motivoMercado === 'string' && e.motivoMercado.length >= 10 && e.motivoMercado.length <= 70, `${e.id} motivoMercado`);
+  }
+});
+
 test('eventos.json: todo setor aparece em pelo menos 4 eventos', () => {
+  const setorDe = Object.fromEntries(acoes.map((a) => [a.ticker, a.setor]));
   for (const s of SETORES) {
-    const n = eventos.filter((e) => s in e.impactoSetores).length;
+    const n = eventos.filter((e) => s in e.impactoSetores ||
+      Object.keys(e.impactoAcoes ?? {}).some((t) => setorDe[t] === s)).length;
     assert.ok(n >= 4, `${s}: ${n}`);
   }
 });
@@ -57,12 +67,12 @@ test('eventos.json: nenhum grupo com mais de 4 eventos', () => {
   for (const [g, n] of Object.entries(contagem)) assert.ok(n <= 4, `${g}: ${n}`);
 });
 
-test('eventos.json: qualquer ação sozinha na carteira recebe 5 notícias relevantes', () => {
+test('eventos.json: qualquer ação sozinha na carteira recebe ao menos 3 notícias específicas', () => {
   for (const acao of acoes) {
     const carteira = { valorInicial: 1, posicoes: [{ acao, percentual: 100, quantidade: 1, preco: 1 }] };
     for (let i = 0; i < 20; i++) {
       const s = sortearEventos(eventos, 5, Math.random, (e) => eventoAfetaCarteira(e, carteira));
-      assert.ok(s.every((e) => eventoAfetaCarteira(e, carteira)), acao.ticker);
+      assert.ok(s.filter((e) => eventoAfetaCarteira(e, carteira)).length >= 3, acao.ticker);
     }
   }
 });

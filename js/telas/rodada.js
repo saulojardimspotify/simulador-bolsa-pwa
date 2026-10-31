@@ -42,11 +42,11 @@ export function render(container, estado, irPara) {
         seloAcao(acao),
         el('div', { class: 'res-info' },
           el('div', { class: 'card-nome' }, acao.nome, res.investida ? '' : el('span', { class: 'etiqueta' }, 'não investida')),
-          el('div', { class: 'res-motivo' }, res.motivo ?? (res.afetada ? 'Afetada pela notícia' : 'Pouco afetada por esta notícia'))),
+          el('div', { class: 'res-motivo' }, res.motivo ?? 'Afetada pela notícia')),
         el('div', { class: 'res-numeros' },
           precoEl,
           el('span', { class: 'res-pct' }, formatarPct(res.pct)),
-          res.investida && res.afetada ? el('span', { class: 'res-reais' }, `${res.variacaoReais >= 0 ? '+' : '−'}${formatarReais(Math.abs(res.variacaoReais))}`) : null));
+          res.investida && res.pct !== 0 ? el('span', { class: 'res-reais' }, `${res.variacaoReais >= 0 ? '+' : '−'}${formatarReais(Math.abs(res.variacaoReais))}`) : null));
     });
 
     const seguir = el('button', {
@@ -70,7 +70,7 @@ export function render(container, estado, irPara) {
           Math.abs(variacaoTotal) < LIMIAR_IGUAL ? ` (menos de ${LIMIAR_IGUAL.toLocaleString('pt-BR')}% conta como "fica igual")` : '')),
       el('div', { class: 'res-lista' }, linhas),
       r.algumaInvestidaAfetada ? null
-        : el('p', { class: 'ileso' }, 'Seu setor passou ileso desta vez, e isso também é diversificação!'),
+        : el('p', { class: 'ileso' }, 'A notícia não era sobre os setores da sua carteira: suas ações só acompanharam o mercado.'),
       el('div', { class: 'explicacao' }, el('h2', {}, 'Por que isso aconteceu?'), el('p', {}, evento.explicacao)),
       seguir));
 
