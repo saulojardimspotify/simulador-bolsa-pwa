@@ -71,6 +71,18 @@ test('variacaoAcao: setor não citado fica em zero', () => {
   assert.equal(r.motivo, null);
 });
 
+test('variacaoAcao: ação não afetada não recebe ruído', () => {
+  assert.equal(variacaoAcao(PETR, selic, () => 0).pct, 0);
+  assert.equal(variacaoAcao(PETR, selic, () => 0.99).pct, 0);
+});
+
+test('aplicarEvento: carteira sem ação afetada fica exatamente igual', () => {
+  const ev = { id: 'e', manchete: '', explicacao: '', impactoSetores: { 'Saúde': 5 } };
+  const r = aplicarEvento(carteira([PETR, ITUB, LREN], [40, 30, 30]), ev, () => 0);
+  assert.equal(r.valorDepois, r.valorAntes);
+  assert.equal(r.algumaInvestidaAfetada, false);
+});
+
 test('variacaoAcao: motivo por ticker tem prioridade', () => {
   const ev = { ...selic, motivos: { MGLU3: 'Muito endividada', 'Varejo e Consumo': 'Varejo' } };
   assert.equal(variacaoAcao(MGLU, ev, meio).motivo, 'Muito endividada');

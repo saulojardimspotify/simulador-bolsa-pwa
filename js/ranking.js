@@ -19,7 +19,8 @@ const PALAVROES_TRECHO = [
 const PALAVROES_PALAVRA = ['cu', 'pau', 'fdp', 'pqp', 'vsf', 'tnc', 'krl', 'crl', 'bicha', 'piranha', 'macaco', 'mona'];
 
 export function normalizarNome(texto) {
-  return texto.trim().replace(/\s+/g, ' ');
+  return texto.trim().replace(/\s+/g, ' ').toLocaleLowerCase('pt-BR')
+    .replace(/(^|\s)(\S)/g, (_, espaco, letra) => espaco + letra.toLocaleUpperCase('pt-BR'));
 }
 
 function temPalavrao(nome) {

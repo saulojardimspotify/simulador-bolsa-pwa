@@ -21,6 +21,11 @@ test('normalizarNome tira espaços extras', () => {
   assert.equal(normalizarNome('  José   Maria '), 'José Maria');
 });
 
+test('normalizarNome põe a primeira letra de cada nome em maiúscula', () => {
+  assert.equal(normalizarNome('  ana  júlia '), 'Ana Júlia');
+  assert.equal(normalizarNome('ÉRICA'), 'Érica');
+});
+
 test('nomePermitido: aceita letras com acento', () => {
   assert.deepEqual(nomePermitido('José'), { ok: true });
   assert.deepEqual(nomePermitido('  Ana  Júlia '), { ok: true });
