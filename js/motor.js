@@ -8,22 +8,37 @@
  * @typedef {{posicoes:Posicao[], valorInicial:number}} Carteira
  */
 
-export function sortearEventos(eventos, n = 5, rng = Math.random) {
-  const embaralhados = [...eventos];
-  for (let i = embaralhados.length - 1; i > 0; i--) {
+// Variação da carteira (em %) abaixo da qual o palpite certo é "fica igual".
+export const LIMIAR_IGUAL = 0.5;
+
+function embaralhar(lista, rng) {
+  const copia = [...lista];
+  for (let i = copia.length - 1; i > 0; i--) {
     const j = Math.floor(rng() * (i + 1));
-    [embaralhados[i], embaralhados[j]] = [embaralhados[j], embaralhados[i]];
+    [copia[i], copia[j]] = [copia[j], copia[i]];
   }
+  return copia;
+}
+
+export function eventoAfetaCarteira(evento, carteira) {
+  return carteira.posicoes.some((p) => p.percentual > 0 &&
+    (evento.impactoAcoes?.[p.acao.ticker] !== undefined || evento.impactoSetores?.[p.acao.setor] !== undefined));
+}
+
+// Prefere os eventos para os quais `relevante` devolve true; completa com os demais se faltar.
+export function sortearEventos(eventos, n = 5, rng = Math.random, relevante = () => true) {
+  const embaralhados = embaralhar(eventos, rng);
+  const candidatos = [...embaralhados.filter(relevante), ...embaralhados.filter((e) => !relevante(e))];
   const escolhidos = [];
   const grupos = new Set();
-  for (const ev of embaralhados) {
+  for (const ev of candidatos) {
     if (escolhidos.length === n) break;
     if (ev.grupo && grupos.has(ev.grupo)) continue;
     if (ev.grupo) grupos.add(ev.grupo);
     escolhidos.push(ev);
   }
   if (escolhidos.length < n) throw new Error('Eventos insuficientes');
-  return escolhidos;
+  return embaralhar(escolhidos, rng);
 }
 
 export function variacaoAcao(acao, evento, rng = Math.random) {
@@ -70,9 +85,11 @@ export function aplicarEvento(carteira, evento, rng = Math.random) {
 }
 
 export function avaliarPalpite(palpite, valorAntes, valorDepois) {
-  const diferenca = valorDepois - valorAntes;
-  if (diferenca === 0) return true;
-  return palpite === 'sobe' ? diferenca > 0 : diferenca < 0;
+  // Arredonda para evitar que 100,5 vire 0,49999…% por erro de ponto flutuante.
+  const pct = Math.round(((valorDepois - valorAntes) / valorAntes) * 1e6) / 1e4;
+  if (palpite === 'sobe') return pct >= LIMIAR_IGUAL;
+  if (palpite === 'cai') return pct <= -LIMIAR_IGUAL;
+  return Math.abs(pct) < LIMIAR_IGUAL;
 }
 
 export function licaoFinal(carteira, retornoPct) {

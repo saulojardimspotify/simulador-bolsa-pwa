@@ -2,11 +2,12 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { SETORES } from '../js/setores.js';
-import { sortearEventos } from '../js/motor.js';
+import { sortearEventos, eventoAfetaCarteira } from '../js/motor.js';
 
 const ler = (arq) => JSON.parse(readFileSync(new URL(`../data/${arq}`, import.meta.url), 'utf8'));
 const eventos = ler('eventos.json');
-const tickers = new Set(ler('acoes.json').acoes.map((a) => a.ticker));
+const acoes = ler('acoes.json').acoes;
+const tickers = new Set(acoes.map((a) => a.ticker));
 
 test('eventos.json: 50 eventos com ids únicos em kebab-case', () => {
   assert.equal(eventos.length, 50);
@@ -54,6 +55,16 @@ test('eventos.json: nenhum grupo com mais de 4 eventos', () => {
   const contagem = {};
   for (const e of eventos) if (e.grupo) contagem[e.grupo] = (contagem[e.grupo] ?? 0) + 1;
   for (const [g, n] of Object.entries(contagem)) assert.ok(n <= 4, `${g}: ${n}`);
+});
+
+test('eventos.json: qualquer ação sozinha na carteira recebe 5 notícias relevantes', () => {
+  for (const acao of acoes) {
+    const carteira = { valorInicial: 1, posicoes: [{ acao, percentual: 100, quantidade: 1, preco: 1 }] };
+    for (let i = 0; i < 20; i++) {
+      const s = sortearEventos(eventos, 5, Math.random, (e) => eventoAfetaCarteira(e, carteira));
+      assert.ok(s.every((e) => eventoAfetaCarteira(e, carteira)), acao.ticker);
+    }
+  }
 });
 
 test('eventos.json: sorteio sempre funciona', () => {

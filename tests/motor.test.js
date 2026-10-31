@@ -2,6 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   sortearEventos, variacaoAcao, valorCarteira, aplicarEvento, avaliarPalpite, licaoFinal,
+  LIMIAR_IGUAL, eventoAfetaCarteira,
 } from '../js/motor.js';
 import { SETORES, CORES_SETOR } from '../js/setores.js';
 
@@ -127,11 +128,50 @@ test('valorCarteira soma quantidade × preço', () => {
   assert.equal(valorCarteira(carteira([PETR, ITUB, LREN], [40, 30, 30])), 10000);
 });
 
-test('avaliarPalpite', () => {
+test('avaliarPalpite: sobe e cai precisam de pelo menos 0,5%', () => {
+  assert.equal(LIMIAR_IGUAL, 0.5);
   assert.equal(avaliarPalpite('sobe', 100, 101), true);
+  assert.equal(avaliarPalpite('sobe', 100, 100.5), true);
+  assert.equal(avaliarPalpite('sobe', 100, 100.4), false);
   assert.equal(avaliarPalpite('cai', 100, 101), false);
   assert.equal(avaliarPalpite('cai', 100, 99), true);
-  assert.equal(avaliarPalpite('cai', 100, 100), true);
+  assert.equal(avaliarPalpite('cai', 100, 99.6), false);
+  assert.equal(avaliarPalpite('cai', 100, 100), false);
+});
+
+test('avaliarPalpite: fica igual acerta só dentro de ±0,5%', () => {
+  assert.equal(avaliarPalpite('igual', 100, 100), true);
+  assert.equal(avaliarPalpite('igual', 100, 100.4), true);
+  assert.equal(avaliarPalpite('igual', 100, 99.6), true);
+  assert.equal(avaliarPalpite('igual', 100, 100.5), false);
+  assert.equal(avaliarPalpite('igual', 100, 99.5), false);
+});
+
+test('eventoAfetaCarteira: só conta ações com mais de 0%', () => {
+  const c = carteira([PETR, ITUB, LREN], [100, 0, 0]);
+  assert.equal(eventoAfetaCarteira({ impactoSetores: { 'Petróleo e Gás': 3 } }, c), true);
+  assert.equal(eventoAfetaCarteira({ impactoSetores: { 'Bancos e Finanças': 3 } }, c), false);
+  assert.equal(eventoAfetaCarteira({ impactoSetores: {}, impactoAcoes: { PETR4: 5 } }, c), true);
+});
+
+test('sortearEventos: prioriza eventos que afetam a carteira', () => {
+  const eventos = Array.from({ length: 20 }, (_, i) => ({
+    id: `e${i}`, impactoSetores: {}, relevante: i < 6, grupo: i === 0 || i === 1 ? 'juros' : undefined,
+  }));
+  const rng = lcg(7);
+  for (let k = 0; k < 200; k++) {
+    const s = sortearEventos(eventos, 5, rng, (e) => e.relevante);
+    assert.equal(s.length, 5);
+    assert.ok(s.every((e) => e.relevante), s.map((e) => e.id).join());
+    assert.ok(s.filter((e) => e.grupo === 'juros').length <= 1);
+  }
+});
+
+test('sortearEventos: completa com outros quando faltam relevantes', () => {
+  const eventos = Array.from({ length: 10 }, (_, i) => ({ id: `e${i}`, impactoSetores: {}, relevante: i < 2 }));
+  const s = sortearEventos(eventos, 5, lcg(3), (e) => e.relevante);
+  assert.equal(s.length, 5);
+  assert.equal(s.filter((e) => e.relevante).length, 2);
 });
 
 test('sortearEventos: 5 únicos e no máximo 1 por grupo', () => {
