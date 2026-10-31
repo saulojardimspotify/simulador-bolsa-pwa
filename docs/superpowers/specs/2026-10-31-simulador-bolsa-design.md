@@ -22,6 +22,7 @@ PWA educativo para uma feira escolar, usado por alunos do ensino médio num **mo
 |---|---|
 | Preços iniciais | Foto real dos preços, embutida no app (`acoes.json`) |
 | Ações disponíveis | Todas as da carteira atual do IBOVESPA (~85), com filtros |
+| Distribuição | Aluno define % por ação em passos de 10%, total 100%, 0% permitido |
 | Eventos | Banco de **50 eventos**; 5 sorteados por partida, sem contradições |
 | Interação por rodada | Palpite (sobe/desce) antes da revelação + animação |
 | Fim da partida | Resultado individual + Ranking do dia (top 10) |
@@ -32,7 +33,7 @@ PWA educativo para uma feira escolar, usado por alunos do ensino médio num **mo
 ## 3. Telas e fluxo
 
 ```
-Início → Escolha das ações → [Rodada 1..5: Manchete → Palpite → Revelação] → Resultado → Ranking → Início
+Início → Escolha das ações → Distribuição (%) → [Rodada 1..5: Manchete → Palpite → Revelação] → Resultado → Ranking → Início
 ```
 
 ### 3.1 Início (modo vitrine)
@@ -46,8 +47,16 @@ Início → Escolha das ações → [Rodada 1..5: Manchete → Palpite → Revel
 - Filtros por botões grandes: **Setor** (múltipla escolha), **Porte** (Grande/Média/Pequena), **Bons dividendos**; mais um campo de **busca** por nome ou ticker.
 - Botão "Limpar filtros". Mensagem amigável quando nenhum card corresponde aos filtros.
 - Barra fixa inferior com **3 espaços**. Tocar num card adiciona ou remove a ação; com 3 escolhidas, os demais cards ficam esmaecidos.
-- Botão **Montar carteira** habilitado só com exatamente 3 ações.
-- Capital inicial: **R$ 10.000**, dividido igualmente (R$ 3.333,33 por ação; quantidade fracionária de ações é permitida).
+- Botão **Montar carteira** habilitado só com exatamente 3 ações; leva à etapa de distribuição.
+
+### 3.2.1 Distribuição do dinheiro
+- Capital inicial: **R$ 10.000**.
+- Para cada uma das 3 ações, o aluno define a porcentagem com botões grandes **−** e **+**, em passos de **10%**, de **0% a 100%**.
+- Valor inicial: 40% / 30% / 30% (na ordem de escolha).
+- O total precisa ser exatamente **100%**. A tela mostra "Falta distribuir X%" ou "Passou X% do total" e o valor em R$ de cada ação.
+- **0% é permitido**: a ação continua na carteira e aparece nas rodadas, mas não afeta o valor ("Você não investiu nesta ação").
+- Botões **Voltar** (para trocar ações) e **Confirmar carteira** (habilitado só com total = 100%).
+- Quantidade de ações = valor alocado ÷ preço (frações permitidas).
 
 ### 3.3 Rodadas (5)
 Placar fixo: valor atual da carteira e "Rodada N de 5".
@@ -58,18 +67,21 @@ Placar fixo: valor atual da carteira e "Rodada N de 5".
    - Para cada ação: preço antigo → novo com contador animado, variação em % e R$, ▲/▼ e cor verde/vermelha, e o motivo curto (ex.: "Varejo é sensível aos juros").
    - Feedback do palpite: "Você acertou!" (com confete) ou "Não foi dessa vez".
    - Explicação completa do evento.
-   - Se nenhuma ação da carteira foi afetada pelo evento: "Seu setor passou ileso desta vez, e isso também é diversificação!"
+   - Ações com 0% aparecem com a variação de preço, mas marcadas "não investida" e sem valor em R$.
+   - Se nenhuma ação com mais de 0% foi afetada pelo evento: "Seu setor passou ileso desta vez, e isso também é diversificação!"
    - Botão **Seguir em frente** (na rodada 5: **Ver resultado**).
 
 ### 3.4 Resultado
 - Valor inicial, valor final e retorno total em % (com ▲/▼ e cor).
 - Desempenho de cada ação na partida.
 - Palpites certos: N de 5.
-- Lição personalizada, escolhida por regra:
-  - As 3 ações no mesmo setor → "Carteira concentrada: tudo subiu ou caiu junto. Diversificar reduz o risco."
-  - 2 ações no mesmo setor → "Diversificação parcial: duas ações dependiam das mesmas notícias."
-  - 3 setores diferentes → "Boa diversificação: quando um setor caía, outro segurava."
-  - Retorno > +10% ou < −10% → comentário sobre risco e sorte.
+- Lição personalizada, escolhida por regra, considerando só as ações com mais de 0%:
+  - Uma ação com 70% ou mais → "Você apostou quase tudo numa ação só: o resultado dependeu dela."
+  - Todas no mesmo setor → "Carteira concentrada: tudo subiu ou caiu junto. Diversificar reduz o risco."
+  - Duas no mesmo setor → "Diversificação parcial: duas ações dependiam das mesmas notícias."
+  - Setores todos diferentes → "Boa diversificação: quando um setor caía, outro segurava."
+  - Retorno > +10% ou < −10% → comentário extra sobre risco e sorte.
+  - Vale a primeira regra de concentração que se aplicar; o comentário sobre retorno é somado a ela.
 - Botão **Entrar no ranking**.
 
 ### 3.5 Ranking
@@ -175,7 +187,7 @@ tests/                testes da lógica pura e validação dos JSON
 - Evento com setor desconhecido é detectado pelo teste de validação, não em tempo de execução.
 
 ## 9. Testes
-- **Lógica (Node, `node --test`):** cálculo de impacto (ação > setor > zero + ruído), acúmulo entre rodadas, palpite correto e incorreto, sorteio de 5 sem repetição e sem grupo duplicado, regras da lição final, ordenação e desempate do ranking, filtro de nomes, filtros da escolha de ações.
+- **Lógica (Node, `node --test`):** distribuição em passos de 10% (limites 0–100%, total = 100%, ação com 0% não altera o valor), cálculo de impacto (ação > setor > zero + ruído), acúmulo entre rodadas, palpite correto e incorreto, sorteio de 5 sem repetição e sem grupo duplicado, regras da lição final, ordenação e desempate do ranking, filtro de nomes, filtros da escolha de ações.
 - **Validação dos dados:** 50 eventos, ids únicos, setores existentes, tickers em `impactoAcoes` presentes em `acoes.json`, impactos em [−12, 12], cada setor em ≥ 4 eventos; ações com todos os campos e setores válidos.
 - **Teste visual:** partida completa no navegador em 375×812 (celular) e 1920×1080 (monitor), conferindo o funcionamento offline e a volta automática por inatividade.
 
