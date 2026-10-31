@@ -2,626 +2,1103 @@
   {
     "id": "selic-sobe",
     "manchete": "Banco Central sobe a taxa Selic para conter a inflação",
-    "explicacao": "A Selic é a taxa básica de juros do país. Quando ela sobe, pegar dinheiro emprestado fica mais caro: as pessoas compram menos a prazo e as construtoras vendem menos imóveis financiados. Já os bancos costumam ganhar mais com os juros dos empréstimos.",
-    "impactoSetores": {
-      "Varejo e Consumo": -6,
-      "Construção e Imóveis": -7,
-      "Bancos e Finanças": 3,
-      "Tecnologia e Telecom": -3
-    },
-    "impactoAcoes": {
-      "MGLU3": -9
+    "explicacao": "A Selic é a taxa básica de juros. Quando ela sobe, comprar a prazo e financiar imóvel fica caro: lojas, construtoras, faculdades e shoppings vendem menos, e empresas com muita dívida pagam mais juros. Bancos e seguradoras ganham mais aplicando dinheiro, e muita gente troca a bolsa pela renda fixa.",
+    "impactos": {
+      "MGLU3": -9,
+      "LREN3": -5,
+      "CEAB3": -5,
+      "AZZA3": -5,
+      "VIVA3": -5,
+      "NATU3": -5,
+      "CURY3": -7,
+      "DIRR3": -7,
+      "TEND3": -7,
+      "MRVE3": -7,
+      "CYRE3": -6,
+      "ALOS3": -4,
+      "IGTI11": -4,
+      "MULT3": -4,
+      "COGN3": -5,
+      "YDUQ3": -5,
+      "RENT3": -3,
+      "VAMO3": -3,
+      "ENEV3": -3,
+      "AURE3": -3,
+      "CSAN3": -3,
+      "SBSP3": -3,
+      "MOTV3": -3,
+      "SMFT3": -3,
+      "POMO4": -3,
+      "RDOR3": -3,
+      "EQTL3": -3,
+      "ENGI11": -3,
+      "ITUB4": 2,
+      "BBDC3": 2,
+      "BBDC4": 2,
+      "BBAS3": 2,
+      "SANB11": 2,
+      "BPAC11": 2,
+      "ITSA4": 2,
+      "BBSE3": 3,
+      "CXSE3": 3,
+      "PSSA3": 3,
+      "B3SA3": -4,
+      "TOTS3": -3
     },
     "motivos": {
-      "Varejo e Consumo": "Vendas a prazo ficam mais caras",
-      "Construção e Imóveis": "Financiamento de imóveis encarece",
-      "Bancos e Finanças": "Bancos ganham mais com juros",
-      "Tecnologia e Telecom": "Empresas de crescimento sofrem com juros altos",
-      "MGLU3": "Depende muito de vendas parceladas"
+      "MGLU3": "Depende muito de vendas parceladas",
+      "LREN3": "Vendas a prazo ficam mais caras",
+      "CEAB3": "Vendas a prazo ficam mais caras",
+      "AZZA3": "Vendas a prazo ficam mais caras",
+      "VIVA3": "Vendas a prazo ficam mais caras",
+      "NATU3": "Vendas a prazo ficam mais caras",
+      "CURY3": "Financiamento de imóvel encarece",
+      "DIRR3": "Financiamento de imóvel encarece",
+      "TEND3": "Financiamento de imóvel encarece",
+      "MRVE3": "Financiamento de imóvel encarece",
+      "CYRE3": "Financiamento de imóvel encarece",
+      "ALOS3": "Lojistas e clientes gastam menos",
+      "IGTI11": "Lojistas e clientes gastam menos",
+      "MULT3": "Lojistas e clientes gastam menos",
+      "COGN3": "Alunos financiam menos a faculdade",
+      "YDUQ3": "Alunos financiam menos a faculdade",
+      "RENT3": "Tem muita dívida e paga mais juros",
+      "VAMO3": "Tem muita dívida e paga mais juros",
+      "ENEV3": "Tem muita dívida e paga mais juros",
+      "AURE3": "Tem muita dívida e paga mais juros",
+      "CSAN3": "Tem muita dívida e paga mais juros",
+      "SBSP3": "Tem muita dívida e paga mais juros",
+      "MOTV3": "Tem muita dívida e paga mais juros",
+      "SMFT3": "Tem muita dívida e paga mais juros",
+      "POMO4": "Tem muita dívida e paga mais juros",
+      "RDOR3": "Tem muita dívida e paga mais juros",
+      "EQTL3": "Tem muita dívida e paga mais juros",
+      "ENGI11": "Tem muita dívida e paga mais juros",
+      "ITUB4": "Ganha mais com os juros dos empréstimos",
+      "BBDC3": "Ganha mais com os juros dos empréstimos",
+      "BBDC4": "Ganha mais com os juros dos empréstimos",
+      "BBAS3": "Ganha mais com os juros dos empréstimos",
+      "SANB11": "Ganha mais com os juros dos empréstimos",
+      "BPAC11": "Ganha mais com os juros dos empréstimos",
+      "ITSA4": "Ganha mais com os juros dos empréstimos",
+      "BBSE3": "Aplica as reservas a juros maiores",
+      "CXSE3": "Aplica as reservas a juros maiores",
+      "PSSA3": "Aplica as reservas a juros maiores",
+      "B3SA3": "Investidores trocam a bolsa pela renda fixa",
+      "TOTS3": "Empresa de crescimento perde atrativo"
     },
-    "grupo": "juros",
-    "impactoMercado": -2,
-    "motivoMercado": "Juros altos derrubam a bolsa toda"
+    "grupo": "juros"
   },
   {
     "id": "selic-cai",
     "manchete": "Banco Central corta a Selic e juros caem pela primeira vez no ano",
-    "explicacao": "Com juros menores, o crédito fica mais barato. As famílias voltam a comprar parcelado, financiar a casa própria fica mais fácil e as empresas que precisam de empréstimo para crescer respiram aliviadas. Os bancos ganham um pouco menos por empréstimo.",
-    "impactoSetores": {
-      "Varejo e Consumo": 6,
-      "Construção e Imóveis": 7,
-      "Bancos e Finanças": -2,
-      "Tecnologia e Telecom": 4
+    "explicacao": "Com juros menores, comprar a prazo e financiar imóvel fica mais barato: lojas, construtoras, faculdades e shoppings vendem mais, e empresas com muita dívida economizam. A bolsa atrai mais investidores. Bancos e seguradoras ganham um pouco menos aplicando dinheiro.",
+    "impactos": {
+      "MGLU3": 9,
+      "LREN3": 5,
+      "CEAB3": 5,
+      "AZZA3": 5,
+      "VIVA3": 5,
+      "NATU3": 5,
+      "CURY3": 7,
+      "DIRR3": 7,
+      "TEND3": 7,
+      "MRVE3": 7,
+      "CYRE3": 6,
+      "ALOS3": 4,
+      "IGTI11": 4,
+      "MULT3": 4,
+      "COGN3": 5,
+      "YDUQ3": 5,
+      "RENT3": 3,
+      "VAMO3": 3,
+      "ENEV3": 3,
+      "AURE3": 3,
+      "CSAN3": 3,
+      "SBSP3": 3,
+      "MOTV3": 3,
+      "SMFT3": 3,
+      "POMO4": 3,
+      "RDOR3": 3,
+      "EQTL3": 3,
+      "ENGI11": 3,
+      "ITUB4": -1.5,
+      "BBDC3": -1.5,
+      "BBDC4": -1.5,
+      "BBAS3": -1.5,
+      "SANB11": -1.5,
+      "BPAC11": -1.5,
+      "ITSA4": -1.5,
+      "BBSE3": -2,
+      "CXSE3": -2,
+      "PSSA3": -2,
+      "B3SA3": 4,
+      "TOTS3": 3
     },
     "motivos": {
-      "Varejo e Consumo": "Crédito barato aumenta as vendas",
-      "Construção e Imóveis": "Mais gente consegue financiar imóvel",
-      "Bancos e Finanças": "Margem dos empréstimos diminui",
-      "Tecnologia e Telecom": "Investidores voltam a apostar em crescimento"
+      "MGLU3": "Vendas parceladas voltam a crescer",
+      "LREN3": "Crédito barato aumenta as vendas",
+      "CEAB3": "Crédito barato aumenta as vendas",
+      "AZZA3": "Crédito barato aumenta as vendas",
+      "VIVA3": "Crédito barato aumenta as vendas",
+      "NATU3": "Crédito barato aumenta as vendas",
+      "CURY3": "Mais gente consegue financiar imóvel",
+      "DIRR3": "Mais gente consegue financiar imóvel",
+      "TEND3": "Mais gente consegue financiar imóvel",
+      "MRVE3": "Mais gente consegue financiar imóvel",
+      "CYRE3": "Mais gente consegue financiar imóvel",
+      "ALOS3": "Clientes voltam a gastar",
+      "IGTI11": "Clientes voltam a gastar",
+      "MULT3": "Clientes voltam a gastar",
+      "COGN3": "Mais alunos conseguem financiar a faculdade",
+      "YDUQ3": "Mais alunos conseguem financiar a faculdade",
+      "RENT3": "Paga menos juros sobre a dívida",
+      "VAMO3": "Paga menos juros sobre a dívida",
+      "ENEV3": "Paga menos juros sobre a dívida",
+      "AURE3": "Paga menos juros sobre a dívida",
+      "CSAN3": "Paga menos juros sobre a dívida",
+      "SBSP3": "Paga menos juros sobre a dívida",
+      "MOTV3": "Paga menos juros sobre a dívida",
+      "SMFT3": "Paga menos juros sobre a dívida",
+      "POMO4": "Paga menos juros sobre a dívida",
+      "RDOR3": "Paga menos juros sobre a dívida",
+      "EQTL3": "Paga menos juros sobre a dívida",
+      "ENGI11": "Paga menos juros sobre a dívida",
+      "ITUB4": "Ganha um pouco menos por empréstimo",
+      "BBDC3": "Ganha um pouco menos por empréstimo",
+      "BBDC4": "Ganha um pouco menos por empréstimo",
+      "BBAS3": "Ganha um pouco menos por empréstimo",
+      "SANB11": "Ganha um pouco menos por empréstimo",
+      "BPAC11": "Ganha um pouco menos por empréstimo",
+      "ITSA4": "Ganha um pouco menos por empréstimo",
+      "BBSE3": "Reservas rendem menos",
+      "CXSE3": "Reservas rendem menos",
+      "PSSA3": "Reservas rendem menos",
+      "B3SA3": "Mais gente investe na bolsa",
+      "TOTS3": "Empresas de crescimento voltam à moda"
     },
-    "grupo": "juros",
-    "impactoMercado": 2,
-    "motivoMercado": "Juros baixos animam a bolsa toda"
+    "grupo": "juros"
   },
   {
     "id": "inflacao-dispara",
     "manchete": "Inflação acelera e preços nos supermercados sobem pelo terceiro mês seguido",
-    "explicacao": "Inflação é a alta geral dos preços. Quando a comida fica mais cara, sobra menos dinheiro no fim do mês e as famílias cortam roupas, eletrônicos e passeios. As empresas de alimentos pagam mais pelos ingredientes e vendem menos.",
-    "impactoSetores": {
-      "Varejo e Consumo": -5,
-      "Alimentos e Bebidas": -2
+    "explicacao": "Inflação é a alta geral dos preços. Com comida mais cara, sobra menos dinheiro e as famílias cortam roupas, eletrônicos e cosméticos. Muita gente passa a fazer compras no atacarejo, que é mais barato. Fabricantes de bebidas e carnes pagam mais pelos ingredientes.",
+    "impactos": {
+      "MGLU3": -4,
+      "LREN3": -4,
+      "CEAB3": -4,
+      "AZZA3": -4,
+      "VIVA3": -4,
+      "NATU3": -4,
+      "ASAI3": 2,
+      "ABEV3": -2,
+      "MBRF3": -2
     },
     "motivos": {
-      "Varejo e Consumo": "Família com menos dinheiro compra menos",
-      "Alimentos e Bebidas": "Custos sobem e consumo cai"
+      "MGLU3": "Famílias cortam compras",
+      "LREN3": "Famílias cortam compras",
+      "CEAB3": "Famílias cortam compras",
+      "AZZA3": "Famílias cortam compras",
+      "VIVA3": "Famílias cortam compras",
+      "NATU3": "Famílias cortam compras",
+      "ASAI3": "Clientes trocam o supermercado pelo atacarejo",
+      "ABEV3": "Ingredientes mais caros",
+      "MBRF3": "Ingredientes mais caros"
     },
-    "grupo": "inflacao",
-    "impactoMercado": -1.5,
-    "motivoMercado": "Medo de juros mais altos pesa na bolsa"
+    "grupo": "inflacao"
   },
   {
     "id": "inflacao-controlada",
     "manchete": "Inflação fica abaixo da meta e preços dos alimentos caem",
-    "explicacao": "Quando a inflação está controlada, o dinheiro das famílias rende mais no fim do mês. Sobra para comprar roupas, sair para comer e até pensar num imóvel. Isso ajuda as empresas que vendem direto para o consumidor.",
-    "impactoSetores": {
-      "Varejo e Consumo": 4,
-      "Alimentos e Bebidas": 3,
-      "Construção e Imóveis": 3
+    "explicacao": "Quando a inflação está controlada, o salário rende mais no fim do mês e cresce a chance de os juros caírem. Sobra dinheiro para roupas, eletrônicos e lazer, e mais famílias pensam em comprar a casa própria.",
+    "impactos": {
+      "MGLU3": 3,
+      "LREN3": 3,
+      "CEAB3": 3,
+      "AZZA3": 3,
+      "VIVA3": 3,
+      "NATU3": 3,
+      "CURY3": 3,
+      "DIRR3": 3,
+      "TEND3": 3,
+      "MRVE3": 3,
+      "CYRE3": 3,
+      "ABEV3": 2
     },
     "motivos": {
-      "Varejo e Consumo": "Salário rende mais",
-      "Alimentos e Bebidas": "Consumo volta a crescer",
-      "Construção e Imóveis": "Famílias planejam comprar imóvel"
+      "MGLU3": "Salário rende mais",
+      "LREN3": "Salário rende mais",
+      "CEAB3": "Salário rende mais",
+      "AZZA3": "Salário rende mais",
+      "VIVA3": "Salário rende mais",
+      "NATU3": "Salário rende mais",
+      "CURY3": "Famílias planejam comprar imóvel",
+      "DIRR3": "Famílias planejam comprar imóvel",
+      "TEND3": "Famílias planejam comprar imóvel",
+      "MRVE3": "Famílias planejam comprar imóvel",
+      "CYRE3": "Famílias planejam comprar imóvel",
+      "ABEV3": "Consumo de bebidas cresce"
     },
-    "grupo": "inflacao",
-    "impactoMercado": 1.5,
-    "motivoMercado": "Chance de juros menores anima a bolsa"
+    "grupo": "inflacao"
   },
   {
     "id": "dolar-dispara",
     "manchete": "Dólar dispara e passa a valer muito mais em reais",
-    "explicacao": "Empresas que exportam vendem em dólar e recebem mais reais por cada venda: é o caso de mineradoras, do agronegócio e de indústrias como a Embraer. Já quem depende de produtos importados, como lojas de eletrônicos e empresas de tecnologia, vê os custos subirem.",
-    "impactoSetores": {
-      "Indústria e Papel": 5,
-      "Mineração e Siderurgia": 4,
-      "Agronegócio": 5,
-      "Varejo e Consumo": -4,
-      "Tecnologia e Telecom": -3,
-      "Petróleo e Gás": 3,
-      "Saúde": -2
+    "explicacao": "Quem exporta vende em dólar e recebe mais reais: petróleo, minério, celulose, carne, aviões e motores. Quem depende de produtos importados paga mais caro: lojas de eletrônicos, fabricantes de remédios, hospitais e operadoras de telefonia, que compram equipamentos de fora.",
+    "impactos": {
+      "PETR3": 3,
+      "PETR4": 3,
+      "PRIO3": 3,
+      "BRAV3": 3,
+      "VALE3": 4,
+      "CMIN3": 4,
+      "BRAP4": 4,
+      "GGBR4": 3,
+      "GOAU4": 3,
+      "SUZB3": 5,
+      "KLBN11": 5,
+      "MBRF3": 4,
+      "BEEF3": 4,
+      "EMBJ3": 6,
+      "WEGE3": 4,
+      "MGLU3": -4,
+      "VIVA3": -3,
+      "HYPE3": -2,
+      "RADL3": -2,
+      "RDOR3": -2,
+      "VIVT3": -2,
+      "TIMS3": -2,
+      "SMFT3": -2
     },
     "motivos": {
-      "Indústria e Papel": "Exporta e recebe em dólar",
-      "Mineração e Siderurgia": "Vende minério e aço em dólar",
-      "Agronegócio": "Exporta carne e grãos em dólar",
-      "Varejo e Consumo": "Produtos importados ficam caros",
-      "Tecnologia e Telecom": "Equipamentos importados encarecem",
-      "Petróleo e Gás": "Petróleo é vendido em dólar",
-      "Saúde": "Remédios e equipamentos importados encarecem"
+      "PETR3": "Vende petróleo em dólar",
+      "PETR4": "Vende petróleo em dólar",
+      "PRIO3": "Vende petróleo em dólar",
+      "BRAV3": "Vende petróleo em dólar",
+      "VALE3": "Vende minério em dólar",
+      "CMIN3": "Vende minério em dólar",
+      "BRAP4": "Vende minério em dólar",
+      "GGBR4": "Tem fábricas nos EUA e exporta aço",
+      "GOAU4": "Tem fábricas nos EUA e exporta aço",
+      "SUZB3": "Exporta celulose em dólar",
+      "KLBN11": "Exporta celulose em dólar",
+      "MBRF3": "Exporta carne em dólar",
+      "BEEF3": "Exporta carne em dólar",
+      "EMBJ3": "Vende aviões em dólar",
+      "WEGE3": "Exporta motores em dólar",
+      "MGLU3": "Eletrônicos importados ficam caros",
+      "VIVA3": "Ouro é cotado em dólar",
+      "HYPE3": "Matéria-prima de remédios é importada",
+      "RADL3": "Matéria-prima de remédios é importada",
+      "RDOR3": "Equipamentos médicos importados encarecem",
+      "VIVT3": "Equipamentos de rede importados encarecem",
+      "TIMS3": "Equipamentos de rede importados encarecem",
+      "SMFT3": "Aparelhos de academia importados encarecem"
     },
-    "grupo": "cambio",
-    "impactoMercado": -1,
-    "motivoMercado": "Estrangeiros saindo derrubam a bolsa"
+    "grupo": "cambio"
   },
   {
     "id": "dolar-despenca",
     "manchete": "Dólar despenca com entrada forte de investidores estrangeiros",
-    "explicacao": "Com o dólar barato, os exportadores recebem menos reais pelo que vendem lá fora. Em compensação, produtos e peças importadas ficam mais baratos, o que ajuda o varejo e as empresas de tecnologia.",
-    "impactoSetores": {
-      "Indústria e Papel": -4,
-      "Mineração e Siderurgia": -3,
-      "Agronegócio": -4,
-      "Varejo e Consumo": 4,
-      "Tecnologia e Telecom": 3,
-      "Petróleo e Gás": -3,
-      "Saúde": 2
+    "explicacao": "Com o dólar barato, quem exporta recebe menos reais pelo que vende lá fora: petróleo, minério, celulose, carne, aviões e motores. Já quem compra produtos importados economiza: lojas de eletrônicos, fabricantes de remédios, hospitais e operadoras de telefonia.",
+    "impactos": {
+      "PETR3": -3,
+      "PETR4": -3,
+      "PRIO3": -3,
+      "BRAV3": -3,
+      "VALE3": -4,
+      "CMIN3": -4,
+      "BRAP4": -4,
+      "GGBR4": -3,
+      "GOAU4": -3,
+      "SUZB3": -5,
+      "KLBN11": -5,
+      "MBRF3": -4,
+      "BEEF3": -4,
+      "EMBJ3": -6,
+      "WEGE3": -4,
+      "MGLU3": 4,
+      "VIVA3": 3,
+      "HYPE3": 2,
+      "RADL3": 2,
+      "RDOR3": 2,
+      "VIVT3": 2,
+      "TIMS3": 2,
+      "SMFT3": 2
     },
     "motivos": {
-      "Indústria e Papel": "Exportação rende menos reais",
-      "Mineração e Siderurgia": "Minério vendido em dólar vale menos",
-      "Agronegócio": "Exportação rende menos reais",
-      "Varejo e Consumo": "Importados ficam baratos",
-      "Tecnologia e Telecom": "Equipamentos ficam mais baratos",
-      "Petróleo e Gás": "Petróleo vendido em dólar rende menos reais",
-      "Saúde": "Remédios e equipamentos importados ficam baratos"
+      "PETR3": "Petróleo vendido em dólar rende menos",
+      "PETR4": "Petróleo vendido em dólar rende menos",
+      "PRIO3": "Petróleo vendido em dólar rende menos",
+      "BRAV3": "Petróleo vendido em dólar rende menos",
+      "VALE3": "Minério vendido em dólar rende menos",
+      "CMIN3": "Minério vendido em dólar rende menos",
+      "BRAP4": "Minério vendido em dólar rende menos",
+      "GGBR4": "Exportação de aço rende menos",
+      "GOAU4": "Exportação de aço rende menos",
+      "SUZB3": "Celulose vendida em dólar rende menos",
+      "KLBN11": "Celulose vendida em dólar rende menos",
+      "MBRF3": "Carne exportada rende menos",
+      "BEEF3": "Carne exportada rende menos",
+      "EMBJ3": "Aviões vendidos em dólar rendem menos",
+      "WEGE3": "Exportação de motores rende menos",
+      "MGLU3": "Eletrônicos importados ficam baratos",
+      "VIVA3": "Ouro fica mais barato",
+      "HYPE3": "Matéria-prima de remédios fica barata",
+      "RADL3": "Matéria-prima de remédios fica barata",
+      "RDOR3": "Equipamentos médicos ficam baratos",
+      "VIVT3": "Equipamentos de rede ficam baratos",
+      "TIMS3": "Equipamentos de rede ficam baratos",
+      "SMFT3": "Aparelhos de academia ficam baratos"
     },
-    "grupo": "cambio",
-    "impactoMercado": 1,
-    "motivoMercado": "Dinheiro estrangeiro entrando na bolsa"
+    "grupo": "cambio"
   },
   {
     "id": "pib-forte",
     "manchete": "Economia brasileira cresce acima do esperado no trimestre",
-    "explicacao": "O PIB mede tudo o que o país produz. Quando ele cresce forte, há mais empregos, mais vendas e mais empréstimos. Lojas, bancos, construtoras e empresas de transporte costumam se beneficiar juntas.",
-    "impactoSetores": {
-      "Varejo e Consumo": 5,
-      "Bancos e Finanças": 3,
-      "Construção e Imóveis": 4,
-      "Transporte e Logística": 4
+    "explicacao": "O PIB mede tudo o que o país produz. Quando ele cresce forte, há mais emprego e mais dinheiro circulando: lojas vendem mais, bancos emprestam mais, as pessoas viajam, alugam carros, vão à academia e compram imóveis. Fábricas e empresas de energia também trabalham mais.",
+    "impactos": {
+      "MGLU3": 4,
+      "LREN3": 4,
+      "CEAB3": 4,
+      "AZZA3": 4,
+      "VIVA3": 4,
+      "NATU3": 4,
+      "ALOS3": 3,
+      "IGTI11": 3,
+      "MULT3": 3,
+      "ITUB4": 2,
+      "BBDC3": 2,
+      "BBDC4": 2,
+      "BBAS3": 2,
+      "SANB11": 2,
+      "BPAC11": 2,
+      "ITSA4": 2,
+      "CURY3": 3,
+      "DIRR3": 3,
+      "TEND3": 3,
+      "MRVE3": 3,
+      "RENT3": 3,
+      "MOTV3": 2,
+      "RAIL3": 2,
+      "B3SA3": 3,
+      "PSSA3": 2,
+      "SMFT3": 3,
+      "VBBR3": 2,
+      "UGPA3": 2,
+      "USIM5": 3,
+      "AXIA3": 2,
+      "EGIE3": 2,
+      "AURE3": 2,
+      "ENEV3": 2,
+      "CPLE3": 2,
+      "CPFE3": 2
     },
     "motivos": {
-      "Varejo e Consumo": "Mais gente empregada comprando",
-      "Bancos e Finanças": "Mais crédito e menos calote",
-      "Construção e Imóveis": "Demanda por imóveis aumenta",
-      "Transporte e Logística": "Mais mercadorias circulando"
+      "MGLU3": "Mais gente empregada comprando",
+      "LREN3": "Mais gente empregada comprando",
+      "CEAB3": "Mais gente empregada comprando",
+      "AZZA3": "Mais gente empregada comprando",
+      "VIVA3": "Mais gente empregada comprando",
+      "NATU3": "Mais gente empregada comprando",
+      "ALOS3": "Shoppings mais cheios",
+      "IGTI11": "Shoppings mais cheios",
+      "MULT3": "Shoppings mais cheios",
+      "ITUB4": "Mais empréstimos e menos calote",
+      "BBDC3": "Mais empréstimos e menos calote",
+      "BBDC4": "Mais empréstimos e menos calote",
+      "BBAS3": "Mais empréstimos e menos calote",
+      "SANB11": "Mais empréstimos e menos calote",
+      "BPAC11": "Mais empréstimos e menos calote",
+      "ITSA4": "Mais empréstimos e menos calote",
+      "CURY3": "Mais famílias compram imóvel",
+      "DIRR3": "Mais famílias compram imóvel",
+      "TEND3": "Mais famílias compram imóvel",
+      "MRVE3": "Mais famílias compram imóvel",
+      "RENT3": "Mais gente aluga carro",
+      "MOTV3": "Mais carros e caminhões nas estradas",
+      "RAIL3": "Mais carga nos trens",
+      "B3SA3": "Mais negócios na bolsa",
+      "PSSA3": "Mais carros e casas para segurar",
+      "SMFT3": "Mais gente paga academia",
+      "VBBR3": "Mais combustível vendido",
+      "UGPA3": "Mais combustível vendido",
+      "USIM5": "Montadoras compram mais aço",
+      "AXIA3": "País consome mais energia",
+      "EGIE3": "País consome mais energia",
+      "AURE3": "País consome mais energia",
+      "ENEV3": "País consome mais energia",
+      "CPLE3": "País consome mais energia",
+      "CPFE3": "Distribui mais energia"
     },
-    "grupo": "pib",
-    "impactoMercado": 2,
-    "motivoMercado": "Economia forte anima a bolsa toda"
+    "grupo": "pib"
   },
   {
     "id": "recessao",
     "manchete": "Brasil entra em recessão após dois trimestres de queda no PIB",
-    "explicacao": "Recessão é quando a economia encolhe por um tempo. As empresas vendem menos, demitem, e as pessoas atrasam contas. Quase todos os setores sofrem, mas os que dependem do consumo e do crédito sentem mais.",
-    "impactoSetores": {
-      "Varejo e Consumo": -6,
-      "Bancos e Finanças": -4,
-      "Construção e Imóveis": -5,
-      "Transporte e Logística": -4,
-      "Indústria e Papel": -3,
-      "Petróleo e Gás": -3
+    "explicacao": "Recessão é quando a economia encolhe por um tempo. Empresas vendem menos e demitem, as pessoas atrasam contas e cortam gastos. Lojas, shoppings, construtoras, bancos e quem fabrica ou aluga veículos sentem mais, porque dependem de consumo e de crédito.",
+    "impactos": {
+      "MGLU3": -5,
+      "LREN3": -5,
+      "CEAB3": -5,
+      "AZZA3": -5,
+      "VIVA3": -5,
+      "NATU3": -5,
+      "ALOS3": -4,
+      "IGTI11": -4,
+      "MULT3": -4,
+      "ITUB4": -3,
+      "BBDC3": -3,
+      "BBDC4": -3,
+      "BBAS3": -3,
+      "SANB11": -3,
+      "BPAC11": -3,
+      "ITSA4": -3,
+      "CURY3": -4,
+      "DIRR3": -4,
+      "TEND3": -4,
+      "MRVE3": -4,
+      "RENT3": -4,
+      "VAMO3": -4,
+      "POMO4": -4,
+      "WEGE3": -2,
+      "B3SA3": -3,
+      "PSSA3": -2,
+      "VBBR3": -2,
+      "UGPA3": -2,
+      "COGN3": -4,
+      "YDUQ3": -4
     },
     "motivos": {
-      "Varejo e Consumo": "Consumidores param de comprar",
-      "Bancos e Finanças": "Mais gente sem pagar dívidas",
-      "Construção e Imóveis": "Ninguém quer comprar imóvel na crise",
-      "Transporte e Logística": "Menos carga para transportar",
-      "Indústria e Papel": "Fábricas produzem menos",
-      "Petróleo e Gás": "Menos consumo de combustível"
+      "MGLU3": "Consumidores param de comprar",
+      "LREN3": "Consumidores param de comprar",
+      "CEAB3": "Consumidores param de comprar",
+      "AZZA3": "Consumidores param de comprar",
+      "VIVA3": "Consumidores param de comprar",
+      "NATU3": "Consumidores param de comprar",
+      "ALOS3": "Shoppings mais vazios",
+      "IGTI11": "Shoppings mais vazios",
+      "MULT3": "Shoppings mais vazios",
+      "ITUB4": "Mais gente sem pagar dívidas",
+      "BBDC3": "Mais gente sem pagar dívidas",
+      "BBDC4": "Mais gente sem pagar dívidas",
+      "BBAS3": "Mais gente sem pagar dívidas",
+      "SANB11": "Mais gente sem pagar dívidas",
+      "BPAC11": "Mais gente sem pagar dívidas",
+      "ITSA4": "Mais gente sem pagar dívidas",
+      "CURY3": "Ninguém quer comprar imóvel na crise",
+      "DIRR3": "Ninguém quer comprar imóvel na crise",
+      "TEND3": "Ninguém quer comprar imóvel na crise",
+      "MRVE3": "Ninguém quer comprar imóvel na crise",
+      "RENT3": "Menos aluguel de carros e caminhões",
+      "VAMO3": "Menos aluguel de carros e caminhões",
+      "POMO4": "Menos ônibus vendidos",
+      "WEGE3": "Fábricas compram menos motores",
+      "B3SA3": "Menos negócios na bolsa",
+      "PSSA3": "Menos carros e casas para segurar",
+      "VBBR3": "Menos combustível vendido",
+      "UGPA3": "Menos combustível vendido",
+      "COGN3": "Alunos abandonam a faculdade",
+      "YDUQ3": "Alunos abandonam a faculdade"
     },
-    "grupo": "pib",
-    "impactoMercado": -2.5,
-    "motivoMercado": "Crise econômica derruba a bolsa toda"
+    "grupo": "pib"
   },
   {
     "id": "desemprego-minimo",
     "manchete": "Desemprego cai ao menor nível da história",
-    "explicacao": "Com mais gente trabalhando e recebendo salário, o consumo cresce. As famílias gastam mais em supermercado, roupas e lazer, contratam planos de saúde pela empresa e voltam a sonhar com a casa própria.",
-    "impactoSetores": {
-      "Varejo e Consumo": 5,
-      "Alimentos e Bebidas": 3,
-      "Construção e Imóveis": 3
+    "explicacao": "Com mais gente trabalhando e recebendo salário, o consumo cresce. As famílias gastam mais em compras, voltam a pagar faculdade e sonham com a casa própria. As empresas contratam planos de saúde para os novos funcionários, e mais gente faz exames.",
+    "impactos": {
+      "MGLU3": 4,
+      "LREN3": 4,
+      "CEAB3": 4,
+      "AZZA3": 4,
+      "ASAI3": 2,
+      "ALOS3": 2,
+      "IGTI11": 2,
+      "MULT3": 2,
+      "COGN3": 3,
+      "YDUQ3": 3,
+      "CURY3": 2,
+      "DIRR3": 2,
+      "TEND3": 2,
+      "MRVE3": 2,
+      "HAPV3": 3,
+      "FLRY3": 2,
+      "ABEV3": 2
     },
     "motivos": {
-      "Varejo e Consumo": "Mais salários circulando",
-      "Alimentos e Bebidas": "Mais consumo de alimentos e bebidas",
-      "Construção e Imóveis": "Mais famílias compram imóvel",
-      "HAPV3": "Empresas contratam planos de saúde"
-    },
-    "impactoAcoes": {
-      "HAPV3": 3
-    },
-    "impactoMercado": 1.5,
-    "motivoMercado": "Economia aquecida anima a bolsa"
+      "MGLU3": "Mais salários circulando",
+      "LREN3": "Mais salários circulando",
+      "CEAB3": "Mais salários circulando",
+      "AZZA3": "Mais salários circulando",
+      "ASAI3": "Mais compras no atacarejo",
+      "ALOS3": "Shoppings mais cheios",
+      "IGTI11": "Shoppings mais cheios",
+      "MULT3": "Shoppings mais cheios",
+      "COGN3": "Mais gente paga faculdade",
+      "YDUQ3": "Mais gente paga faculdade",
+      "CURY3": "Mais famílias compram imóvel",
+      "DIRR3": "Mais famílias compram imóvel",
+      "TEND3": "Mais famílias compram imóvel",
+      "MRVE3": "Mais famílias compram imóvel",
+      "HAPV3": "Empresas contratam planos de saúde",
+      "FLRY3": "Mais gente com plano faz exames",
+      "ABEV3": "Mais consumo de bebidas"
+    }
   },
   {
     "id": "crise-bancaria-exterior",
     "manchete": "Quebra de banco nos Estados Unidos espalha medo pelos mercados",
-    "explicacao": "Quando um banco grande quebra lá fora, investidores do mundo todo ficam com medo e vendem ações, principalmente de bancos. A bolsa inteira cai, mas os bancos sofrem mais porque se teme que o problema se espalhe entre eles.",
-    "impactoSetores": {
-      "Bancos e Finanças": -8
+    "explicacao": "Quando um banco grande quebra lá fora, investidores do mundo todo ficam com medo de que o problema se espalhe e vendem ações de bancos. Também temem uma freada na economia mundial, o que derruba as petroleiras menores, mais sensíveis ao preço do petróleo.",
+    "impactos": {
+      "ITUB4": -6,
+      "BBDC3": -6,
+      "BBDC4": -6,
+      "BBAS3": -6,
+      "SANB11": -6,
+      "BPAC11": -6,
+      "ITSA4": -6,
+      "B3SA3": -4,
+      "BBSE3": -2,
+      "CXSE3": -2,
+      "PSSA3": -2,
+      "PRIO3": -3,
+      "BRAV3": -3
     },
     "motivos": {
-      "Bancos e Finanças": "Medo de contágio entre bancos"
-    },
-    "impactoMercado": -2.5,
-    "motivoMercado": "Medo global derruba a bolsa toda"
+      "ITUB4": "Medo de contágio entre bancos",
+      "BBDC3": "Medo de contágio entre bancos",
+      "BBDC4": "Medo de contágio entre bancos",
+      "BBAS3": "Medo de contágio entre bancos",
+      "SANB11": "Medo de contágio entre bancos",
+      "BPAC11": "Medo de contágio entre bancos",
+      "ITSA4": "Medo de contágio entre bancos",
+      "B3SA3": "Investidores fogem da bolsa",
+      "BBSE3": "Setor financeiro sob desconfiança",
+      "CXSE3": "Setor financeiro sob desconfiança",
+      "PSSA3": "Setor financeiro sob desconfiança",
+      "PRIO3": "Medo de menor demanda por petróleo",
+      "BRAV3": "Medo de menor demanda por petróleo"
+    }
   },
   {
     "id": "juros-eua-sobem",
     "manchete": "Banco central americano sobe juros e dinheiro sai dos países emergentes",
-    "explicacao": "Quando os juros dos Estados Unidos sobem, investir lá fica mais seguro e atraente. Muitos investidores tiram dinheiro de países como o Brasil, e as ações de empresas que dependem de crédito e de crescimento futuro caem mais.",
-    "impactoSetores": {
-      "Bancos e Finanças": -2,
-      "Construção e Imóveis": -3,
-      "Tecnologia e Telecom": -4,
-      "Varejo e Consumo": -3
+    "explicacao": "Quando os juros dos Estados Unidos sobem, investir lá fica mais seguro e atraente. Investidores tiram dinheiro do Brasil, e quem mais sofre são as empresas que prometem crescer no futuro e a própria bolsa, que tem menos negócios.",
+    "impactos": {
+      "B3SA3": -3,
+      "TOTS3": -4,
+      "MGLU3": -4,
+      "CYRE3": -2,
+      "RENT3": -2
     },
     "motivos": {
-      "Bancos e Finanças": "Estrangeiros vendem ações brasileiras",
-      "Construção e Imóveis": "Crédito tende a encarecer",
-      "Tecnologia e Telecom": "Ações de crescimento perdem atrativo",
-      "Varejo e Consumo": "Crédito tende a encarecer"
+      "B3SA3": "Estrangeiros fazem menos negócios aqui",
+      "TOTS3": "Empresa de crescimento perde atrativo",
+      "MGLU3": "Empresa de crescimento perde atrativo",
+      "CYRE3": "Estrangeiros vendem ações brasileiras",
+      "RENT3": "Estrangeiros vendem ações brasileiras"
     },
-    "grupo": "juros-eua",
-    "impactoMercado": -1.5,
-    "motivoMercado": "Estrangeiros tiram dinheiro do Brasil"
+    "grupo": "juros-eua"
   },
   {
     "id": "juros-eua-caem",
     "manchete": "Juros caem nos Estados Unidos e estrangeiros voltam à bolsa brasileira",
-    "explicacao": "Com juros baixos lá fora, os investidores buscam lugares onde o dinheiro renda mais, e o Brasil entra na lista. A chegada desse dinheiro faz subir as ações, principalmente de empresas ligadas ao crédito e ao crescimento.",
-    "impactoSetores": {
-      "Bancos e Finanças": 3,
-      "Construção e Imóveis": 3,
-      "Tecnologia e Telecom": 4,
-      "Varejo e Consumo": 3
+    "explicacao": "Com juros baixos nos Estados Unidos, investidores procuram lugares onde o dinheiro renda mais, e o Brasil entra na lista. As empresas que prometem crescer e a própria bolsa, que faz mais negócios, são as mais procuradas.",
+    "impactos": {
+      "B3SA3": 3,
+      "TOTS3": 4,
+      "MGLU3": 4,
+      "CYRE3": 2,
+      "RENT3": 2
     },
     "motivos": {
-      "Bancos e Finanças": "Estrangeiros compram ações brasileiras",
-      "Construção e Imóveis": "Expectativa de crédito mais barato",
-      "Tecnologia e Telecom": "Ações de crescimento voltam à moda",
-      "Varejo e Consumo": "Expectativa de crédito mais barato"
+      "B3SA3": "Estrangeiros fazem mais negócios aqui",
+      "TOTS3": "Empresas de crescimento voltam à moda",
+      "MGLU3": "Empresas de crescimento voltam à moda",
+      "CYRE3": "Estrangeiros compram ações brasileiras",
+      "RENT3": "Estrangeiros compram ações brasileiras"
     },
-    "grupo": "juros-eua",
-    "impactoMercado": 1.5,
-    "motivoMercado": "Estrangeiros trazem dinheiro ao Brasil"
+    "grupo": "juros-eua"
   },
   {
     "id": "petroleo-dispara",
     "manchete": "Conflito no Oriente Médio faz preço do petróleo disparar",
-    "explicacao": "O Oriente Médio produz boa parte do petróleo do mundo. Quando há conflito por lá, o barril fica mais caro. Petroleiras lucram mais, mas quem gasta muito com combustível, como transportadoras e indústrias, vê os custos subirem.",
-    "impactoSetores": {
-      "Petróleo e Gás": 8,
-      "Transporte e Logística": -5,
-      "Agronegócio": -2,
-      "Indústria e Papel": -2
+    "explicacao": "O Oriente Médio produz boa parte do petróleo do mundo. Com conflito por lá, o barril fica mais caro e as produtoras lucram mais, principalmente as menores, que só produzem petróleo. O etanol fica competitivo. Já quem gasta muito diesel, como ferrovias e frotas de caminhões, vê o custo subir.",
+    "impactos": {
+      "PETR3": 7,
+      "PETR4": 7,
+      "PRIO3": 9,
+      "BRAV3": 9,
+      "CSAN3": 2,
+      "RAIL3": -3,
+      "VAMO3": -2,
+      "VBBR3": -2,
+      "UGPA3": -2
     },
     "motivos": {
-      "Petróleo e Gás": "Vende petróleo mais caro",
-      "Transporte e Logística": "Diesel mais caro",
-      "Agronegócio": "Frete e fertilizantes encarecem",
-      "Indústria e Papel": "Energia e frete mais caros"
+      "PETR3": "Vende petróleo mais caro",
+      "PETR4": "Vende petróleo mais caro",
+      "PRIO3": "Só produz petróleo: ganha muito com a alta",
+      "BRAV3": "Só produz petróleo: ganha muito com a alta",
+      "CSAN3": "Etanol da Raízen fica mais competitivo",
+      "RAIL3": "Diesel mais caro nos trens",
+      "VAMO3": "Caminhões alugados gastam mais diesel",
+      "VBBR3": "Consumidor abastece menos",
+      "UGPA3": "Consumidor abastece menos"
     },
-    "grupo": "petroleo",
-    "impactoMercado": -1,
-    "motivoMercado": "Medo de inflação pesa na bolsa"
+    "grupo": "petroleo"
   },
   {
     "id": "petroleo-despenca",
     "manchete": "Preço do petróleo despenca com excesso de produção no mundo",
-    "explicacao": "Quando há petróleo sobrando no mercado, o preço cai. Petroleiras passam a lucrar menos por barril. Para empresas de transporte e indústrias, combustível e energia mais baratos significam custos menores.",
-    "impactoSetores": {
-      "Petróleo e Gás": -8,
-      "Transporte e Logística": 4,
-      "Indústria e Papel": 2
+    "explicacao": "Quando sobra petróleo no mundo, o preço cai e as produtoras lucram menos por barril, principalmente as menores, que só produzem petróleo. Para ferrovias e frotas de caminhões, diesel mais barato é custo menor, e os postos vendem mais combustível.",
+    "impactos": {
+      "PETR3": -7,
+      "PETR4": -7,
+      "PRIO3": -9,
+      "BRAV3": -9,
+      "CSAN3": -2,
+      "RAIL3": 3,
+      "VAMO3": 2,
+      "VBBR3": 2,
+      "UGPA3": 2
     },
     "motivos": {
-      "Petróleo e Gás": "Lucro por barril despenca",
-      "Transporte e Logística": "Diesel mais barato",
-      "Indústria e Papel": "Energia e frete mais baratos"
+      "PETR3": "Lucro por barril despenca",
+      "PETR4": "Lucro por barril despenca",
+      "PRIO3": "Só produz petróleo: perde muito com a queda",
+      "BRAV3": "Só produz petróleo: perde muito com a queda",
+      "CSAN3": "Etanol perde competitividade",
+      "RAIL3": "Diesel mais barato nos trens",
+      "VAMO3": "Caminhões gastam menos com diesel",
+      "VBBR3": "Postos vendem mais combustível",
+      "UGPA3": "Postos vendem mais combustível"
     },
-    "grupo": "petroleo",
-    "impactoMercado": 0.5,
-    "motivoMercado": "Combustível barato alivia a economia"
+    "grupo": "petroleo"
   },
   {
     "id": "opep-corta-producao",
     "manchete": "Países produtores de petróleo combinam cortar a produção",
-    "explicacao": "A OPEP é um grupo de países que produzem muito petróleo. Quando eles decidem produzir menos, a oferta cai e o preço do barril sobe. Petroleiras de fora do grupo, como as brasileiras, ganham com isso.",
-    "impactoSetores": {
-      "Petróleo e Gás": 6,
-      "Transporte e Logística": -3
+    "explicacao": "A OPEP é um grupo de países que produzem muito petróleo. Quando decidem produzir menos, a oferta cai e o barril fica mais caro. Produtoras brasileiras, que estão fora do grupo, vendem mais caro. As ferrovias pagam mais pelo diesel.",
+    "impactos": {
+      "PETR3": 5,
+      "PETR4": 5,
+      "PRIO3": 6,
+      "BRAV3": 6,
+      "RAIL3": -2
     },
     "motivos": {
-      "Petróleo e Gás": "Barril mais caro aumenta o lucro",
-      "Transporte e Logística": "Combustível encarece"
+      "PETR3": "Barril mais caro aumenta o lucro",
+      "PETR4": "Barril mais caro aumenta o lucro",
+      "PRIO3": "Só produz petróleo: ganha com a alta",
+      "BRAV3": "Só produz petróleo: ganha com a alta",
+      "RAIL3": "Diesel mais caro nos trens"
     },
-    "grupo": "petroleo",
-    "impactoMercado": -0.5,
-    "motivoMercado": "Combustível mais caro preocupa"
+    "grupo": "petroleo"
   },
   {
     "id": "minerio-sobe-china",
     "manchete": "China anuncia grande pacote de obras e minério de ferro sobe forte",
-    "explicacao": "A China é a maior compradora de minério de ferro do mundo, usado para fazer aço. Quando o governo chinês investe em prédios, pontes e ferrovias, precisa de muito aço, e as mineradoras brasileiras vendem mais e mais caro.",
-    "impactoSetores": {
-      "Mineração e Siderurgia": 8
+    "explicacao": "A China é a maior compradora de minério de ferro do mundo, usado para fazer aço. Com um pacote de obras chinês, a procura dispara e as mineradoras vendem mais e mais caro. A Bradespar sobe junto porque é dona de uma parte da Vale.",
+    "impactos": {
+      "VALE3": 7,
+      "CMIN3": 9,
+      "BRAP4": 7
     },
     "motivos": {
-      "Mineração e Siderurgia": "China compra mais minério"
+      "VALE3": "China compra mais minério",
+      "CMIN3": "Só vende minério: ganha muito com a alta",
+      "BRAP4": "É dona de parte da Vale"
     },
-    "grupo": "minerio",
-    "impactoMercado": 1,
-    "motivoMercado": "China forte anima a bolsa"
+    "grupo": "minerio"
   },
   {
     "id": "minerio-cai-china",
     "manchete": "Economia da China desacelera e preço do minério de ferro desaba",
-    "explicacao": "Se a China constrói menos, compra menos minério. Com menos procura, o preço cai e as mineradoras e siderúrgicas brasileiras faturam menos, já que a China é o maior cliente delas.",
-    "impactoSetores": {
-      "Mineração e Siderurgia": -8
+    "explicacao": "Se a China constrói menos, compra menos minério de ferro. Com menos procura, o preço cai e as mineradoras faturam menos. A Bradespar cai junto porque é dona de uma parte da Vale.",
+    "impactos": {
+      "VALE3": -7,
+      "CMIN3": -9,
+      "BRAP4": -7
     },
     "motivos": {
-      "Mineração e Siderurgia": "China compra menos minério"
+      "VALE3": "China compra menos minério",
+      "CMIN3": "Só vende minério: perde muito com a queda",
+      "BRAP4": "É dona de parte da Vale"
     },
-    "grupo": "minerio",
-    "impactoMercado": -1,
-    "motivoMercado": "China fraca preocupa a bolsa"
+    "grupo": "minerio"
   },
   {
     "id": "china-compra-carne",
     "manchete": "China libera mais frigoríficos brasileiros para exportar carne",
-    "explicacao": "Quando a China autoriza mais empresas brasileiras a vender carne para lá, abre-se um mercado gigante, com mais de 1 bilhão de consumidores. Frigoríficos e empresas de alimentos podem vender mais e com preços melhores.",
-    "impactoSetores": {
-      "Agronegócio": 7,
-      "Alimentos e Bebidas": 5
+    "explicacao": "Quando a China autoriza mais frigoríficos brasileiros a vender carne para lá, abre-se um mercado com mais de 1 bilhão de consumidores. Os frigoríficos podem vender mais e com preços melhores.",
+    "impactos": {
+      "MBRF3": 6,
+      "BEEF3": 7
     },
     "motivos": {
-      "Agronegócio": "Novo mercado para a carne brasileira",
-      "Alimentos e Bebidas": "Mais exportação de proteína"
-    },
-    "impactoMercado": 0.5,
-    "motivoMercado": "Exportações maiores animam a bolsa"
+      "MBRF3": "Vende mais carne para a China",
+      "BEEF3": "Vende mais carne bovina para a China"
+    }
   },
   {
     "id": "guerra-comercial",
     "manchete": "Grandes potências entram em guerra comercial e aumentam impostos de importação",
-    "explicacao": "Numa guerra comercial, os países cobram taxas mais altas sobre produtos estrangeiros. O comércio mundial encolhe, e empresas que exportam, como indústrias, mineradoras e o agronegócio, encontram mais barreiras para vender.",
-    "impactoSetores": {
-      "Indústria e Papel": -5,
-      "Mineração e Siderurgia": -5,
-      "Agronegócio": -3,
-      "Tecnologia e Telecom": -2,
-      "Petróleo e Gás": -3
+    "explicacao": "Numa guerra comercial, os países cobram taxas mais altas sobre produtos estrangeiros. Quem exporta encontra barreiras: aviões, motores, aço, minério, celulose e carne. Com o comércio mundial menor, também cai a procura por petróleo.",
+    "impactos": {
+      "EMBJ3": -6,
+      "WEGE3": -4,
+      "GGBR4": -3,
+      "GOAU4": -3,
+      "CSNA3": -3,
+      "USIM5": -3,
+      "VALE3": -4,
+      "CMIN3": -4,
+      "BRAP4": -4,
+      "SUZB3": -3,
+      "KLBN11": -3,
+      "MBRF3": -3,
+      "BEEF3": -3,
+      "PRIO3": -3,
+      "BRAV3": -3
     },
     "motivos": {
-      "Indústria e Papel": "Exportações enfrentam barreiras",
-      "Mineração e Siderurgia": "Comércio mundial de aço e minério cai",
-      "Agronegócio": "Menos compradores lá fora",
-      "Tecnologia e Telecom": "Peças importadas encarecem",
-      "Petróleo e Gás": "Medo de menos demanda por petróleo"
+      "EMBJ3": "Vende muitos aviões aos EUA",
+      "WEGE3": "Exporta motores",
+      "GGBR4": "Aço enfrenta taxas lá fora",
+      "GOAU4": "Aço enfrenta taxas lá fora",
+      "CSNA3": "Aço enfrenta taxas lá fora",
+      "USIM5": "Aço enfrenta taxas lá fora",
+      "VALE3": "Comércio mundial de minério cai",
+      "CMIN3": "Comércio mundial de minério cai",
+      "BRAP4": "Comércio mundial de minério cai",
+      "SUZB3": "Exportação de celulose cai",
+      "KLBN11": "Exportação de celulose cai",
+      "MBRF3": "Menos compradores de carne",
+      "BEEF3": "Menos compradores de carne",
+      "PRIO3": "Menor demanda por petróleo",
+      "BRAV3": "Menor demanda por petróleo"
     },
-    "grupo": "comercio",
-    "impactoMercado": -2,
-    "motivoMercado": "Comércio mundial em crise derruba a bolsa"
+    "grupo": "comercio"
   },
   {
     "id": "acordo-mercosul-ue",
     "manchete": "Acordo entre Mercosul e União Europeia reduz impostos sobre produtos brasileiros",
-    "explicacao": "Com o acordo, produtos brasileiros pagam menos imposto para entrar na Europa. Carnes, grãos, bebidas e produtos industrializados ficam mais competitivos lá fora, e as empresas exportadoras podem vender mais.",
-    "impactoSetores": {
-      "Agronegócio": 6,
-      "Alimentos e Bebidas": 4,
-      "Indústria e Papel": 3
+    "explicacao": "Com o acordo, produtos brasileiros pagam menos imposto para entrar na Europa. Carnes, celulose, aviões e motores ficam mais competitivos lá fora, e as empresas exportadoras podem vender mais.",
+    "impactos": {
+      "MBRF3": 5,
+      "BEEF3": 5,
+      "EMBJ3": 3,
+      "WEGE3": 3,
+      "SUZB3": 3,
+      "KLBN11": 3
     },
     "motivos": {
-      "Agronegócio": "Carne e grãos entram mais fácil na Europa",
-      "Alimentos e Bebidas": "Exportação de alimentos cresce",
-      "Indústria e Papel": "Produtos industriais ficam competitivos"
+      "MBRF3": "Carne entra mais fácil na Europa",
+      "BEEF3": "Carne entra mais fácil na Europa",
+      "EMBJ3": "Aviões mais competitivos na Europa",
+      "WEGE3": "Motores mais competitivos na Europa",
+      "SUZB3": "Celulose entra mais fácil na Europa",
+      "KLBN11": "Celulose entra mais fácil na Europa"
     },
-    "grupo": "comercio",
-    "impactoMercado": 1,
-    "motivoMercado": "Mais comércio anima a bolsa"
+    "grupo": "comercio"
   },
   {
     "id": "taxa-aco-importado",
     "manchete": "Governo aumenta imposto sobre aço importado da China",
-    "explicacao": "O aço chinês chega muito barato e tira clientes das siderúrgicas brasileiras. Com o novo imposto, o aço nacional volta a competir. Por outro lado, quem usa aço para construir ou fabricar coisas passa a pagar um pouco mais.",
-    "impactoSetores": {
-      "Mineração e Siderurgia": 6,
-      "Construção e Imóveis": -2,
-      "Indústria e Papel": -2
+    "explicacao": "O aço chinês chega muito barato e tira clientes das siderúrgicas brasileiras. Com o novo imposto, o aço nacional volta a competir. Por outro lado, quem usa muito aço para fabricar, como a Marcopolo nos ônibus e a WEG nos motores, paga um pouco mais.",
+    "impactos": {
+      "GGBR4": 5,
+      "GOAU4": 5,
+      "CSNA3": 6,
+      "USIM5": 7,
+      "POMO4": -2,
+      "WEGE3": -1.5
     },
     "motivos": {
-      "Mineração e Siderurgia": "Menos concorrência do aço chinês",
-      "Construção e Imóveis": "Aço para obras fica mais caro",
-      "Indústria e Papel": "Matéria-prima mais cara"
-    },
-    "impactoMercado": 0.5,
-    "motivoMercado": "Leve otimismo com a indústria nacional"
+      "GGBR4": "Menos concorrência do aço chinês",
+      "GOAU4": "Menos concorrência do aço chinês",
+      "CSNA3": "Menos concorrência do aço chinês",
+      "USIM5": "Mais exposta ao aço chinês: ganha mais",
+      "POMO4": "Aço para ônibus fica mais caro",
+      "WEGE3": "Aço para motores fica mais caro"
+    }
   },
   {
     "id": "celulose-recorde",
     "manchete": "Preço da celulose bate recorde com alta procura por embalagens",
-    "explicacao": "Celulose é a matéria-prima do papel e das embalagens de papelão. Com o crescimento das compras online, o mundo precisa de muito mais caixas. O Brasil é um dos maiores produtores, e as fabricantes vendem mais caro.",
-    "impactoSetores": {
-      "Indústria e Papel": 7
+    "explicacao": "Celulose é a matéria-prima do papel e das embalagens de papelão. Com o crescimento das compras online, o mundo precisa de muito mais caixas. Suzano e Klabin, grandes produtoras brasileiras, vendem mais caro.",
+    "impactos": {
+      "SUZB3": 7,
+      "KLBN11": 5
     },
     "motivos": {
-      "Indústria e Papel": "Celulose vendida mais cara"
-    },
-    "impactoMercado": 0.5,
-    "motivoMercado": "Exportação forte anima a bolsa"
+      "SUZB3": "Maior produtora de celulose do mundo",
+      "KLBN11": "Vende celulose e papelão"
+    }
   },
   {
     "id": "safra-recorde",
     "manchete": "Brasil colhe a maior safra de grãos da sua história",
-    "explicacao": "Uma safra recorde significa muita soja e milho para vender e exportar. O agronegócio fatura mais, as ferrovias e transportadoras levam mais carga até os portos e a ração dos animais fica mais barata para os frigoríficos.",
-    "impactoSetores": {
-      "Agronegócio": 7,
-      "Transporte e Logística": 5,
-      "Alimentos e Bebidas": 2
+    "explicacao": "Uma safra recorde significa muita soja e milho. A ferrovia Rumo leva os grãos até os portos, os postos vendem mais diesel para tratores e caminhões, e a ração dos frangos e porcos fica mais barata. A Cosan também ganha, porque é dona de parte da Rumo e de terras agrícolas.",
+    "impactos": {
+      "RAIL3": 6,
+      "VBBR3": 2,
+      "UGPA3": 2,
+      "MBRF3": 3,
+      "CSAN3": 3
     },
     "motivos": {
-      "Agronegócio": "Muito mais produção para vender",
-      "Transporte e Logística": "Grãos lotam trens e caminhões",
-      "Alimentos e Bebidas": "Ração e insumos mais baratos"
+      "RAIL3": "Trens lotados de grãos",
+      "VBBR3": "Mais diesel para tratores e caminhões",
+      "UGPA3": "Mais diesel para tratores e caminhões",
+      "MBRF3": "Ração mais barata para frangos e porcos",
+      "CSAN3": "Dona de parte da Rumo e de terras agrícolas"
     },
-    "grupo": "safra",
-    "impactoMercado": 1,
-    "motivoMercado": "Agro forte ajuda a economia"
+    "grupo": "clima"
   },
   {
     "id": "seca-centro-oeste",
     "manchete": "Seca severa atinge o Centro-Oeste e derruba a produção de grãos",
-    "explicacao": "Sem chuva, as plantações rendem menos e o agronegócio perde dinheiro. Há menos carga para transportar, os rios e represas baixam, e as hidrelétricas geram menos energia, obrigando o uso de usinas mais caras.",
-    "impactoSetores": {
-      "Agronegócio": -7,
-      "Transporte e Logística": -4,
-      "Energia e Saneamento": -5,
-      "Alimentos e Bebidas": -3
+    "explicacao": "Sem chuva, as plantações rendem menos e há menos grãos para levar aos portos. As represas baixam e as hidrelétricas geram menos energia, então o país liga usinas térmicas a gás, como as da Eneva, que ganham com isso.",
+    "impactos": {
+      "RAIL3": -5,
+      "CSAN3": -4,
+      "MBRF3": -3,
+      "AXIA3": -4,
+      "AURE3": -4,
+      "CMIG4": -3,
+      "CPLE3": -3,
+      "EGIE3": -3,
+      "ENEV3": 4
     },
     "motivos": {
-      "Agronegócio": "Colheita menor",
-      "Transporte e Logística": "Menos grãos para levar",
-      "Energia e Saneamento": "Represas baixas geram menos energia",
-      "Alimentos e Bebidas": "Matéria-prima mais cara"
+      "RAIL3": "Menos grãos para transportar",
+      "CSAN3": "Menos cana e grãos",
+      "MBRF3": "Ração mais cara",
+      "AXIA3": "Represas baixas geram menos energia",
+      "AURE3": "Represas baixas geram menos energia",
+      "CMIG4": "Represas baixas geram menos energia",
+      "CPLE3": "Represas baixas geram menos energia",
+      "EGIE3": "Represas baixas geram menos energia",
+      "ENEV3": "Usinas a gás são chamadas para gerar energia"
     },
-    "grupo": "clima",
-    "impactoMercado": -1,
-    "motivoMercado": "Seca prejudica a economia"
+    "grupo": "clima"
   },
   {
     "id": "chuvas-enchem-reservatorios",
     "manchete": "Chuvas acima da média enchem as represas das hidrelétricas",
-    "explicacao": "A maior parte da energia do Brasil vem de hidrelétricas. Com as represas cheias, gerar energia fica barato e as empresas do setor não precisam ligar usinas caras, o que aumenta o lucro delas.",
-    "impactoSetores": {
-      "Energia e Saneamento": 5
+    "explicacao": "A maior parte da energia do Brasil vem de hidrelétricas. Com as represas cheias, gerar energia fica barato e as hidrelétricas lucram mais. As usinas a gás ficam desligadas, e as empresas de saneamento têm água garantida para abastecer as cidades.",
+    "impactos": {
+      "AXIA3": 5,
+      "AURE3": 5,
+      "CMIG4": 3,
+      "CPLE3": 3,
+      "EGIE3": 3,
+      "ENEV3": -4,
+      "SBSP3": 2,
+      "CSMG3": 2
     },
     "motivos": {
-      "Energia e Saneamento": "Energia barata de gerar"
+      "AXIA3": "Represas cheias geram energia barata",
+      "AURE3": "Represas cheias geram energia barata",
+      "CMIG4": "Represas cheias geram energia barata",
+      "CPLE3": "Represas cheias geram energia barata",
+      "EGIE3": "Represas cheias geram energia barata",
+      "ENEV3": "Usinas a gás ficam desligadas",
+      "SBSP3": "Água garantida nas represas",
+      "CSMG3": "Água garantida nas represas"
     },
-    "grupo": "clima",
-    "impactoMercado": 0.5,
-    "motivoMercado": "Energia barata ajuda a economia"
+    "grupo": "clima"
   },
   {
     "id": "el-nino-forte",
     "manchete": "Meteorologistas preveem El Niño forte com secas e enchentes",
-    "explicacao": "O El Niño é o aquecimento das águas do Oceano Pacífico, que bagunça o clima: chove demais no Sul e falta chuva no Norte e Nordeste. Isso atrapalha as lavouras, a geração de energia e encarece alimentos.",
-    "impactoSetores": {
-      "Agronegócio": -5,
-      "Energia e Saneamento": -3,
-      "Alimentos e Bebidas": -2
+    "explicacao": "O El Niño é o aquecimento das águas do Oceano Pacífico, que bagunça o clima. Chove demais no Sul, o que enche as represas da Copel no Paraná, e falta chuva no Norte e no Nordeste, o que atrapalha lavouras, pastos e outras hidrelétricas.",
+    "impactos": {
+      "CPLE3": 3,
+      "AXIA3": -2,
+      "AURE3": -2,
+      "CSAN3": -3,
+      "MBRF3": -2,
+      "BEEF3": -2,
+      "RAIL3": -2
     },
     "motivos": {
-      "Agronegócio": "Risco de perder parte da colheita",
-      "Energia e Saneamento": "Geração de energia fica incerta",
-      "Alimentos e Bebidas": "Ingredientes podem encarecer"
+      "CPLE3": "Chuva no Sul enche as represas do Paraná",
+      "AXIA3": "Menos chuva nas represas do Norte",
+      "AURE3": "Menos chuva nas represas do Norte",
+      "CSAN3": "Risco para a cana e as lavouras",
+      "MBRF3": "Pasto e ração podem faltar",
+      "BEEF3": "Pasto e ração podem faltar",
+      "RAIL3": "Colheita incerta"
     },
-    "impactoMercado": -0.5,
-    "motivoMercado": "Incerteza com o clima"
+    "grupo": "clima"
   },
   {
     "id": "gripe-aviaria-controlada",
     "manchete": "Brasil é declarado livre da gripe aviária e volta a exportar frango",
-    "explicacao": "Quando surge uma doença em aves, vários países param de comprar frango brasileiro por segurança. Com o fim do problema, as exportações são liberadas e os frigoríficos e produtores voltam a vender normalmente.",
-    "impactoSetores": {
-      "Alimentos e Bebidas": 5,
-      "Agronegócio": 3
+    "explicacao": "Quando surge uma doença em aves, vários países param de comprar frango brasileiro por segurança. Com o fim do problema, as exportações são liberadas e a MBRF, dona da Sadia e da Perdigão, volta a vender frango para o mundo todo.",
+    "impactos": {
+      "MBRF3": 6
     },
     "motivos": {
-      "Alimentos e Bebidas": "Exportação de frango liberada",
-      "Agronegócio": "Produtores voltam a vender"
-    },
-    "impactoMercado": 0.5,
-    "motivoMercado": "Exportações liberadas animam a bolsa"
+      "MBRF3": "Dona da Sadia: volta a exportar frango"
+    }
   },
   {
     "id": "apagao-nacional",
     "manchete": "Apagão deixa várias regiões do país sem luz por horas",
-    "explicacao": "Um apagão grande levanta dúvidas sobre a qualidade das empresas de energia, que podem levar multas e ser investigadas. Fábricas param a produção durante horas, o que causa prejuízo para a indústria.",
-    "impactoSetores": {
-      "Energia e Saneamento": -6,
-      "Indústria e Papel": -3
+    "explicacao": "Um apagão grande levanta dúvidas sobre quem cuida da rede elétrica. As empresas que transmitem e distribuem energia podem levar multas e ser investigadas, e a Axia, antiga Eletrobras, é a principal dona das linhas.",
+    "impactos": {
+      "AXIA3": -5,
+      "ISAE4": -4,
+      "TAEE11": -4,
+      "EQTL3": -3,
+      "ENGI11": -3,
+      "CPFE3": -3,
+      "CMIG4": -3,
+      "CPLE3": -3
     },
     "motivos": {
-      "Energia e Saneamento": "Risco de multas e investigação",
-      "Indústria e Papel": "Fábricas paradas"
-    },
-    "impactoMercado": -1,
-    "motivoMercado": "Dia de prejuízo para a economia"
+      "AXIA3": "Maior dona de linhas de transmissão",
+      "ISAE4": "Risco de multas na transmissão",
+      "TAEE11": "Risco de multas na transmissão",
+      "EQTL3": "Risco de multas na distribuição",
+      "ENGI11": "Risco de multas na distribuição",
+      "CPFE3": "Risco de multas na distribuição",
+      "CMIG4": "Risco de multas na distribuição",
+      "CPLE3": "Risco de multas na distribuição"
+    }
   },
   {
     "id": "leilao-transmissao",
     "manchete": "Governo faz leilão bilionário para novas linhas de transmissão de energia",
-    "explicacao": "Linhas de transmissão levam a energia das usinas até as cidades. As empresas que vencem o leilão garantem receita por cerca de 30 anos. A WEG, que fabrica equipamentos elétricos, também ganha com as grandes encomendas.",
-    "impactoSetores": {
-      "Energia e Saneamento": 5
+    "explicacao": "Linhas de transmissão levam a energia das usinas até as cidades. As empresas que vencem o leilão garantem receita por cerca de 30 anos. A WEG, que fabrica transformadores e equipamentos elétricos, ganha grandes encomendas.",
+    "impactos": {
+      "TAEE11": 6,
+      "ISAE4": 5,
+      "AXIA3": 2,
+      "ENGI11": 2,
+      "WEGE3": 4
     },
     "motivos": {
-      "Energia e Saneamento": "Receita garantida por décadas"
-    },
-    "impactoAcoes": {
-      "WEGE3": 5
-    },
-    "impactoMercado": 0.5,
-    "motivoMercado": "Investimentos animam a bolsa"
+      "TAEE11": "Vence novos lotes de transmissão",
+      "ISAE4": "Vence novos lotes de transmissão",
+      "AXIA3": "Também disputa linhas novas",
+      "ENGI11": "Também disputa linhas novas",
+      "WEGE3": "Vende transformadores para as obras"
+    }
   },
   {
     "id": "reforma-tributaria-consumo",
     "manchete": "Reforma tributária simplifica impostos sobre produtos do dia a dia",
-    "explicacao": "Hoje o Brasil tem muitos impostos diferentes sobre o consumo, o que deixa tudo mais caro e complicado. Com regras mais simples, lojas e fabricantes gastam menos com burocracia, e remédios e serviços de saúde passam a pagar menos imposto. Alguns serviços financeiros, porém, passam a pagar mais.",
-    "impactoSetores": {
-      "Varejo e Consumo": 4,
-      "Alimentos e Bebidas": 3,
-      "Bancos e Finanças": -2,
-      "Saúde": 2
+    "explicacao": "A reforma junta vários impostos sobre o consumo em poucos, o que reduz custos e burocracia das lojas. Remédios ganham imposto reduzido. Já as bebidas alcoólicas passam a pagar um imposto extra, o chamado imposto seletivo, criado para produtos que fazem mal à saúde.",
+    "impactos": {
+      "MGLU3": 3,
+      "LREN3": 3,
+      "CEAB3": 3,
+      "AZZA3": 3,
+      "ASAI3": 3,
+      "RADL3": 3,
+      "HYPE3": 3,
+      "ABEV3": -4
     },
     "motivos": {
-      "Varejo e Consumo": "Menos burocracia e custo",
-      "Alimentos e Bebidas": "Impostos mais simples",
-      "Bancos e Finanças": "Serviços financeiros pagam mais",
-      "Saúde": "Remédios e saúde terão imposto reduzido"
-    },
-    "impactoMercado": 1,
-    "motivoMercado": "Impostos mais simples animam a bolsa"
+      "MGLU3": "Menos impostos e burocracia",
+      "LREN3": "Menos impostos e burocracia",
+      "CEAB3": "Menos impostos e burocracia",
+      "AZZA3": "Menos impostos e burocracia",
+      "ASAI3": "Menos impostos e burocracia",
+      "RADL3": "Remédios terão imposto reduzido",
+      "HYPE3": "Remédios terão imposto reduzido",
+      "ABEV3": "Cerveja paga o novo imposto seletivo"
+    }
   },
   {
     "id": "bancos-mais-capital",
     "manchete": "Banco Central exige que bancos guardem mais dinheiro como reserva",
-    "explicacao": "Para deixar o sistema mais seguro, o Banco Central manda os bancos guardarem mais dinheiro parado. Isso reduz o risco de crises, mas sobra menos dinheiro para emprestar e lucrar, e os bancos ganham menos no curto prazo.",
-    "impactoSetores": {
-      "Bancos e Finanças": -5
+    "explicacao": "Para deixar o sistema mais seguro, o Banco Central manda os bancos guardarem mais dinheiro parado. Isso reduz o risco de crises, mas sobra menos dinheiro para emprestar, e os bancos lucram menos no curto prazo.",
+    "impactos": {
+      "ITUB4": -4,
+      "BBDC3": -4,
+      "BBDC4": -4,
+      "BBAS3": -4,
+      "SANB11": -4,
+      "BPAC11": -4,
+      "ITSA4": -3
     },
     "motivos": {
-      "Bancos e Finanças": "Menos dinheiro para emprestar"
-    },
-    "impactoMercado": -0.5,
-    "motivoMercado": "Menos crédito na economia"
+      "ITUB4": "Menos dinheiro para emprestar",
+      "BBDC3": "Menos dinheiro para emprestar",
+      "BBDC4": "Menos dinheiro para emprestar",
+      "BBAS3": "Menos dinheiro para emprestar",
+      "SANB11": "Menos dinheiro para emprestar",
+      "BPAC11": "Menos dinheiro para emprestar",
+      "ITSA4": "É dona de parte do Itaú"
+    }
   },
   {
     "id": "programa-habitacao",
     "manchete": "Governo amplia programa de casas populares com juros baixos",
-    "explicacao": "Programas de habitação ajudam famílias de renda mais baixa a comprar a casa própria. As construtoras focadas nesse público, como Cury, Direcional, Tenda e MRV, vendem muito mais, e aumenta a procura por aço para as obras.",
-    "impactoSetores": {
-      "Construção e Imóveis": 8,
-      "Mineração e Siderurgia": 2
+    "explicacao": "Programas de habitação ajudam famílias de renda mais baixa a comprar a casa própria. As construtoras focadas nesse público vendem muito mais, as siderúrgicas vendem mais vergalhão para as obras e a Caixa Seguridade vende mais seguros habitacionais.",
+    "impactos": {
+      "CURY3": 9,
+      "DIRR3": 9,
+      "TEND3": 10,
+      "MRVE3": 10,
+      "GGBR4": 2,
+      "GOAU4": 2,
+      "CSNA3": 2,
+      "CXSE3": 3
     },
     "motivos": {
-      "Construção e Imóveis": "Muito mais casas vendidas",
-      "Mineração e Siderurgia": "Mais aço para as obras"
-    },
-    "impactoAcoes": {
-      "CURY3": 10,
-      "DIRR3": 10,
-      "TEND3": 10,
-      "MRVE3": 10
-    },
-    "impactoMercado": 0.5,
-    "motivoMercado": "Mais obras animam a economia"
+      "CURY3": "Constrói casas populares",
+      "DIRR3": "Constrói casas populares",
+      "TEND3": "Constrói casas populares",
+      "MRVE3": "Constrói casas populares",
+      "GGBR4": "Vende vergalhão para as obras",
+      "GOAU4": "Vende vergalhão para as obras",
+      "CSNA3": "Vende vergalhão para as obras",
+      "CXSE3": "Vende seguro habitacional pela Caixa"
+    }
   },
   {
     "id": "planos-saude-reajuste",
     "manchete": "Agência autoriza reajuste maior nos planos de saúde",
-    "explicacao": "A ANS é a agência que regula os planos de saúde. Com um reajuste maior autorizado, as operadoras, como a Hapvida e a SulAmérica (da Rede D'Or), recebem mais por cliente e cobrem melhor os custos de consultas e cirurgias. Para as famílias, a mensalidade fica mais cara.",
-    "impactoSetores": {},
-    "motivos": {
-      "HAPV3": "Operadora recebe mais por cliente",
-      "RDOR3": "Dona da SulAmérica, recebe mais por cliente"
-    },
-    "grupo": "saude-regras",
-    "impactoAcoes": {
+    "explicacao": "A ANS é a agência que regula os planos de saúde. Com um reajuste maior autorizado, as operadoras, como a Hapvida e a SulAmérica (da Rede D'Or), recebem mais por cliente. Para as famílias, a mensalidade fica mais cara.",
+    "impactos": {
       "HAPV3": 6,
       "RDOR3": 3
     },
-    "impactoMercado": 0.5,
-    "motivoMercado": "Dia tranquilo na bolsa"
+    "motivos": {
+      "HAPV3": "Operadora recebe mais por cliente",
+      "RDOR3": "Dona da SulAmérica: recebe mais por cliente"
+    },
+    "grupo": "saude-regras"
   },
   {
     "id": "regra-planos-saude",
     "manchete": "Nova regra obriga planos de saúde a cobrir mais tratamentos",
-    "explicacao": "Quando os planos de saúde precisam cobrir mais exames e tratamentos, os custos das operadoras, como a Hapvida e a SulAmérica (da Rede D'Or), sobem bastante. É bom para os pacientes, mas reduz o lucro dessas empresas no curto prazo.",
-    "impactoSetores": {},
+    "explicacao": "Quando os planos de saúde precisam cobrir mais exames e tratamentos, os custos das operadoras, como a Hapvida e a SulAmérica (da Rede D'Or), sobem bastante. Já os laboratórios, como o Fleury, fazem mais exames pagos pelos planos.",
+    "impactos": {
+      "HAPV3": -7,
+      "RDOR3": -3,
+      "FLRY3": 3
+    },
     "motivos": {
       "HAPV3": "Operadora passa a gastar mais",
-      "RDOR3": "Dona da SulAmérica, gasta mais"
+      "RDOR3": "Dona da SulAmérica: gasta mais",
+      "FLRY3": "Faz mais exames pagos pelos planos"
     },
-    "grupo": "saude-regras",
-    "impactoAcoes": {
-      "HAPV3": -7,
-      "RDOR3": -3
-    },
-    "impactoMercado": -0.5,
-    "motivoMercado": "Dia sem grandes novidades na bolsa"
+    "grupo": "saude-regras"
   },
   {
     "id": "epidemia-dengue",
     "manchete": "Epidemia de dengue lota hospitais e farmácias pelo país",
     "explicacao": "Nem toda empresa de saúde reage igual. Farmácias, fabricantes de remédios e laboratórios de exames vendem mais. Já os planos de saúde gastam mais com internações dos clientes, o que aperta o lucro. Mesmo setor, efeitos opostos!",
-    "impactoSetores": {},
-    "impactoAcoes": {
+    "impactos": {
       "RADL3": 6,
       "HYPE3": 4,
       "FLRY3": 3,
@@ -632,258 +1109,241 @@
       "HYPE3": "Vende mais remédios",
       "FLRY3": "Mais exames de dengue",
       "HAPV3": "Plano de saúde paga mais internações"
-    },
-    "impactoMercado": -0.5,
-    "motivoMercado": "Pessoas doentes faltam ao trabalho"
+    }
   },
   {
     "id": "concessao-rodovias",
     "manchete": "Governo concede rodovias e ferrovias à iniciativa privada",
-    "explicacao": "Em uma concessão, uma empresa privada assume uma estrada ou ferrovia, faz melhorias e cobra pedágio ou frete por muitos anos. As empresas de infraestrutura ganham novos negócios, e as construtoras recebem obras.",
-    "impactoSetores": {
-      "Transporte e Logística": 6,
-      "Construção e Imóveis": 3
+    "explicacao": "Em uma concessão, uma empresa privada assume uma estrada ou ferrovia, faz melhorias e cobra pedágio ou frete por muitos anos. A Motiva, antiga CCR, administra rodovias, e a Rumo, ferrovias: as duas disputam os novos contratos.",
+    "impactos": {
+      "MOTV3": 6,
+      "RAIL3": 3
     },
     "motivos": {
-      "Transporte e Logística": "Novos contratos de longo prazo",
-      "Construção e Imóveis": "Mais obras de infraestrutura"
-    },
-    "impactoMercado": 0.5,
-    "motivoMercado": "Investimentos animam a bolsa"
+      "MOTV3": "Disputa novas rodovias",
+      "RAIL3": "Disputa novas ferrovias"
+    }
   },
   {
     "id": "expansao-5g",
     "manchete": "Internet 5G chega a todas as cidades com mais de 50 mil habitantes",
-    "explicacao": "O 5G é uma internet móvel muito mais rápida. Com a expansão, as operadoras de telefonia e as empresas de tecnologia ganham mais clientes e vendem planos e serviços mais caros.",
-    "impactoSetores": {
-      "Tecnologia e Telecom": 5
+    "explicacao": "O 5G é uma internet móvel muito mais rápida. Com a expansão, as operadoras de telefonia ganham mais clientes e vendem planos mais caros.",
+    "impactos": {
+      "VIVT3": 5,
+      "TIMS3": 5
     },
     "motivos": {
-      "Tecnologia e Telecom": "Mais clientes e planos melhores"
-    },
-    "impactoMercado": 0.5,
-    "motivoMercado": "Tecnologia anima a bolsa"
+      "VIVT3": "Mais clientes em planos 5G",
+      "TIMS3": "Mais clientes em planos 5G"
+    }
   },
   {
     "id": "ataque-hacker",
     "manchete": "Ataque hacker expõe dados de milhões de brasileiros",
-    "explicacao": "Um grande vazamento de dados assusta clientes e pode gerar multas pesadas pela Lei Geral de Proteção de Dados. Empresas de tecnologia e bancos precisam investir mais em segurança, o que aumenta os custos.",
-    "impactoSetores": {
-      "Tecnologia e Telecom": -5,
-      "Bancos e Finanças": -2
+    "explicacao": "Um grande vazamento de dados assusta clientes e pode gerar multas pesadas pela Lei Geral de Proteção de Dados. Empresas de software, operadoras e bancos, que guardam muitos dados, precisam gastar mais com segurança.",
+    "impactos": {
+      "TOTS3": -5,
+      "VIVT3": -2,
+      "TIMS3": -2,
+      "ITUB4": -2,
+      "BBDC4": -2,
+      "BBAS3": -2
     },
     "motivos": {
-      "Tecnologia e Telecom": "Risco de multas e perda de clientes",
-      "Bancos e Finanças": "Gastos extras com segurança"
-    },
-    "impactoMercado": -0.5,
-    "motivoMercado": "Insegurança digital preocupa"
+      "TOTS3": "Software sob desconfiança",
+      "VIVT3": "Gastos extras com segurança",
+      "TIMS3": "Gastos extras com segurança",
+      "ITUB4": "Gastos extras com segurança",
+      "BBDC4": "Gastos extras com segurança",
+      "BBAS3": "Gastos extras com segurança"
+    }
   },
   {
     "id": "privatizacao-saneamento",
     "manchete": "Novas regras atraem empresas privadas para levar esgoto a todo o país",
-    "explicacao": "Milhões de brasileiros ainda não têm esgoto tratado. Com regras novas, empresas de saneamento podem ganhar contratos grandes e longos para resolver isso, e as construtoras ganham as obras de canos e estações de tratamento.",
-    "impactoSetores": {
-      "Construção e Imóveis": 2
+    "explicacao": "Milhões de brasileiros ainda não têm esgoto tratado. Com regras novas, as empresas de saneamento podem ganhar contratos grandes e longos. A Equatorial também ganha, porque é a principal acionista da Sabesp.",
+    "impactos": {
+      "SBSP3": 7,
+      "CSMG3": 7,
+      "EQTL3": 3
     },
     "motivos": {
-      "Construção e Imóveis": "Obras de redes de esgoto",
       "SBSP3": "Contratos grandes e longos de esgoto",
-      "CSMG3": "Contratos grandes e longos de esgoto"
-    },
-    "impactoAcoes": {
-      "SBSP3": 7,
-      "CSMG3": 7
-    },
-    "impactoMercado": 0.5,
-    "motivoMercado": "Investimentos animam a bolsa"
+      "CSMG3": "Contratos grandes e longos de esgoto",
+      "EQTL3": "É a principal acionista da Sabesp"
+    }
   },
   {
     "id": "imposto-dividendos",
     "manchete": "Governo propõe cobrar imposto sobre dividendos",
-    "explicacao": "Dividendos são a parte do lucro que a empresa divide com quem tem suas ações. Se passarem a pagar imposto, o investidor recebe menos. Empresas famosas por pagar muitos dividendos, como bancos, elétricas e petroleiras, ficam menos atraentes.",
-    "impactoSetores": {
-      "Bancos e Finanças": -4,
-      "Energia e Saneamento": -3,
-      "Petróleo e Gás": -3,
-      "Tecnologia e Telecom": -2
+    "explicacao": "Dividendos são a parte do lucro que a empresa divide com quem tem suas ações. Se passarem a pagar imposto, o investidor recebe menos. As empresas famosas por pagar muitos dividendos ficam menos atraentes e são as que mais caem.",
+    "impactos": {
+      "BBSE3": -5,
+      "TAEE11": -5,
+      "BBAS3": -4,
+      "CXSE3": -4,
+      "ITSA4": -4,
+      "ISAE4": -4,
+      "PETR3": -3,
+      "PETR4": -3,
+      "VIVT3": -3,
+      "CMIG4": -3,
+      "CPFE3": -3,
+      "EGIE3": -3,
+      "CSMG3": -3,
+      "VBBR3": -3
     },
     "motivos": {
-      "Bancos e Finanças": "Famosos por pagar bons dividendos",
-      "Energia e Saneamento": "Dividendos rendem menos ao investidor",
-      "Petróleo e Gás": "Dividendos rendem menos ao investidor",
-      "Tecnologia e Telecom": "Dividendos rendem menos ao investidor"
-    },
-    "impactoMercado": -1.5,
-    "motivoMercado": "Investidores vendem ações com o novo imposto"
+      "BBSE3": "Famosa por pagar muitos dividendos",
+      "TAEE11": "Famosa por pagar muitos dividendos",
+      "BBAS3": "Paga muitos dividendos",
+      "CXSE3": "Paga muitos dividendos",
+      "ITSA4": "Paga muitos dividendos",
+      "ISAE4": "Paga muitos dividendos",
+      "PETR3": "Paga bons dividendos",
+      "PETR4": "Paga bons dividendos",
+      "VIVT3": "Paga bons dividendos",
+      "CMIG4": "Paga bons dividendos",
+      "CPFE3": "Paga bons dividendos",
+      "EGIE3": "Paga bons dividendos",
+      "CSMG3": "Paga bons dividendos",
+      "VBBR3": "Paga bons dividendos"
+    }
   },
   {
     "id": "petrobras-novo-campo",
     "manchete": "Petrobras anuncia descoberta de grande campo de petróleo no pré-sal",
-    "explicacao": "O pré-sal é uma camada de petróleo muito profunda no fundo do mar. Uma descoberta grande significa que a empresa terá mais petróleo para vender por muitos anos. Os investidores apostam em lucros maiores no futuro.",
-    "impactoSetores": {
-      "Petróleo e Gás": 2
-    },
-    "impactoAcoes": {
+    "explicacao": "O pré-sal é uma camada de petróleo muito profunda no fundo do mar. Uma descoberta grande significa que a Petrobras terá mais petróleo para vender por muitos anos, e os investidores apostam em lucros maiores no futuro.",
+    "impactos": {
       "PETR3": 7,
       "PETR4": 7
     },
     "motivos": {
       "PETR3": "Mais reservas de petróleo",
-      "PETR4": "Mais reservas de petróleo",
-      "Petróleo e Gás": "Setor ganha atenção dos investidores"
-    },
-    "impactoMercado": 0.5,
-    "motivoMercado": "Maior empresa da bolsa puxa o índice"
+      "PETR4": "Mais reservas de petróleo"
+    }
   },
   {
     "id": "embraer-encomenda",
     "manchete": "Embraer fecha a maior encomenda de aviões da sua história",
     "explicacao": "A Embraer é a fabricante brasileira de aviões. Uma encomenda recorde garante trabalho e faturamento por vários anos. Como os aviões são vendidos em dólar, a notícia anima ainda mais os investidores.",
-    "impactoSetores": {
-      "Indústria e Papel": 1
-    },
-    "impactoAcoes": {
+    "impactos": {
       "EMBJ3": 9
     },
     "motivos": {
-      "EMBJ3": "Faturamento garantido por anos",
-      "Indústria e Papel": "Indústria brasileira em destaque"
-    },
-    "impactoMercado": 0.5,
-    "motivoMercado": "Bom humor geral na bolsa"
+      "EMBJ3": "Faturamento garantido por anos"
+    }
   },
   {
     "id": "weg-fabrica-nova",
     "manchete": "WEG anuncia fábrica nova para motores de carros elétricos",
     "explicacao": "A WEG fabrica motores e equipamentos elétricos e vende para o mundo todo. Com a fábrica nova, ela entra forte no mercado de carros elétricos, que cresce rápido. Investidores apostam em mais vendas no futuro.",
-    "impactoSetores": {
-      "Indústria e Papel": 1
-    },
-    "impactoAcoes": {
+    "impactos": {
       "WEGE3": 6
     },
     "motivos": {
-      "WEGE3": "Aposta num mercado em crescimento",
-      "Indústria e Papel": "Indústria investe em inovação"
-    },
-    "impactoMercado": 0.5,
-    "motivoMercado": "Bom humor geral na bolsa"
+      "WEGE3": "Aposta num mercado em crescimento"
+    }
   },
   {
     "id": "vale-recompra",
     "manchete": "Vale anuncia que vai recomprar bilhões em ações próprias",
-    "explicacao": "Na recompra, a empresa usa seu dinheiro para comprar as próprias ações na bolsa. Com menos ações circulando, cada uma passa a representar um pedaço maior da empresa. É um sinal de que a direção acha a ação barata.",
-    "impactoSetores": {
-      "Mineração e Siderurgia": 1
-    },
-    "impactoAcoes": {
-      "VALE3": 5
+    "explicacao": "Na recompra, a empresa usa seu dinheiro para comprar as próprias ações na bolsa. Com menos ações circulando, cada uma vale um pedaço maior da empresa. A Bradespar, dona de parte da Vale, sobe junto.",
+    "impactos": {
+      "VALE3": 5,
+      "BRAP4": 3
     },
     "motivos": {
       "VALE3": "Empresa compra as próprias ações",
-      "Mineração e Siderurgia": "Setor fica mais atraente"
-    },
-    "impactoMercado": 0.5,
-    "motivoMercado": "Uma das maiores da bolsa puxa o índice"
+      "BRAP4": "É dona de parte da Vale"
+    }
   },
   {
     "id": "magalu-black-friday",
     "manchete": "Magazine Luiza bate recorde de vendas na Black Friday",
-    "explicacao": "A Black Friday é o dia de promoções mais importante do varejo. Um recorde de vendas mostra que a empresa está atraindo clientes, principalmente no site e no aplicativo. O setor todo se anima com o consumo forte.",
-    "impactoSetores": {
-      "Varejo e Consumo": 2
-    },
-    "impactoAcoes": {
+    "explicacao": "A Black Friday é o dia de promoções mais importante do varejo. Um recorde de vendas mostra que o Magazine Luiza está atraindo clientes, principalmente no site e no aplicativo.",
+    "impactos": {
       "MGLU3": 8
     },
     "motivos": {
-      "MGLU3": "Vendas recordes",
-      "Varejo e Consumo": "Consumo forte anima o setor"
-    },
-    "impactoMercado": 0.5,
-    "motivoMercado": "Bom humor com o consumo"
+      "MGLU3": "Vendas recordes"
+    }
   },
   {
     "id": "ambev-sem-alcool",
     "manchete": "Cerveja sem álcool da Ambev vira febre entre os jovens adultos",
     "explicacao": "Muitas pessoas estão bebendo menos álcool. A Ambev investiu cedo em cervejas sem álcool e agora colhe os frutos com vendas crescendo rápido. Isso mostra como acompanhar mudanças de comportamento ajuda uma empresa.",
-    "impactoSetores": {
-      "Alimentos e Bebidas": 1
-    },
-    "impactoAcoes": {
+    "impactos": {
       "ABEV3": 6
     },
     "motivos": {
-      "ABEV3": "Produto novo vende muito",
-      "Alimentos e Bebidas": "Setor se anima com a novidade"
-    },
-    "impactoMercado": 0.5,
-    "motivoMercado": "Bom humor geral na bolsa"
+      "ABEV3": "Produto novo vende muito"
+    }
   },
   {
     "id": "copa-do-mundo",
     "manchete": "Copa do Mundo começa e o Brasil para para ver os jogos",
-    "explicacao": "Em época de Copa, as pessoas compram mais cerveja, salgadinhos, televisões e camisas da seleção. As operadoras de internet ganham com o streaming dos jogos. Já nas fábricas, a produção cai um pouco nos dias de jogo.",
-    "impactoSetores": {
-      "Alimentos e Bebidas": 4,
-      "Varejo e Consumo": 3,
-      "Tecnologia e Telecom": 2,
-      "Indústria e Papel": -1
+    "explicacao": "Em época de Copa, as pessoas compram mais cerveja para assistir aos jogos e trocam de televisão. As operadoras ganham com o uso de internet para ver as partidas pelo celular.",
+    "impactos": {
+      "ABEV3": 5,
+      "MGLU3": 3,
+      "VIVT3": 2,
+      "TIMS3": 2
     },
     "motivos": {
-      "Alimentos e Bebidas": "Mais cerveja e petiscos",
-      "Varejo e Consumo": "TVs e camisas vendem mais",
-      "Tecnologia e Telecom": "Mais uso de internet",
-      "Indústria e Papel": "Fábricas param nos jogos"
-    },
-    "impactoMercado": 0.5,
-    "motivoMercado": "Clima de festa anima a bolsa"
+      "ABEV3": "Mais cerveja nos jogos",
+      "MGLU3": "Televisões vendem mais",
+      "VIVT3": "Mais uso de internet no celular",
+      "TIMS3": "Mais uso de internet no celular"
+    }
   },
   {
     "id": "ia-nas-empresas",
     "manchete": "Empresas brasileiras aceleram o uso de inteligência artificial",
-    "explicacao": "A inteligência artificial ajuda empresas a atender clientes, prever vendas e cortar custos. Empresas de tecnologia vendem mais software e serviços, e os bancos, que usam muita IA no atendimento, ficam mais eficientes.",
-    "impactoSetores": {
-      "Tecnologia e Telecom": 6,
-      "Bancos e Finanças": 2
+    "explicacao": "A inteligência artificial ajuda empresas a atender clientes, prever vendas e cortar custos. Empresas de software vendem mais, os bancos atendem melhor gastando menos, e a Vivo vende serviços de nuvem e dados.",
+    "impactos": {
+      "TOTS3": 6,
+      "ITUB4": 2,
+      "BBDC4": 2,
+      "VIVT3": 2
     },
     "motivos": {
-      "Tecnologia e Telecom": "Mais procura por software",
-      "Bancos e Finanças": "Atendimento mais eficiente"
-    },
-    "impactoMercado": 1,
-    "motivoMercado": "Empresas mais eficientes animam a bolsa"
+      "TOTS3": "Mais procura por software",
+      "ITUB4": "Atendimento mais eficiente",
+      "BBDC4": "Atendimento mais eficiente",
+      "VIVT3": "Vende serviços de nuvem"
+    }
   },
   {
     "id": "jovens-academia",
     "manchete": "Pesquisa mostra jovens trocando refrigerante por academia",
     "explicacao": "Mudanças de hábito mexem com as empresas. Se os jovens se preocupam mais com a saúde, redes de academia como a Smart Fit ganham clientes, enquanto quem vende refrigerante, como a Ambev, precisa se reinventar.",
-    "impactoSetores": {},
-    "motivos": {
-      "SMFT3": "Mais gente matriculada na academia",
-      "ABEV3": "Vende menos refrigerante"
-    },
-    "impactoAcoes": {
+    "impactos": {
       "SMFT3": 7,
       "ABEV3": -3
     },
-    "impactoMercado": 0.5,
-    "motivoMercado": "Dia tranquilo na bolsa"
+    "motivos": {
+      "SMFT3": "Mais gente matriculada na academia",
+      "ABEV3": "Vende menos refrigerante"
+    }
   },
   {
     "id": "compras-online-crescem",
     "manchete": "Compras pela internet crescem 30% em um ano",
-    "explicacao": "Cada compra online precisa ser entregue, então as empresas de transporte e logística ganham muito com esse crescimento. As lojas que vendem bem pela internet também se beneficiam, porque alcançam clientes no país inteiro.",
-    "impactoSetores": {
-      "Transporte e Logística": 4,
-      "Varejo e Consumo": 2
+    "explicacao": "Cada compra pela internet chega numa caixa de papelão, e a Klabin é a maior fabricante dessas caixas no Brasil. Lojas fortes no site vendem mais, enquanto os shoppings recebem menos visitantes.",
+    "impactos": {
+      "MGLU3": 5,
+      "KLBN11": 3,
+      "ALOS3": -2,
+      "IGTI11": -2,
+      "MULT3": -2
     },
     "motivos": {
-      "Transporte e Logística": "Mais entregas para fazer",
-      "Varejo e Consumo": "Lojas online vendem mais"
-    },
-    "impactoMercado": 0.5,
-    "motivoMercado": "Consumo forte anima a bolsa"
+      "MGLU3": "Forte nas vendas online",
+      "KLBN11": "Fabrica caixas de papelão",
+      "ALOS3": "Menos gente vai ao shopping",
+      "IGTI11": "Menos gente vai ao shopping",
+      "MULT3": "Menos gente vai ao shopping"
+    }
   }
 ]

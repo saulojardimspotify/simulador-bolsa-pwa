@@ -2,14 +2,11 @@
 
 /**
  * @typedef {{ticker:string, nome:string, setor:string, porte:string, bonsDividendos:boolean, preco:number}} Acao
- * @typedef {{id:string, manchete:string, explicacao:string, impactoSetores:Object<string,number>,
- *   impactoAcoes?:Object<string,number>, motivos?:Object<string,string>, grupo?:string}} Evento
+ * @typedef {{id:string, manchete:string, explicacao:string, impactos:Object<string,number>,
+ *   motivos:Object<string,string>, grupo?:string}} Evento   (impactos e motivos por ticker)
  * @typedef {{acao:Acao, percentual:number, quantidade:number, preco:number}} Posicao
  * @typedef {{posicoes:Posicao[], valorInicial:number}} Carteira
  */
-
-// Variação da carteira (em %) abaixo da qual o palpite certo é "fica igual".
-export const LIMIAR_IGUAL = 0.5;
 
 function embaralhar(lista, rng) {
   const copia = [...lista];
@@ -21,8 +18,7 @@ function embaralhar(lista, rng) {
 }
 
 export function eventoAfetaCarteira(evento, carteira) {
-  return carteira.posicoes.some((p) => p.percentual > 0 &&
-    (evento.impactoAcoes?.[p.acao.ticker] !== undefined || evento.impactoSetores?.[p.acao.setor] !== undefined));
+  return carteira.posicoes.some((p) => p.percentual > 0 && evento.impactos?.[p.acao.ticker] !== undefined);
 }
 
 // Prefere os eventos para os quais `relevante` devolve true; completa com os demais se faltar.
@@ -42,18 +38,11 @@ export function sortearEventos(eventos, n = 5, rng = Math.random, relevante = ()
 }
 
 export function variacaoAcao(acao, evento, rng = Math.random) {
-  const proprio = evento.impactoAcoes?.[acao.ticker];
-  const doSetor = evento.impactoSetores?.[acao.setor];
-  const base = proprio ?? doSetor;
-  // O ruído evita ações idênticas no mesmo setor; é proporcional ao impacto para nunca inverter o sinal.
-  const ruido = (b) => (rng() * 2 - 1) * Math.min(1, Math.abs(b) * 0.3);
-  if (base === undefined) {
-    const mercado = evento.impactoMercado;
-    if (!mercado) return { pct: 0, afetada: false, origem: null, motivo: null };
-    return { pct: mercado + ruido(mercado), afetada: false, origem: 'mercado', motivo: evento.motivoMercado ?? 'Acompanhou o mercado' };
-  }
-  const motivo = evento.motivos?.[acao.ticker] ?? evento.motivos?.[acao.setor] ?? null;
-  return { pct: base + ruido(base), afetada: true, origem: proprio !== undefined ? 'acao' : 'setor', motivo };
+  const base = evento.impactos?.[acao.ticker];
+  if (base === undefined) return { pct: 0, afetada: false, direcao: 'neutra', motivo: null };
+  // O ruído evita ações idênticas; é proporcional ao impacto para nunca inverter o sinal.
+  const ruido = (rng() * 2 - 1) * Math.min(1, Math.abs(base) * 0.3);
+  return { pct: base + ruido, afetada: true, direcao: base > 0 ? 'sobe' : 'cai', motivo: evento.motivos?.[acao.ticker] ?? null };
 }
 
 export function valorCarteira(carteira) {
@@ -64,7 +53,7 @@ export function aplicarEvento(carteira, evento, rng = Math.random) {
   const valorAntes = valorCarteira(carteira);
   const resultados = [];
   const posicoes = carteira.posicoes.map((p) => {
-    const { pct, afetada, motivo } = variacaoAcao(p.acao, evento, rng);
+    const { pct, afetada, direcao, motivo } = variacaoAcao(p.acao, evento, rng);
     const precoDepois = p.preco * (1 + pct / 100);
     resultados.push({
       ticker: p.acao.ticker,
@@ -72,6 +61,7 @@ export function aplicarEvento(carteira, evento, rng = Math.random) {
       precoDepois,
       pct,
       afetada,
+      direcao,
       investida: p.percentual > 0,
       motivo,
       variacaoReais: p.quantidade * (precoDepois - p.preco),
@@ -88,12 +78,9 @@ export function aplicarEvento(carteira, evento, rng = Math.random) {
   };
 }
 
-export function avaliarPalpite(palpite, valorAntes, valorDepois) {
-  // Arredonda para evitar que 100,5 vire 0,49999…% por erro de ponto flutuante.
-  const pct = Math.round(((valorDepois - valorAntes) / valorAntes) * 1e6) / 1e4;
-  if (palpite === 'sobe') return pct >= LIMIAR_IGUAL;
-  if (palpite === 'cai') return pct <= -LIMIAR_IGUAL;
-  return Math.abs(pct) < LIMIAR_IGUAL;
+// palpites: { TICKER: 'sobe' | 'neutra' | 'cai' }
+export function contarAcertos(palpites, resultados) {
+  return resultados.filter((r) => palpites[r.ticker] === r.direcao).length;
 }
 
 export function licaoFinal(carteira, retornoPct) {

@@ -1,16 +1,23 @@
 import { el, seloAcao, formatarReais, formatarPct, classeVariacao, animarNumero, confete, umaVez } from '../ui.js';
-import { aplicarEvento, avaliarPalpite, valorCarteira, LIMIAR_IGUAL } from '../motor.js';
+import { aplicarEvento, contarAcertos, valorCarteira } from '../motor.js';
 
 const TOTAL_RODADAS = 5;
-const PALPITES = { sobe: '▲ subir', igual: '● fica igual', cai: '▼ cair' };
+const OPCOES = [
+  { valor: 'sobe', rotulo: '▲ Sobe', classe: 'opcao-sobe' },
+  { valor: 'neutra', rotulo: '● Neutra', classe: 'opcao-neutra' },
+  { valor: 'cai', rotulo: '▼ Cai', classe: 'opcao-cai' },
+];
+const NOME_DIRECAO = { sobe: '▲ sobe', neutra: '● neutra', cai: '▼ cai' };
 const ANIMACAO_MS = 1200;
 
 export function render(container, estado, irPara) {
   const evento = estado.eventosPartida[estado.rodada];
-  const valorAtual = valorCarteira(estado.carteira);
-  const valorEl = el('b', { class: 'placar-valor' }, formatarReais(valorAtual));
-  const acertosEl = el('b', {}, `${estado.acertos}`);
+  const posicoes = estado.carteira.posicoes;
+  const maxAcertos = TOTAL_RODADAS * posicoes.length;
+  const valorEl = el('b', { class: 'placar-valor' }, formatarReais(valorCarteira(estado.carteira)));
+  const acertosEl = el('b', {}, `${estado.acertos} de ${maxAcertos}`);
   const area = el('div', { class: 'rodada-area' });
+  const palpites = {};
 
   const placar = el('div', { class: 'placar' },
     el('div', {}, el('span', { class: 'suave' }, 'Rodada '), el('b', {}, `${estado.rodada + 1} de ${TOTAL_RODADAS}`)),
@@ -21,28 +28,34 @@ export function render(container, estado, irPara) {
     el('div', { class: 'plantao' }, '🔴 PLANTÃO DE NOTÍCIAS'),
     el('h1', {}, evento.manchete));
 
+  const revelarBtn = el('button', { class: 'botao botao-primario botao-enorme', disabled: true }, 'Ver o que aconteceu ▶');
+
   let revelado = false;
-  function revelar(palpite) {
-    // Subir e Cair dividem a mesma trava: um toque com dois dedos não aplica o evento duas vezes.
-    if (revelado) return;
+  function revelar() {
+    // Trava única: um toque duplo não aplica o evento duas vezes.
+    if (revelado || Object.keys(palpites).length < posicoes.length) return;
     revelado = true;
     const r = aplicarEvento(estado.carteira, evento);
-    const acertou = avaliarPalpite(palpite, r.valorAntes, r.valorDepois);
+    const acertos = contarAcertos(palpites, r.resultados);
     estado.carteira = r.carteira;
-    if (acertou) estado.acertos += 1;
-    estado.historico.push({ eventoId: evento.id, palpite, acertou, valorAntes: r.valorAntes, valorDepois: r.valorDepois });
+    estado.acertos += acertos;
+    estado.historico.push({ eventoId: evento.id, palpites: { ...palpites }, acertos, valorAntes: r.valorAntes, valorDepois: r.valorDepois });
 
     const variacaoTotal = ((r.valorDepois - r.valorAntes) / r.valorAntes) * 100;
     const ultima = estado.rodada === TOTAL_RODADAS - 1;
     const linhas = r.resultados.map((res, i) => {
       const acao = estado.carteira.posicoes[i].acao;
+      const certo = palpites[res.ticker] === res.direcao;
       const precoEl = el('span', { class: 'res-preco' }, formatarReais(res.precoAntes));
       animarNumero(precoEl, res.precoAntes, res.precoDepois, ANIMACAO_MS, formatarReais);
       return el('div', { class: `res-linha ${classeVariacao(res.pct)}${res.investida ? '' : ' nao-investida'}` },
         seloAcao(acao),
         el('div', { class: 'res-info' },
           el('div', { class: 'card-nome' }, acao.nome, res.investida ? '' : el('span', { class: 'etiqueta' }, 'não investida')),
-          el('div', { class: 'res-motivo' }, res.motivo ?? 'Afetada pela notícia')),
+          el('div', { class: 'res-motivo' }, res.motivo ?? 'A notícia não é sobre esta empresa'),
+          el('div', { class: `res-palpite ${certo ? 'certo' : 'errado'}` },
+            certo ? '✓ ' : '✗ ', `Você disse ${NOME_DIRECAO[palpites[res.ticker]]}`,
+            certo ? '' : ` · ficou ${NOME_DIRECAO[res.direcao]}`)),
         el('div', { class: 'res-numeros' },
           precoEl,
           el('span', { class: 'res-pct' }, formatarPct(res.pct)),
@@ -61,32 +74,48 @@ export function render(container, estado, irPara) {
       }),
     }, ultima ? 'Ver resultado 🏁' : 'Seguir em frente ▶');
 
+    const titulo = acertos === posicoes.length ? '🎯 Acertou todas!'
+      : acertos === 0 ? '😅 Não foi dessa vez' : `👍 Você acertou ${acertos} de ${posicoes.length}`;
     area.replaceChildren(el('div', { class: 'revelacao' },
-      el('div', { class: `feedback ${acertou ? 'acertou' : 'errou'}` },
-        acertou ? '🎯 Você acertou!' : '😅 Não foi dessa vez',
-        el('span', { class: 'feedback-detalhe' },
-          ` Você disse ${PALPITES[palpite]}. Sua carteira: `,
-          el('b', { class: classeVariacao(variacaoTotal) }, formatarPct(variacaoTotal)),
-          Math.abs(variacaoTotal) < LIMIAR_IGUAL ? ` (menos de ${LIMIAR_IGUAL.toLocaleString('pt-BR')}% conta como "fica igual")` : '')),
+      el('div', { class: `feedback ${acertos === posicoes.length ? 'acertou' : 'errou'}` },
+        titulo,
+        el('span', { class: 'feedback-detalhe' }, ' Sua carteira nesta rodada: ',
+          el('b', { class: classeVariacao(variacaoTotal) }, formatarPct(variacaoTotal)))),
       el('div', { class: 'res-lista' }, linhas),
-      r.algumaInvestidaAfetada ? null
-        : el('p', { class: 'ileso' }, 'A notícia não era sobre os setores da sua carteira: suas ações só acompanharam o mercado.'),
+      r.resultados.some((res) => res.afetada) ? null
+        : el('p', { class: 'ileso' }, 'Essa notícia não era sobre nenhuma das suas empresas: as três ficaram neutras.'),
       el('div', { class: 'explicacao' }, el('h2', {}, 'Por que isso aconteceu?'), el('p', {}, evento.explicacao)),
       seguir));
 
     animarNumero(valorEl, r.valorAntes, r.valorDepois, ANIMACAO_MS, formatarReais);
-    acertosEl.textContent = `${estado.acertos}`;
-    if (acertou) confete(container);
+    acertosEl.textContent = `${estado.acertos} de ${maxAcertos}`;
+    if (acertos === posicoes.length) confete(container);
   }
+  revelarBtn.addEventListener('click', revelar);
+
+  const linhasPalpite = posicoes.map((p) => {
+    const botoes = OPCOES.map((o) => el('button', {
+      class: `opcao ${o.classe}`,
+      'aria-pressed': 'false',
+      onclick: () => {
+        palpites[p.acao.ticker] = o.valor;
+        for (const b of botoes) b.setAttribute('aria-pressed', b === botaoDe[o.valor] ? 'true' : 'false');
+        revelarBtn.disabled = Object.keys(palpites).length < posicoes.length;
+      },
+    }, o.rotulo));
+    const botaoDe = Object.fromEntries(OPCOES.map((o, i) => [o.valor, botoes[i]]));
+    return el('div', { class: `palpite-linha${p.percentual === 0 ? ' zerada' : ''}` },
+      seloAcao(p.acao),
+      el('div', { class: 'palpite-acao' },
+        el('div', { class: 'card-nome' }, p.acao.nome),
+        el('div', { class: 'suave' }, `${p.acao.ticker} · ${p.percentual}% da carteira`)),
+      el('div', { class: 'opcoes', role: 'group', 'aria-label': `Palpite para ${p.acao.nome}` }, botoes));
+  });
 
   area.append(el('div', { class: 'palpite' },
-    el('h2', {}, 'O que acontece com sua carteira depois dessa notícia?'),
-    el('div', { class: 'carteira-mini' }, estado.carteira.posicoes.map((p) =>
-      el('span', { class: `mini${p.percentual === 0 ? ' zerada' : ''}` }, seloAcao(p.acao), `${p.acao.nome} · ${p.percentual}%`))),
-    el('div', { class: 'palpite-botoes' },
-      el('button', { class: 'botao botao-sobe botao-enorme', onclick: umaVez(() => revelar('sobe')) }, '▲ Subir'),
-      el('button', { class: 'botao botao-igual botao-enorme', onclick: umaVez(() => revelar('igual')) }, '● Fica igual'),
-      el('button', { class: 'botao botao-cai botao-enorme', onclick: umaVez(() => revelar('cai')) }, '▼ Cair'))));
+    el('h2', {}, 'Com essa notícia, cada ação sobe, fica neutra ou cai?'),
+    el('div', { class: 'palpite-lista' }, linhasPalpite),
+    revelarBtn));
 
   container.append(el('section', { class: 'tela-rodada' }, placar, manchete, area));
 }

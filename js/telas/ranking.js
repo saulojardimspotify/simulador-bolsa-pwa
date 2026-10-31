@@ -134,7 +134,7 @@ export function render(container, estado, irPara) {
   container.append(el('section', { class: 'tela-ranking' },
     el('header', { class: 'cabecalho-tela' },
       el('h1', {}, '🏆 Entre no ranking'),
-      el('p', { class: 'suave' }, `Seu retorno: ${formatarPct(estado.retornoFinal ?? 0)} · ${estado.acertos} de 5 palpites certos`)),
+      el('p', { class: 'suave' }, `Seu retorno: ${formatarPct(estado.retornoFinal ?? 0)} · ${estado.acertos} de 15 palpites certos`)),
     area));
   desenharTitulos();
   atualizarPrevia();

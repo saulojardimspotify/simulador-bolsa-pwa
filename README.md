@@ -1,6 +1,6 @@
 # Simulador da Bolsa
 
-App educativo (PWA) para feiras escolares. O aluno recebe **R$ 10.000 fictícios**, monta uma carteira com **3 ações do IBOVESPA**, divide o dinheiro em partes de 10% e acompanha **5 notícias sorteadas**. As notícias são escolhidas de preferência entre as que afetam as ações da carteira dele. A cada notícia ele dá um palpite (a carteira vai subir, ficar igual, com variação menor que 0,5%, ou cair?), vê quanto cada ação mudou e lê o porquê. No fim, vê o resultado, uma lição sobre diversificação e entra no **ranking do dia**.
+App educativo (PWA) para feiras escolares. O aluno recebe **R$ 10.000 fictícios**, monta uma carteira com **3 ações do IBOVESPA**, divide o dinheiro em partes de 10% e acompanha **5 notícias sorteadas**, de preferência notícias que afetam as empresas da carteira dele. A cada notícia ele diz, **para cada ação**, se ela sobe, fica neutra ou cai (até 15 acertos por partida), vê quanto cada uma mudou e lê o porquê. No fim, vê o resultado, uma lição sobre diversificação e entra no **ranking do dia**.
 
 > Simulação educativa: os eventos e os impactos são fictícios. Os preços iniciais são reais, da data indicada no rodapé.
 
@@ -29,22 +29,16 @@ As notícias ficam em [`data/eventos.json`](data/eventos.json). Dá para editar 
   "id": "selic-sobe",
   "manchete": "Banco Central sobe a taxa Selic para conter a inflação",
   "explicacao": "Texto curto explicando por que isso mexe com as ações.",
-  "impactoSetores": { "Varejo e Consumo": -6, "Bancos e Finanças": 3 },
-  "impactoAcoes": { "MGLU3": -9 },
-  "motivos": { "Varejo e Consumo": "Vendas a prazo ficam mais caras" },
-  "impactoMercado": -2,
-  "motivoMercado": "Juros altos derrubam a bolsa toda",
+  "impactos": { "MGLU3": -9, "LREN3": -5, "ITUB4": 2 },
+  "motivos": { "MGLU3": "Depende muito de vendas parceladas", "LREN3": "Vendas a prazo ficam mais caras", "ITUB4": "Ganha mais com os juros dos empréstimos" },
   "grupo": "juros"
 }
 ```
 
-- **impactoSetores**: quanto (em %) cada setor sobe ou cai. Use os nomes de setor exatamente como em [`js/setores.js`](js/setores.js).
-- **impactoAcoes** (opcional): impacto específico de uma ação; vale mais que o do setor.
-- **motivos** (opcional): frase curta mostrada ao lado da ação, por setor ou por código.
-- **impactoMercado**: quanto (em %, de ±0,5 a ±4) se mexem todas as outras ações, as que não são do setor citado. É o "humor geral da bolsa" com a notícia.
-- **motivoMercado**: frase curta mostrada ao lado dessas ações.
+- **impactos**: quanto (em %, de 1 a 12, para cima ou para baixo) cada **empresa** sobe ou cai, pelo código da ação. Só entram as empresas que a notícia afeta de verdade; as outras ficam paradas, e para elas a resposta certa é "neutra".
+- **motivos**: frase curta mostrada ao lado de cada empresa citada em `impactos` (obrigatória para todas).
 - **grupo** (opcional): eventos do mesmo grupo nunca saem na mesma partida (ex.: "Selic sobe" e "Selic cai").
-- Impactos entre **−12 e +12**, nunca 0. O banco precisa ter exatamente **50** eventos (os testes conferem).
+- O banco precisa ter exatamente **50** eventos, e toda empresa precisa aparecer em pelo menos 3 notícias (os testes conferem).
 
 Depois de publicar uma alteração, o app mostra a versão nova a partir da **segunda** vez que for aberto com internet.
 

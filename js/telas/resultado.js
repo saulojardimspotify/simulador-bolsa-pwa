@@ -13,7 +13,7 @@ export function render(container, estado, irPara) {
       el('div', { class: 'bloco' }, el('span', { class: 'suave' }, 'Você começou com'), el('b', {}, formatarReais(c.valorInicial))),
       el('div', { class: 'bloco' }, el('span', { class: 'suave' }, 'Terminou com'), el('b', { class: classeVariacao(retorno) }, formatarReais(final))),
       el('div', { class: 'bloco grande' }, el('span', { class: 'suave' }, 'Retorno'), el('b', { class: classeVariacao(retorno) }, formatarPct(retorno))),
-      el('div', { class: 'bloco' }, el('span', { class: 'suave' }, 'Palpites certos'), el('b', {}, `${estado.acertos} de 5`))),
+      el('div', { class: 'bloco' }, el('span', { class: 'suave' }, 'Palpites certos'), el('b', {}, `${estado.acertos} de 15`))),
     el('div', { class: 'res-lista' }, c.posicoes.map((p) => {
       const pct = (p.preco / p.acao.preco - 1) * 100;
       return el('div', { class: `res-linha ${classeVariacao(pct)}${p.percentual === 0 ? ' nao-investida' : ''}` },
