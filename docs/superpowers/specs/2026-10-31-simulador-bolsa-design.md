@@ -150,7 +150,7 @@ Regras: há eventos bons, ruins e mistos; cada setor aparece em pelo menos 4 eve
 - **Porte:** valor de mercado > R$ 50 bi = Grande; R$ 10–50 bi = Média; < R$ 10 bi = Pequena.
 - **Bons dividendos:** dividend yield dos últimos 12 meses ≥ 6%.
 - Sem logos de empresas: selo com iniciais na cor do setor.
-- **Script `scripts/atualizar-precos.mjs`** (Node): busca preços e indicadores numa fonte pública e regrava `acoes.json`, preservando setor e nome popular já revisados. A fonte e qualquer chave de API são definidas no plano e confirmadas com o professor antes do uso.
+- **Script `scripts/atualizar-precos.mjs`** (Node): busca os **preços** numa fonte pública sem chave de API (Yahoo Finance) e regrava `acoes.json`, preservando os demais campos. Porte e bons dividendos são classificados manualmente por pesquisa (valores aproximados, revisados a cada feira).
 
 ## 6. Arquitetura
 
