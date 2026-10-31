@@ -1,7 +1,8 @@
 // Service worker: guarda todos os arquivos no primeiro acesso para o app funcionar offline.
-// Responde com a cópia guardada e, se houver internet, atualiza a cópia em segundo plano:
-// uma edição publicada aparece a partir da segunda abertura do app.
-// Ao adicionar ou remover arquivos, atualize a lista e troque a versão abaixo.
+// - Dados (data/*.json): responde com a cópia guardada e atualiza em segundo plano, então
+//   uma edição de eventos ou preços aparece a partir da segunda abertura do app.
+// - Código (html, css, js): só sai do cache. Para publicar uma mudança de código, troque a
+//   versão abaixo; o app inteiro é baixado de novo de uma vez, sem misturar versões.
 const CACHE = 'simulador-bolsa-v1';
 
 const ARQUIVOS = [
@@ -43,20 +44,20 @@ self.addEventListener('activate', (evento) => {
 
 self.addEventListener('fetch', (evento) => {
   if (evento.request.method !== 'GET') return;
-  const atualizar = fetch(evento.request).then((resposta) => {
-    if (resposta.ok && new URL(evento.request.url).origin === self.location.origin) {
-      const copia = resposta.clone();
-      caches.open(CACHE).then((cache) => cache.put(evento.request, copia));
+  const url = new URL(evento.request.url);
+  const ehDado = url.origin === self.location.origin && /\/data\/[^/]+\.json$/.test(url.pathname);
+  const salvo = caches.match(evento.request, { ignoreSearch: true });
+  if (!ehDado) {
+    evento.respondWith(salvo.then((r) => r ?? fetch(evento.request)));
+    return;
+  }
+  const atualizar = fetch(evento.request).then(async (resposta) => {
+    if (resposta.ok) {
+      const cache = await caches.open(CACHE);
+      await cache.put(evento.request, resposta.clone());
     }
     return resposta;
   });
-  evento.respondWith(
-    caches.match(evento.request, { ignoreSearch: true }).then((salvo) => {
-      if (salvo) {
-        evento.waitUntil(atualizar.catch(() => {}));
-        return salvo;
-      }
-      return atualizar;
-    }),
-  );
+  evento.waitUntil(atualizar.catch(() => {}));
+  evento.respondWith(salvo.then((r) => r ?? atualizar));
 });

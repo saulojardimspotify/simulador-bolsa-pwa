@@ -117,7 +117,7 @@ Placar fixo: valor atual da carteira e "Rodada N de 5".
 1. Se o ticker está em `impactoAcoes`, usa esse valor.
 2. Senão, se o setor está em `impactoSetores`, usa esse valor.
 3. Senão, 0.
-4. Soma ruído aleatório uniforme em [−1, +1] pontos percentuais.
+4. Se a ação foi afetada (passos 1 ou 2), soma ruído aleatório uniforme em [−1, +1] pontos percentuais. Ação não afetada fica exatamente parada.
 5. `novoPreco = preco × (1 + variação/100)`. Efeitos se acumulam entre rodadas.
 
 Uma ação conta como "afetada" quando entra pelos passos 1 ou 2. O palpite está correto quando o sinal da variação do valor total da carteira bate com a escolha do aluno. Se a variação total for exatamente 0, a rodada conta como acerto.

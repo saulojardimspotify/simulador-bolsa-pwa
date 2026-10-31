@@ -20,7 +20,11 @@ export function render(container, estado, irPara) {
     el('div', { class: 'plantao' }, '🔴 PLANTÃO DE NOTÍCIAS'),
     el('h1', {}, evento.manchete));
 
+  let revelado = false;
   function revelar(palpite) {
+    // Subir e Cair dividem a mesma trava: um toque com dois dedos não aplica o evento duas vezes.
+    if (revelado) return;
+    revelado = true;
     const r = aplicarEvento(estado.carteira, evento);
     const acertou = avaliarPalpite(palpite, r.valorAntes, r.valorDepois);
     estado.carteira = r.carteira;

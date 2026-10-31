@@ -63,7 +63,15 @@ const inatividade = iniciarInatividade({
   aoCancelar: () => { contagem.hidden = true; },
 });
 
+const TRAVA_TROCA_MS = 400;
+let travaTimer = null;
+
 export function irPara(nome) {
+  document.querySelectorAll('.modal-fundo').forEach((m) => m.remove());
+  // Ignora toques logo após trocar de tela, para o 2º toque de um toque duplo não cair na tela nova.
+  app.inert = true;
+  clearTimeout(travaTimer);
+  travaTimer = setTimeout(() => { app.inert = false; }, TRAVA_TROCA_MS);
   app.replaceChildren();
   app.dataset.tela = nome;
   window.scrollTo(0, 0);

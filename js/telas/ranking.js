@@ -4,6 +4,8 @@ import {
 } from '../ranking.js';
 import { atualizarRankingDoDia } from '../app.js';
 
+const PAINEL_PROFESSOR_MS = 45000;
+
 function gravar(estado, lista) {
   estado.ranking = lista;
   salvarRanking(estado.storage, dataHoje(), lista);
@@ -13,7 +15,15 @@ function abrirPainelProfessor(estado, onMudou) {
   const lista = el('ul', { class: 'professor-lista' });
   const zerar = el('button', { class: 'botao botao-cai' }, 'Zerar ranking de hoje');
   let confirmando = false;
-  const fechar = () => { fundo.remove(); onMudou?.(); };
+  let timer = null;
+  const fechar = () => {
+    clearTimeout(timer);
+    if (!fundo.isConnected) return; // a troca de tela já fechou o painel
+    fundo.remove();
+    onMudou?.();
+  };
+  // Fecha sozinho se o professor se afastar, para nenhum aluno mexer no ranking.
+  const adiar = () => { clearTimeout(timer); timer = setTimeout(fechar, PAINEL_PROFESSOR_MS); };
 
   function desenhar() {
     lista.replaceChildren(...(estado.ranking.length
@@ -40,8 +50,10 @@ function abrirPainelProfessor(estado, onMudou) {
       el('h2', {}, '🔒 Área do professor'),
       lista,
       el('div', { class: 'rodape-botoes' }, zerar, el('button', { class: 'botao botao-primario', onclick: fechar }, 'Fechar'))));
+  fundo.addEventListener('pointerdown', adiar);
   desenhar();
   document.body.append(fundo);
+  adiar();
 }
 
 export function painelRanking(estado, { destaque = null, onMudou } = {}) {
@@ -83,10 +95,13 @@ export function render(container, estado, irPara) {
   }
   nome.addEventListener('input', atualizarPrevia);
 
-  function mostrarFinal(entrada, posicao) {
+  function mostrarFinal(entrada) {
+    const posicao = estado.ranking.findIndex((e) => e.timestamp === entrada.timestamp) + 1;
     area.replaceChildren(
-      el('p', { class: 'posicao' }, `${entrada.titulo} ${entrada.nome}, você ficou em `, el('b', {}, `${posicao}º lugar`), '!'),
-      painelRanking(estado, { destaque: entrada.timestamp, onMudou: () => mostrarFinal(entrada, posicao) }),
+      posicao
+        ? el('p', { class: 'posicao' }, `${entrada.titulo} ${entrada.nome}, você ficou em `, el('b', {}, `${posicao}º lugar`), '!')
+        : el('p', { class: 'posicao' }, 'Ranking atualizado pelo professor.'),
+      painelRanking(estado, { destaque: entrada.timestamp, onMudou: () => mostrarFinal(entrada) }),
       el('div', { class: 'rodape-botoes' },
         el('button', { class: 'botao botao-primario botao-enorme', onclick: umaVez(() => irPara('inicio')) }, 'Jogar de novo 🔄')));
   }
@@ -104,9 +119,8 @@ export function render(container, estado, irPara) {
       titulo, nome: normalizarNome(nome.value), retornoPct: estado.retornoFinal ?? 0,
       acertos: estado.acertos, timestamp: Date.now(),
     };
-    const { lista, posicao } = inserirNoRanking(estado.ranking, entrada);
-    gravar(estado, lista);
-    mostrarFinal(entrada, posicao);
+    gravar(estado, inserirNoRanking(estado.ranking, entrada).lista);
+    mostrarFinal(entrada);
   }
   nome.addEventListener('keydown', (e) => { if (e.key === 'Enter') salvar(); });
 

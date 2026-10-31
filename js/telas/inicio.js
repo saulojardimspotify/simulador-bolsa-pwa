@@ -1,4 +1,4 @@
-import { el } from '../ui.js';
+import { el, umaVez } from '../ui.js';
 import { novaPartida, atualizarRankingDoDia } from '../app.js';
 import { painelRanking } from './ranking.js';
 
@@ -19,6 +19,6 @@ export function render(container, estado, irPara) {
         el('li', {}, 'Monte sua carteira'),
         el('li', {}, 'Dê seu palpite a cada notícia'),
         el('li', {}, 'Entre no ranking do dia')),
-      el('button', { class: 'botao botao-primario botao-enorme', onclick: comecar }, 'Começar ▶')),
+      el('button', { class: 'botao botao-primario botao-enorme', onclick: umaVez(comecar) }, 'Começar ▶')),
     painelRanking(estado, { onMudou: () => irPara('inicio') })));
 }

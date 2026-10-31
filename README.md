@@ -63,3 +63,5 @@ node scripts/gerar-icones.mjs   # gera os ícones
 ```
 
 Não há dependências para instalar. O app é HTML, CSS e JavaScript puros.
+
+**Ao mudar código** (HTML, CSS ou JS), troque a versão em `const CACHE = 'simulador-bolsa-v1'` no [`sw.js`](sw.js) (por exemplo para `v2`). Sem isso, quem já abriu o app continua vendo a versão antiga. Mudanças só em `data/*.json` não precisam disso.
