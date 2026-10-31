@@ -61,11 +61,12 @@ test('sw: na instalação guarda também os logos das ações', async () => {
   const contexto = {
     self: { location: { origin: ORIGEM }, addEventListener: (t, fn) => { ouvintes[t] = fn; }, skipWaiting() {}, clients: { claim() {} } },
     caches: { open: async () => ({ addAll: async (l) => { guardados.push(...l); }, put: async () => {} }) },
-    fetch: async (url) => ({
+    fetch: async (req) => ({
       ok: true,
       json: async () => ({ acoes: [{ ticker: 'PETR4', logo: true }, { ticker: 'XPTO3', logo: false }] }),
-      url,
+      url: req.url ?? req,
     }),
+    Request: class { constructor(url, opcoes = {}) { this.url = url; this.cache = opcoes.cache; } },
     URL,
     Promise,
   };
@@ -73,9 +74,12 @@ test('sw: na instalação guarda também os logos das ações', async () => {
   let espera;
   ouvintes.install({ waitUntil: (p) => { espera = p; } });
   await espera;
-  assert.ok(guardados.includes('./js/app.js'));
-  assert.ok(guardados.includes('./logos/PETR4.svg'));
-  assert.ok(!guardados.includes('./logos/XPTO3.svg'));
+  const urls = guardados.map((r) => r.url);
+  assert.ok(urls.includes('./js/app.js'));
+  assert.ok(urls.includes('./logos/PETR4.svg'));
+  assert.ok(!urls.includes('./logos/XPTO3.svg'));
+  // Ignora o cache HTTP do navegador, senão uma versão nova pode guardar arquivos velhos.
+  assert.ok(guardados.every((r) => r.cache === 'reload'));
 });
 
 test('sw: arquivo fora do cache vem da rede', async () => {

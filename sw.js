@@ -3,7 +3,7 @@
 //   uma edição de eventos ou preços aparece a partir da segunda abertura do app.
 // - Código (html, css, js): só sai do cache. Para publicar uma mudança de código, troque a
 //   versão abaixo; o app inteiro é baixado de novo de uma vez, sem misturar versões.
-const CACHE = 'simulador-bolsa-v3';
+const CACHE = 'simulador-bolsa-v4';
 
 const ARQUIVOS = [
   './',
@@ -33,15 +33,20 @@ const ARQUIVOS = [
 
 // Os logos vêm da lista de ações, para não precisar listar os 76 arquivos aqui.
 async function logos() {
-  const resp = await fetch('./data/acoes.json');
+  const resp = await fetch(semCacheHttp('./data/acoes.json'));
   const { acoes } = await resp.json();
   return acoes.filter((a) => a.logo).map((a) => `./logos/${a.ticker}.svg`);
+}
+
+// Baixa direto do servidor: o cache HTTP do navegador pode ter cópias da versão anterior.
+function semCacheHttp(url) {
+  return new Request(url, { cache: 'reload' });
 }
 
 self.addEventListener('install', (evento) => {
   evento.waitUntil((async () => {
     const cache = await caches.open(CACHE);
-    await cache.addAll([...ARQUIVOS, ...(await logos())]);
+    await cache.addAll([...ARQUIVOS, ...(await logos())].map(semCacheHttp));
     await self.skipWaiting();
   })());
 });
